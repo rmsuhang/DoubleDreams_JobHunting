@@ -1,0 +1,8 @@
+{
+  "name": "本草职哨 · 每日官方招聘汇总",
+  "description": "面向医学硕士（针灸推拿学 / 医学事务CRA）的官方一手渠道每日招聘汇总、关键节点追踪与职位表增量对比工作台。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

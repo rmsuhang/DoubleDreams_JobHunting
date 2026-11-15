@@ -1,0 +1,54 @@
+name: Daily Official Recruitment Briefing
+
+on:
+  schedule:
+    # UTC 00:00 = 北京时间 08:00 每天自动执行
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # 支持在 GitHub Actions 页面随时点击 "Run workflow" 手动立即刷新
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run daily official recruitment scan & generate docs/index.html
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          WORKBENCH_API_URL: ${{ vars.WORKBENCH_API_URL }}
+        run: node scripts/daily-update.ts
+
+      - name: Commit updated briefing snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/briefings.json docs/index.html docs/latest.md
+          git diff --staged --quiet || git commit -m "chore: update daily recruitment briefing ($(date -u +'%Y-%m-%d'))"
+          git push
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload docs artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

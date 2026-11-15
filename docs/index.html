@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>周梦梦 · 个人官方招聘工作台（2026-11-15）</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --accent: #0f766e;
+      --accent-soft: #f0fdfa;
+      --warn: #b45309;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums; }
+    .strong { font-weight: 600; color: var(--ink); }
+    .muted { color: var(--muted); font-size: 12px; }
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { font-size: 18px; font-weight: 700; }
+    .nav-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tab-btn {
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .tab-btn.active { background: var(--accent-soft); color: var(--accent); border-color: #ccfbf1; }
+    .refresh-btn {
+      border: none;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .refresh-btn:disabled { opacity: 0.6; cursor: wait; }
+    .sync-note { font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 24px 20px 48px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .kpi-cell { padding: 18px 20px; border-right: 1px solid var(--border); }
+    .kpi-cell:last-child { border-right: none; }
+    .kpi-val { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .toolbar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .seg-group { display: inline-flex; gap: 4px; background: #f1f5f9; padding: 4px; border-radius: 8px; }
+    .seg-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+    }
+    .seg-btn.active { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    input, select {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 12px;
+      background: var(--surface);
+      color: var(--ink);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+    .meta-line { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .status-warn { color: var(--warn); font-weight: 600; }
+    .status-teal { color: var(--accent); font-weight: 600; }
+    .status-muted { color: #475569; font-weight: 500; }
+    h3 { margin: 0 0 8px; font-size: 16px; line-height: 1.4; }
+    .source-line { font-size: 12px; margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .alert-box {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #78350f;
+      margin-bottom: 12px;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .subhead { font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px; }
+    .bullet-list { margin: 0; padding-left: 16px; font-size: 12px; color: #475569; }
+    .bullet-list li { margin-bottom: 4px; }
+    .pos-details { margin-top: 14px; border-top: 1px solid #f1f5f9; padding-top: 10px; }
+    .pos-details summary { font-size: 12px; font-weight: 600; color: var(--accent); cursor: pointer; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+    th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { background: #f8fafc; color: #475569; font-weight: 600; }
+    .num { text-align: right; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    @media (max-width: 768px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .toolbar, .nav-tabs { display: none !important; }
+      .panel { display: block !important; margin-bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">本草职哨 · 周梦梦个人招聘工作台</div>
+      <div id="headerMeta" class="muted">简报日期 2026-11-15 · 基准 2026-11-15 · 每日设定 08:00 · 仅采信官方一手渠道</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+      <nav class="nav-tabs" aria-label="工作台视图">
+        <button type="button" class="tab-btn active" data-view="briefing">每日简报 (7)</button>
+        <button type="button" class="tab-btn" data-view="milestones">关键节点</button>
+        <button type="button" class="tab-btn" data-view="sources">官源目录 (18)</button>
+        <button type="button" class="tab-btn" data-view="profile">个人画像</button>
+      </nav>
+      
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="syncStatusBar" class="sync-note" style="display:none;"></div>
+    <section id="view-briefing" class="panel active">
+      <div class="kpi-grid">
+        <div class="kpi-cell"><div class="muted">当前有效匹配</div><div id="kpiTotal" class="kpi-val mono">7</div></div>
+        <div class="kpi-cell"><div class="muted">较上次基准新增</div><div id="kpiNew" class="kpi-val mono" style="color:var(--accent)">+0</div></div>
+        <div class="kpi-cell"><div class="muted">变更与异动</div><div id="kpiUpdated" class="kpi-val mono" style="color:var(--warn)">1</div></div>
+        <div class="kpi-cell"><div class="muted">未截止延续</div><div id="kpiOpen" class="kpi-val mono">6</div></div>
+      </div>
+
+      <div class="toolbar">
+        <div class="seg-group" role="group" aria-label="增量筛选">
+          <button type="button" class="seg-btn active" data-diff="all">全部 (7)</button>
+          <button type="button" class="seg-btn" data-diff="new">今日新增 (0)</button>
+          <button type="button" class="seg-btn" data-diff="updated">变更与异动 (1)</button>
+          <button type="button" class="seg-btn" data-diff="still_open">未截止延续 (6)</button>
+        </div>
+        <div class="filters">
+          <input type="search" id="searchInput" placeholder="检索单位、岗位或关键字..." aria-label="关键词检索" />
+          <select id="trackSelect" aria-label="赛道筛选">
+            <option value="all">全部赛道</option>
+            <option value="tcm_physician">针灸推拿医师</option>
+            <option value="medical_cra">医学事务 / CRA</option>
+          </select>
+          <select id="regionSelect" aria-label="地区筛选">
+            <option value="all">全部地区</option>
+            <option value="济南">山东省济南市</option>
+            <option value="青岛">山东省青岛市</option>
+            <option value="山东省级/国家">山东省级 / 国家</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="itemsContainer">
+      <article class="card item-card" data-diff="updated" data-track="tcm_physician" data-region="济南" data-search="【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知 济南市第四人民医院 济南市第四人民医院官网 / 济南卫生健康人才网 济南 重点意向城市命中：山东省济南市 专业与学历匹配：针灸推拿学硕士研究生 考试类型吻合：笔试+专业面试 针灸推拿医师（a类） 中医理疗科">
+        <div class="meta-line">
+          <span class="status-warn">变更/异动</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-15</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-11-24</span>
+        </div>
+        <h3>【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>济南市第四人民医院官网 / 济南卫生健康人才网</span>
+          <a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jndsyy.cn/ ↗</a>
+        </div>
+        <div class="alert-box">关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05</div>
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：山东省济南市</li><li>专业与学历匹配：针灸推拿学硕士研究生</li><li>考试类型吻合：笔试+专业面试</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">补充公告发布</span>
+            <span class="mono">2026-11-15</span>
+            <span class="muted"> · 延长报名及缴费周期，推迟准考证打印与笔试日期</span>
+          </li>
+          <li>
+            <span class="ms-label">网上报名（已延期）</span>
+            <span class="mono">2026-11-12 ~ 2026-11-24</span>
+            <span class="muted"> · 原截止 11-19，延期至 11-24 16:00</span>
+          </li>
+          <li>
+            <span class="ms-label">网上缴费（已调整）</span>
+            <span class="mono">2026-11-13 ~ 2026-11-25</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">准考证打印（已调整）</span>
+            <span class="mono">2026-12-02 ~ 2026-12-04</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">统一笔试（延期后）</span>
+            <span class="mono">2026-12-05</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>针灸推拿医师（A类）</strong><div class="muted">中医理疗科</div></td>
+            <td class="mono num">1</td>
+            <td>硕士研究生<div class="muted">针灸推拿学</div></td>
+            <td>笔试 + 面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="山东省级/国家" data-search="山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告 山东省人社厅 / 省属三甲医院联合引才 山东省人力资源和社会保障厅官网 山东省级/国家 官方一手省级人社主渠道，含山东中医药大学校内双选日程 学历与身份匹配：2027届硕士研究生应届生专场 匹配临床岗位：针灸推拿、中医儿科方向需求集中 中医儿科/小儿推拿医师 省属中医医院儿科及推拿中心">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>山东省级/国家</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-09</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-11-22</span>
+        </div>
+        <h3>山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>山东省人力资源和社会保障厅官网</span>
+          <a href="http://hrss.shandong.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://hrss.shandong.gov.cn/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方一手省级人社主渠道，含山东中医药大学校内双选日程</li><li>学历与身份匹配：2027届硕士研究生应届生专场</li><li>匹配临床岗位：针灸推拿、中医儿科方向需求集中</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">山东中医药大学长清校区双选会</span>
+            <span class="mono">2026-11-18 09:00</span>
+            <span class="muted"> · 距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件</span>
+          </li>
+          <li>
+            <span class="ms-label">线上岗位预报名</span>
+            <span class="mono">2026-11-09 ~ 2026-11-22</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>中医儿科/小儿推拿医师</strong><div class="muted">省属中医医院儿科及推拿中心</div></td>
+            <td class="mono num">3</td>
+            <td>硕士研究生及以上<div class="muted">针灸推拿学（小儿推拿与中医儿科方向优先）</div></td>
+            <td>校园双选资格初审 + 面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="济南" data-search="济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告 济南市第五人民医院 济南市第五人民医院官方网站 济南 重点意向城市命中：山东省济南市 学历与专业匹配：针灸推拿学硕士研究生 资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验 中医康复/针灸推拿医师 中医科 / 康复医学科">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-11</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-11-26</span>
+        </div>
+        <h3>济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>济南市第五人民医院官方网站</span>
+          <a href="https://www.jndwyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jndwyy.cn/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：山东省济南市</li><li>学历与专业匹配：针灸推拿学硕士研究生</li><li>资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">网上报名与简历投递</span>
+            <span class="mono">2026-11-11 ~ 2026-11-26</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">现场资格审查</span>
+            <span class="mono">2026-11-28 ~ 2026-11-29</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">校招面试及专业实操</span>
+            <span class="mono">2026-12-05</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>中医康复/针灸推拿医师</strong><div class="muted">中医科 / 康复医学科</div></td>
+            <td class="mono num">2</td>
+            <td>硕士研究生及以上<div class="muted">针灸推拿学、中医学</div></td>
+            <td>校招综合面试 + 临床技能考核</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="青岛" data-search="青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表 青岛市中医医院（海慈医疗集团） 青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委 青岛 重点意向城市命中：山东省青岛市 岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报） 经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景 针灸推拿康复医师 海慈医疗集团本部针灸推拿康复中心">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>青岛</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-15</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-11-27</span>
+        </div>
+        <h3>青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委</span>
+          <a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.qdzyy.cn/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：山东省青岛市</li><li>岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）</li><li>经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">青岛人社网申报名</span>
+            <span class="mono">2026-11-15 ~ 2026-11-27</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">网上资格审查</span>
+            <span class="mono">2026-11-16 ~ 2026-11-28</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">考务费缴纳</span>
+            <span class="mono">2026-11-18 ~ 2026-11-29</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">准考证打印</span>
+            <span class="mono">2026-12-03 ~ 2026-12-05</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">校园招聘笔试</span>
+            <span class="mono">2026-12-06</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>针灸推拿康复医师</strong><div class="muted">海慈医疗集团本部针灸推拿康复中心</div></td>
+            <td class="mono num">2</td>
+            <td>硕士研究生及以上<div class="muted">针灸推拿学、中医骨伤科学</div></td>
+            <td>笔试（中医基础+针推专业）+ 综合面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="济南" data-search="广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章 广安门医院济南医院（济南市中医医院） 广安门医院济南医院官网（同步济南卫生健康人才网） 济南 重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院） 专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生 资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历 针灸科临床医师 针灸一科 小儿推拿中心医师 推拿科（小儿推拿亚专科）">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-15</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-11-30</span>
+        </div>
+        <h3>广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>广安门医院济南医院官网（同步济南卫生健康人才网）</span>
+          <a href="https://www.jnszhyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jnszhyy.cn/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）</li><li>专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生</li><li>资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">校招网申及邮箱投递</span>
+            <span class="mono">2026-11-15 ~ 2026-11-30</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">资格初审与确认</span>
+            <span class="mono">2026-12-02 ~ 2026-12-03</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">院内面试及手法实操</span>
+            <span class="mono">2026-12-08</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（2 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>针灸科临床医师</strong><div class="muted">针灸一科</div></td>
+            <td class="mono num">2</td>
+            <td>硕士研究生及以上<div class="muted">针灸推拿学</div></td>
+            <td>资格审查 + 现场面谈/面试（免笔试绿色通道）</td>
+          </tr>
+          <tr>
+            <td><strong>小儿推拿中心医师</strong><div class="muted">推拿科（小儿推拿亚专科）</div></td>
+            <td class="mono num">1</td>
+            <td>硕士研究生及以上<div class="muted">针灸推拿学（小儿推拿研究方向优先）</div></td>
+            <td>资格审查 + 临床实操考核 + 面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="济南" data-search="泰格医药2027届“星火计划”临床研究监查员（cra）校园招聘启事 泰格医药（济南/青岛临床运营部） 泰格医药官方招聘官网 济南 重点意向城市命中：可选济南、青岛临床中心驻地 核心证书硬性加分：持有 gcp 证书（2026.08）与执业医师证 临床与科研能力契合：三甲医院住院病历/随访经历 + spss/r 数据核查能力 临床研究监查员（cra 管培生） 临床运营部（山东大区-济南/青岛）">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-10</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-12-02</span>
+        </div>
+        <h3>泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>泰格医药官方招聘官网</span>
+          <a href="https://www.tigermedgrp.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.tigermedgrp.com/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：可选济南、青岛临床中心驻地</li><li>核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证</li><li>临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">山东高校线上宣讲会</span>
+            <span class="mono">2026-11-12</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">校招网申截止</span>
+            <span class="mono">2026-11-10 ~ 2026-12-02</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">山东区集中面试</span>
+            <span class="mono">2026-12-06 ~ 2026-12-10</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>临床研究监查员（CRA 管培生）</strong><div class="muted">临床运营部（山东大区-济南/青岛）</div></td>
+            <td class="mono num">6</td>
+            <td>硕士研究生优先<div class="muted">临床医学、中医学、针灸推拿学、药学等医药相关专业</div></td>
+            <td>网申测评 + 业务面试 + HR终面</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="济南" data-search="齐鲁制药集团2027届创新药临床研究（cra/医学事务专员）校园招聘简章 齐鲁制药集团（济南总部） 齐鲁制药集团官方招聘网站 济南 重点意向城市命中：山东省济南市（总部驻地） track b 简历精准匹配：医学事务/临床研究 cra 岗，要求医药硕士+gcp证书 科研与文档优势：meta分析、spss/r 统计分析及规范化病历撰写经验直接契合岗位职责 医学事务专员 / 临床医学专员（校招） 临床研发中心医学事务部">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-11-15</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 2026-12-10</span>
+        </div>
+        <h3>齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>齐鲁制药集团官方招聘网站</span>
+          <a href="https://www.qilu-pharma.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.qilu-pharma.com/ ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>重点意向城市命中：山东省济南市（总部驻地）</li><li>Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书</li><li>科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">官方校招网申</span>
+            <span class="mono">2026-11-15 ~ 2026-12-10</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">在线专业测评</span>
+            <span class="mono">2026-12-12</span>
+            
+          </li>
+          <li>
+            <span class="ms-label">济南总部终面</span>
+            <span class="mono">2026-12-18</span>
+            
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>医学事务专员 / 临床医学专员（校招）</strong><div class="muted">临床研发中心医学事务部</div></td>
+            <td class="mono num">4</td>
+            <td>硕士研究生及以上<div class="muted">临床医学、中医学、中西医结合、药学</div></td>
+            <td>线上笔试（医学基础+英文文献阅读）+ 两轮面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article></div>
+    </section>
+
+    <section id="view-milestones" class="panel">
+      <div class="card">
+        <h3>关键招聘节点一览表</h3>
+        <table>
+          <thead>
+            <tr><th>节点事项</th><th>时间窗口</th><th>招录单位</th><th>官方来源与发布日期</th></tr>
+          </thead>
+          <tbody>
+      <tr>
+        <td>补充公告发布</td>
+        <td class="mono">2026-11-15</td>
+        <td>济南市第四人民医院</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>网上报名（已延期）</td>
+        <td class="mono">2026-11-12 ~ 2026-11-24</td>
+        <td>济南市第四人民医院</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>网上缴费（已调整）</td>
+        <td class="mono">2026-11-13 ~ 2026-11-25</td>
+        <td>济南市第四人民医院</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>准考证打印（已调整）</td>
+        <td class="mono">2026-12-02 ~ 2026-12-04</td>
+        <td>济南市第四人民医院</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>统一笔试（延期后）</td>
+        <td class="mono">2026-12-05</td>
+        <td>济南市第四人民医院</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>山东中医药大学长清校区双选会</td>
+        <td class="mono">2026-11-18 09:00</td>
+        <td>山东省人社厅 / 省属三甲医院联合引才</td>
+        <td><a href="http://hrss.shandong.gov.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-09）↗</a></td>
+      </tr>
+      <tr>
+        <td>线上岗位预报名</td>
+        <td class="mono">2026-11-09 ~ 2026-11-22</td>
+        <td>山东省人社厅 / 省属三甲医院联合引才</td>
+        <td><a href="http://hrss.shandong.gov.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-09）↗</a></td>
+      </tr>
+      <tr>
+        <td>网上报名与简历投递</td>
+        <td class="mono">2026-11-11 ~ 2026-11-26</td>
+        <td>济南市第五人民医院</td>
+        <td><a href="https://www.jndwyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-11）↗</a></td>
+      </tr>
+      <tr>
+        <td>现场资格审查</td>
+        <td class="mono">2026-11-28 ~ 2026-11-29</td>
+        <td>济南市第五人民医院</td>
+        <td><a href="https://www.jndwyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-11）↗</a></td>
+      </tr>
+      <tr>
+        <td>校招面试及专业实操</td>
+        <td class="mono">2026-12-05</td>
+        <td>济南市第五人民医院</td>
+        <td><a href="https://www.jndwyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-11）↗</a></td>
+      </tr>
+      <tr>
+        <td>青岛人社网申报名</td>
+        <td class="mono">2026-11-15 ~ 2026-11-27</td>
+        <td>青岛市中医医院（海慈医疗集团）</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>网上资格审查</td>
+        <td class="mono">2026-11-16 ~ 2026-11-28</td>
+        <td>青岛市中医医院（海慈医疗集团）</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>考务费缴纳</td>
+        <td class="mono">2026-11-18 ~ 2026-11-29</td>
+        <td>青岛市中医医院（海慈医疗集团）</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>准考证打印</td>
+        <td class="mono">2026-12-03 ~ 2026-12-05</td>
+        <td>青岛市中医医院（海慈医疗集团）</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>校园招聘笔试</td>
+        <td class="mono">2026-12-06</td>
+        <td>青岛市中医医院（海慈医疗集团）</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>校招网申及邮箱投递</td>
+        <td class="mono">2026-11-15 ~ 2026-11-30</td>
+        <td>广安门医院济南医院（济南市中医医院）</td>
+        <td><a href="https://www.jnszhyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>资格初审与确认</td>
+        <td class="mono">2026-12-02 ~ 2026-12-03</td>
+        <td>广安门医院济南医院（济南市中医医院）</td>
+        <td><a href="https://www.jnszhyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>院内面试及手法实操</td>
+        <td class="mono">2026-12-08</td>
+        <td>广安门医院济南医院（济南市中医医院）</td>
+        <td><a href="https://www.jnszhyy.cn/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>山东高校线上宣讲会</td>
+        <td class="mono">2026-11-12</td>
+        <td>泰格医药（济南/青岛临床运营部）</td>
+        <td><a href="https://www.tigermedgrp.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-10）↗</a></td>
+      </tr>
+      <tr>
+        <td>校招网申截止</td>
+        <td class="mono">2026-11-10 ~ 2026-12-02</td>
+        <td>泰格医药（济南/青岛临床运营部）</td>
+        <td><a href="https://www.tigermedgrp.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-10）↗</a></td>
+      </tr>
+      <tr>
+        <td>山东区集中面试</td>
+        <td class="mono">2026-12-06 ~ 2026-12-10</td>
+        <td>泰格医药（济南/青岛临床运营部）</td>
+        <td><a href="https://www.tigermedgrp.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-10）↗</a></td>
+      </tr>
+      <tr>
+        <td>官方校招网申</td>
+        <td class="mono">2026-11-15 ~ 2026-12-10</td>
+        <td>齐鲁制药集团（济南总部）</td>
+        <td><a href="https://www.qilu-pharma.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>在线专业测评</td>
+        <td class="mono">2026-12-12</td>
+        <td>齐鲁制药集团（济南总部）</td>
+        <td><a href="https://www.qilu-pharma.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr>
+      <tr>
+        <td>济南总部终面</td>
+        <td class="mono">2026-12-18</td>
+        <td>齐鲁制药集团（济南总部）</td>
+        <td><a href="https://www.qilu-pharma.com/" target="_blank" rel="noopener noreferrer">官方原文（2026-11-15）↗</a></td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="view-sources" class="panel">
+      <div class="card">
+        <h3>官方一手渠道白名单（18 个已启用）</h3>
+        <table>
+          <thead>
+            <tr><th>官方机构名称</th><th>渠道层级</th><th>地域</th><th>官方网站链接</th></tr>
+          </thead>
+          <tbody>
+      <tr>
+        <td><strong>国家公务员局官网</strong></td>
+        <td>国家级官方门户</td>
+        <td>全国</td>
+        <td><a href="http://www.scs.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://www.scs.gov.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>山东省人力资源和社会保障厅（事业单位公开招聘专栏）</strong></td>
+        <td>省级人社/考试网</td>
+        <td>山东省级</td>
+        <td><a href="http://hrss.shandong.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://hrss.shandong.gov.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南卫生健康人才网</strong></td>
+        <td>本市卫健人事网</td>
+        <td>济南</td>
+        <td><a href="https://www.jnhhr.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jnhhr.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市人力资源和社会保障局官网</strong></td>
+        <td>本市人社/考试网</td>
+        <td>济南</td>
+        <td><a href="http://jnhrss.jinan.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://jnhrss.jinan.gov.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>青岛市人力资源和社会保障局官网</strong></td>
+        <td>本市人社/考试网</td>
+        <td>青岛</td>
+        <td><a href="http://hrss.qingdao.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://hrss.qingdao.gov.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>青岛市卫生健康委员会官网</strong></td>
+        <td>本市卫健委官网</td>
+        <td>青岛</td>
+        <td><a href="http://wsjkw.qingdao.gov.cn/" target="_blank" rel="noopener noreferrer" class="mono">http://wsjkw.qingdao.gov.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>广安门医院济南医院（济南市中医医院）官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.jnszhyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jnszhyy.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市第五人民医院官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.jndwyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jndwyy.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市第一人民医院官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="http://www.jnslyy.com/" target="_blank" rel="noopener noreferrer" class="mono">http://www.jnslyy.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市第七人民医院官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.jnslqy.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jnslqy.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市第四人民医院官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.jndsyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jndsyy.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>济南市机关医院官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.jnsjgyy.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.jnsjgyy.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>山东省中医院（山东中医药大学附属医院）官网</strong></td>
+        <td>医院官方网站</td>
+        <td>济南</td>
+        <td><a href="https://www.sdzydfy.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.sdzydfy.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>青岛市中医医院（海慈医疗集团）官网</strong></td>
+        <td>医院官方网站</td>
+        <td>青岛</td>
+        <td><a href="https://www.qdzyy.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.qdzyy.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>齐鲁制药集团官方招聘及公众号</strong></td>
+        <td>药企/CRO官网及公众号</td>
+        <td>国企/外企</td>
+        <td><a href="https://www.qilu-pharma.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.qilu-pharma.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>华润医疗（国企医疗单位）招聘官网及公众号</strong></td>
+        <td>国企医疗单位官网及公众号</td>
+        <td>国企/外企</td>
+        <td><a href="https://www.crcare.com.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.crcare.com.cn/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>泰格医药（临床研究CRA）官方招聘及公众号</strong></td>
+        <td>药企/CRO官网及公众号</td>
+        <td>国企/外企</td>
+        <td><a href="https://www.tigermedgrp.com/" target="_blank" rel="noopener noreferrer" class="mono">https://www.tigermedgrp.com/ ↗</a></td>
+      </tr>
+      <tr>
+        <td><strong>阿斯利康中国校园招聘官网及公众号</strong></td>
+        <td>外企药企官网及公众号</td>
+        <td>国企/外企</td>
+        <td><a href="https://www.astrazeneca.com.cn/" target="_blank" rel="noopener noreferrer" class="mono">https://www.astrazeneca.com.cn/ ↗</a></td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="view-profile" class="panel">
+      <div class="card">
+        <h3>周梦梦 · 双简历求职画像</h3>
+        <p>硕士研究生（针灸推拿学） · 山东中医药大学（2024.09 - 2027.06） · 2027年6月应届毕业</p>
+        <p class="muted">意向城市：山东省青岛市、山东省济南市 ｜ 期望月薪：8k-15k ｜ 考试类型：校招为主、面试、笔试</p>
+        <div class="two-col" style="margin-top:16px">
+          <div>
+            <div class="subhead">临床与规培经历</div>
+            <p style="font-size:13px;color:#334155">2022.09-2025.06 于山东省中医院（山东中医药大学附属医院）完成针灸推拿专业规范化培训轮转（针灸科、推拿科、中医内科、中医儿科、康复科），可独立完成针灸、小儿推拿、火龙罐、耳穴压豆及住院病历/出院小结书写；此前于成都市第一人民医院、即墨中医院、郫都区中医院完成实习与见习。</p>
+          </div>
+          <div>
+            <div class="subhead">科研方法与核心证书</div>
+            <p style="font-size:13px;color:#334155">聚焦小儿推拿与中医儿科方向（儿童脾胃与呼吸系统常见病调理）；掌握 Meta 分析、网络药理学、SPSS、R 语言文献检索与统计工具；曾任“四季与颈椎病防治”及“即食养生粥”调研项目负责人。</p>
+            <p class="muted">证书：执业医师资格证（2025.09） · GCP证书（2026.08） · 中医经典三级证书（2025.04） · 大学英语四级 CET-4（2022.12） · 普通话二级甲等（2021.11）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var tabBtns = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.panel');
+      tabBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-view');
+          tabBtns.forEach(function (b) { b.classList.remove('active'); });
+          panels.forEach(function (p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          var el = document.getElementById('view-' + target);
+          if (el) el.classList.add('active');
+        });
+      });
+
+      var activeDiff = 'all';
+      var segBtns = document.querySelectorAll('.seg-btn');
+      var searchInput = document.getElementById('searchInput');
+      var trackSelect = document.getElementById('trackSelect');
+      var regionSelect = document.getElementById('regionSelect');
+      var cards = document.querySelectorAll('.item-card');
+
+      function applyFilters() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        var tr = trackSelect.value;
+        var rg = regionSelect.value;
+        cards.forEach(function (card) {
+          var cDiff = card.getAttribute('data-diff');
+          var cTrack = card.getAttribute('data-track');
+          var cRegion = card.getAttribute('data-region');
+          var cSearch = card.getAttribute('data-search') || '';
+          var ok = true;
+          if (activeDiff !== 'all' && cDiff !== activeDiff) ok = false;
+          if (tr !== 'all' && cTrack !== tr && cTrack !== 'both') ok = false;
+          if (rg !== 'all' && cRegion !== rg) ok = false;
+          if (q && cSearch.indexOf(q) === -1) ok = false;
+          card.style.display = ok ? '' : 'none';
+        });
+      }
+
+      segBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeDiff = btn.getAttribute('data-diff') || 'all';
+          segBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyFilters();
+        });
+      });
+      searchInput.addEventListener('input', applyFilters);
+      trackSelect.addEventListener('change', applyFilters);
+      regionSelect.addEventListener('change', applyFilters);
+
+      var apiBase = "";
+      function esc(str) {
+        return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+      function diffText(st) {
+        if (st === 'updated') return '变更/异动';
+        if (st === 'new') return '今日新增';
+        if (st === 'still_open') return '未截止延续';
+        return '已截止';
+      }
+      function trackText(tr) {
+        if (tr === 'tcm_physician') return '针灸推拿医师';
+        if (tr === 'medical_cra') return '医学事务 / CRA';
+        return '双赛道均匹配';
+      }
+      function renderLiveState(state) {
+        if (!state || !state.briefings || !state.briefings.length) return;
+        var b = state.briefings[0];
+        var active = (b.items || []).filter(function (i) { return i.diffStatus !== 'closed'; });
+        document.getElementById('kpiTotal').textContent = String(b.stats.totalMatched);
+        document.getElementById('kpiNew').textContent = '+' + String(b.stats.newCount);
+        document.getElementById('kpiUpdated').textContent = String(b.stats.updatedCount);
+        document.getElementById('kpiOpen').textContent = String(b.stats.stillOpenCount);
+        document.getElementById('headerMeta').textContent =
+          '简报日期 ' + b.briefingDate + ' · 基准 ' + (b.baselineDate || '首次') + ' · 每日设定 ' + state.schedule.triggerTime + ' · 仅采信官方一手渠道';
+        var html = active.map(function (item) {
+          var cls = item.diffStatus === 'updated' ? 'status-warn' : (item.diffStatus === 'new' ? 'status-teal' : 'status-muted');
+          var alertHtml = (item.hasAnomaly || item.diffStatus === 'updated')
+            ? '<div class="alert-box">' + esc(item.anomalyDetail || item.diffNote || '') + '</div>'
+            : '';
+          var reasons = (item.matchReasons || []).map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('');
+          var msList = (item.milestones || []).map(function (m) {
+            return '<li><span class="ms-label">' + esc(m.label) + '</span> <span class="mono">' + esc(m.dateRange) + '</span></li>';
+          }).join('');
+          var posRows = (item.matchedPositions || []).map(function (p) {
+            return '<tr><td><strong>' + esc(p.positionName) + '</strong><div class="muted">' + esc(p.department) + '</div></td><td class="mono num">' + p.headcount + '</td><td>' + esc(p.degreeReq) + '<div class="muted">' + esc(p.majorReq) + '</div></td><td>' + esc(p.examFormat) + '</td></tr>';
+          }).join('');
+          var searchBlob = [item.title, item.employerName, item.sourceName, item.region].concat(item.matchReasons || []).join(' ').toLowerCase();
+          return '<article class="card item-card" data-diff="' + esc(item.diffStatus) + '" data-track="' + esc(item.matchedTrack) + '" data-region="' + esc(item.region) + '" data-search="' + esc(searchBlob) + '">' +
+            '<div class="meta-line"><span class="' + cls + '">' + diffText(item.diffStatus) + '</span><span>·</span><span>' + esc(item.region) + '</span><span>·</span><span>' + trackText(item.matchedTrack) + '</span><span>·</span><span class="mono">发布日期 ' + esc(item.publishDate) + '</span><span>·</span><span class="mono strong">报名截止 ' + esc(item.deadlineDate) + '</span></div>' +
+            '<h3>' + esc(item.title) + '</h3>' +
+            '<div class="source-line"><span class="muted">官方来源：</span><span>' + esc(item.sourceName) + '</span><a href="' + esc(item.sourceUrl) + '" target="_blank" rel="noopener noreferrer" class="mono">' + esc(item.sourceUrl) + ' ↗</a></div>' +
+            alertHtml +
+            '<div class="two-col"><div><div class="subhead">画像匹配原因</div><ul class="bullet-list">' + reasons + '</ul></div><div><div class="subhead">关键节点摘要</div><ul class="bullet-list">' + msList + '</ul></div></div>' +
+            '<details class="pos-details"><summary>展开匹配职位表明细（' + (item.matchedPositions || []).length + ' 个岗位）</summary><table><thead><tr><th>岗位 / 科室</th><th class="num">人数</th><th>学历与专业</th><th>考核形式</th></tr></thead><tbody>' + posRows + '</tbody></table></details>' +
+            '</article>';
+        }).join('');
+        document.getElementById('itemsContainer').innerHTML = html;
+        cards = document.querySelectorAll('.item-card');
+        applyFilters();
+        var statusBar = document.getElementById('syncStatusBar');
+        if (statusBar) {
+          statusBar.style.display = 'block';
+          statusBar.textContent = '已同步最新简报（' + b.briefingDate + '）：' + (b.scanStatusMessage || '数据已是最新');
+        }
+      }
+
+      if (apiBase) {
+        fetch(apiBase + '/api/state')
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (st) { if (st) renderLiveState(st); })
+          .catch(function () {});
+
+        var refreshBtn = document.getElementById('manualRefreshBtn');
+        if (refreshBtn) {
+          refreshBtn.addEventListener('click', function () {
+            refreshBtn.disabled = true;
+            refreshBtn.textContent = '正在巡检官源...';
+            fetch(apiBase + '/api/briefings/run', { method: 'POST' })
+              .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+              .then(function (st) { renderLiveState(st); })
+              .catch(function (err) {
+                var statusBar = document.getElementById('syncStatusBar');
+                if (statusBar) {
+                  statusBar.style.display = 'block';
+                  statusBar.textContent = '同步失败（请确认后端服务在线）：' + err.message;
+                }
+              })
+              .finally(function () {
+                refreshBtn.disabled = false;
+                refreshBtn.textContent = '手动刷新最新数据';
+              });
+          });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
