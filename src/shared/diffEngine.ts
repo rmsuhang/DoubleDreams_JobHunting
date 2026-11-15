@@ -145,6 +145,48 @@ export function isDeadlineClosed(deadlineDate: string, referenceDate: string): b
   return /^\d{4}-\d{2}-\d{2}$/.test(deadlineDate) && deadlineDate < referenceDate;
 }
 
+export function normalizeSourceUrlKey(url: string): string {
+  return url
+    .trim()
+    .toLowerCase()
+    .replace(/^http:\/\//, 'https://')
+    .replace(/\/+$/, '');
+}
+
+export function deduplicateRecruitmentItems(items: RecruitmentItem[]): RecruitmentItem[] {
+  const seenKeys = new Set<string>();
+  const seenUrls = new Set<string>();
+  const deduped: RecruitmentItem[] = [];
+  for (const item of items) {
+    const key = item.canonicalKey || normalizeCanonicalKey(item.employerName, item.title, item.sourceUrl);
+    const urlKey = normalizeSourceUrlKey(item.sourceUrl);
+    if (seenKeys.has(key) || (urlKey && seenUrls.has(urlKey))) {
+      continue;
+    }
+    seenKeys.add(key);
+    if (urlKey) seenUrls.add(urlKey);
+    deduped.push({ ...item, canonicalKey: key });
+  }
+  return deduped;
+}
+
+export function computeBriefingStats(items: RecruitmentItem[]): BriefingSummaryStats {
+  const activeItems = items.filter((item) => item.diffStatus !== 'closed');
+  return {
+    totalMatched: activeItems.length,
+    newCount: activeItems.filter((i) => i.diffStatus === 'new').length,
+    updatedCount: activeItems.filter((i) => i.diffStatus === 'updated').length,
+    stillOpenCount: activeItems.filter((i) => i.diffStatus === 'still_open').length,
+    anomalyCount: activeItems.filter((i) => i.hasAnomaly).length,
+    tcmPhysicianCount: activeItems.filter(
+      (i) => i.matchedTrack === 'tcm_physician' || i.matchedTrack === 'both'
+    ).length,
+    medicalCraCount: activeItems.filter(
+      (i) => i.matchedTrack === 'medical_cra' || i.matchedTrack === 'both'
+    ).length,
+  };
+}
+
 export function computeIncrementalDiff(
   incomingItems: RecruitmentItem[],
   baselineBriefing: BriefingSnapshot | null | undefined,
@@ -154,20 +196,28 @@ export function computeIncrementalDiff(
   stats: BriefingSummaryStats;
 } {
   const baselineMap = new Map<string, RecruitmentItem>();
-  if (baselineBriefing) {
-    for (const prev of baselineBriefing.items) {
-      const key = prev.canonicalKey || normalizeCanonicalKey(prev.employerName, prev.title, prev.sourceUrl);
-      baselineMap.set(key, prev);
-    }
+  const baselineUrlMap = new Map<string, RecruitmentItem>();
+  const cleanBaselineItems = baselineBriefing ? deduplicateRecruitmentItems(baselineBriefing.items) : [];
+  for (const prev of cleanBaselineItems) {
+    const key = prev.canonicalKey || normalizeCanonicalKey(prev.employerName, prev.title, prev.sourceUrl);
+    const urlKey = normalizeSourceUrlKey(prev.sourceUrl);
+    baselineMap.set(key, prev);
+    if (urlKey) baselineUrlMap.set(urlKey, prev);
   }
 
   const seenKeys = new Set<string>();
+  const seenUrls = new Set<string>();
   const result: RecruitmentItem[] = [];
 
   for (const raw of incomingItems) {
     const key = raw.canonicalKey || normalizeCanonicalKey(raw.employerName, raw.title, raw.sourceUrl);
+    const urlKey = normalizeSourceUrlKey(raw.sourceUrl);
+    if (seenKeys.has(key) || (urlKey && seenUrls.has(urlKey))) {
+      continue;
+    }
     seenKeys.add(key);
-    const prev = baselineMap.get(key);
+    if (urlKey) seenUrls.add(urlKey);
+    const prev = baselineMap.get(key) ?? (urlKey ? baselineUrlMap.get(urlKey) : undefined);
 
     if (!prev) {
       const isClosed = isDeadlineClosed(raw.deadlineDate, referenceDate);
@@ -223,23 +273,25 @@ export function computeIncrementalDiff(
   }
 
   // Carry forward any previous still-open items not re-emitted in a partial scan
-  if (baselineBriefing) {
-    for (const prev of baselineBriefing.items) {
-      const key = prev.canonicalKey || normalizeCanonicalKey(prev.employerName, prev.title, prev.sourceUrl);
-      if (
-        !seenKeys.has(key) &&
-        !isDeadlineClosed(prev.deadlineDate, referenceDate) &&
-        prev.diffStatus !== 'closed'
-      ) {
-        result.push({
-          ...prev,
-          canonicalKey: key,
-          diffStatus: 'still_open',
-          diffNote: /^\d{4}-\d{2}-\d{2}$/.test(prev.deadlineDate)
-            ? `延续上次简报（未截止，截止 ${prev.deadlineDate}）`
-            : '延续上次简报（截止时间以官方原文为准）',
-        });
-      }
+  for (const prev of cleanBaselineItems) {
+    const key = prev.canonicalKey || normalizeCanonicalKey(prev.employerName, prev.title, prev.sourceUrl);
+    const urlKey = normalizeSourceUrlKey(prev.sourceUrl);
+    if (
+      !seenKeys.has(key) &&
+      (!urlKey || !seenUrls.has(urlKey)) &&
+      !isDeadlineClosed(prev.deadlineDate, referenceDate) &&
+      prev.diffStatus !== 'closed'
+    ) {
+      seenKeys.add(key);
+      if (urlKey) seenUrls.add(urlKey);
+      result.push({
+        ...prev,
+        canonicalKey: key,
+        diffStatus: 'still_open',
+        diffNote: /^\d{4}-\d{2}-\d{2}$/.test(prev.deadlineDate)
+          ? `延续上次简报（未截止，截止 ${prev.deadlineDate}）`
+          : '延续上次简报（截止时间以官方原文为准）',
+      });
     }
   }
 
@@ -264,21 +316,7 @@ export function computeIncrementalDiff(
     return b.publishDate.localeCompare(a.publishDate);
   });
 
-  const activeItems = result.filter((item) => item.diffStatus !== 'closed');
-  const stats: BriefingSummaryStats = {
-    totalMatched: activeItems.length,
-    newCount: activeItems.filter((i) => i.diffStatus === 'new').length,
-    updatedCount: activeItems.filter((i) => i.diffStatus === 'updated').length,
-    stillOpenCount: activeItems.filter((i) => i.diffStatus === 'still_open').length,
-    anomalyCount: activeItems.filter((i) => i.hasAnomaly).length,
-    tcmPhysicianCount: activeItems.filter(
-      (i) => i.matchedTrack === 'tcm_physician' || i.matchedTrack === 'both'
-    ).length,
-    medicalCraCount: activeItems.filter(
-      (i) => i.matchedTrack === 'medical_cra' || i.matchedTrack === 'both'
-    ).length,
-  };
-
+  const stats = computeBriefingStats(result);
   return { items: result, stats };
 }
 

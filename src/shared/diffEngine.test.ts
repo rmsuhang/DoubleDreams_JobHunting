@@ -113,6 +113,7 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
     canonicalKey: '医院A::公告A',
     title: '医院A校招公告',
     employerName: '医院A',
+    sourceUrl: 'https://www.jnszhyy.cn/zhaopin/a.html',
     deadlineDate: '2026-11-28',
   });
   const baselineItemUpdate = makeItem({
@@ -120,6 +121,7 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
     canonicalKey: '医院B::公告B',
     title: '医院B招聘公告',
     employerName: '医院B',
+    sourceUrl: 'https://www.jnszhyy.cn/zhaopin/b.html',
     deadlineDate: '2026-11-20',
   });
   const baselineItemCarry = makeItem({
@@ -127,6 +129,7 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
     canonicalKey: '医院C::公告C',
     title: '医院C未截止公告',
     employerName: '医院C',
+    sourceUrl: 'https://www.jnszhyy.cn/zhaopin/c.html',
     deadlineDate: '2026-11-30',
   });
 
@@ -160,6 +163,7 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
       canonicalKey: '医院B::公告B',
       title: '医院B招聘延长报名补充公告',
       employerName: '医院B',
+      sourceUrl: 'https://www.jnszhyy.cn/zhaopin/b.html',
       publishDate: '2026-11-15',
       announcementType: 'supplement_correction',
       deadlineDate: '2026-11-26',
@@ -171,6 +175,7 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
       canonicalKey: '医院D::公告D',
       title: '青岛市中医医院2027届针灸推拿硕士校招',
       employerName: '青岛市中医医院',
+      sourceUrl: 'http://wsjkw.qingdao.gov.cn/zhaopin/d.html',
       region: '青岛',
       deadlineDate: '2026-11-29',
     }),
@@ -185,6 +190,50 @@ test('computeIncrementalDiff detects new, updated, still_open, and carries forwa
   assert.equal(items[0].diffStatus, 'updated');
   assert.equal(items[1].diffStatus, 'new');
   assert.ok(items.some((i) => i.employerName === '医院C' && i.diffStatus === 'still_open'));
+});
+
+test('computeIncrementalDiff never accumulates duplicate items across repeated scans', () => {
+  const item1 = makeItem({
+    id: 'run-1',
+    canonicalKey: '济南市第一人民医院::2027届',
+    title: '济南市第一人民医院公开招聘公告（2027届）',
+    employerName: '济南市第一人民医院',
+    sourceUrl: 'http://www.jnslyy.com/contents/51/56396.html',
+    deadlineDate: '以官方原文为准',
+  });
+  const duplicateCopy = { ...item1, id: 'run-2' };
+
+  const baselineWithLegacyDups: BriefingSnapshot = {
+    id: 'brief-dup',
+    briefingDate: '2026-11-15',
+    generatedAt: '2026-11-15T00:00:00.000Z',
+    triggerType: 'manual',
+    baselineBriefingId: null,
+    baselineDate: null,
+    sourcesCheckedCount: 17,
+    liveScanUsed: true,
+    scanStatusMessage: 'ok',
+    stats: {
+      totalMatched: 2,
+      newCount: 2,
+      updatedCount: 0,
+      stillOpenCount: 0,
+      anomalyCount: 0,
+      tcmPhysicianCount: 2,
+      medicalCraCount: 0,
+    },
+    items: [item1, duplicateCopy],
+    groundingLinks: [],
+  };
+
+  const { items, stats } = computeIncrementalDiff(
+    [item1, duplicateCopy, { ...item1, id: 'run-3', sourceUrl: 'https://www.jnslyy.com/contents/51/56396.html/' }],
+    baselineWithLegacyDups,
+    '2026-11-15'
+  );
+  assert.equal(items.length, 1);
+  assert.equal(stats.totalMatched, 1);
+  assert.equal(stats.stillOpenCount, 1);
 });
 
 test('evaluateProfileMatch matches both clinical TCM and Medical/CRA tracks accurately', () => {

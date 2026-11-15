@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { computeBriefingStats, deduplicateRecruitmentItems } from '../src/shared/diffEngine.ts';
 import { createInitialSeedState } from '../src/shared/seedData.ts';
 import type { AppDataState } from '../src/shared/types.ts';
 
@@ -22,9 +23,16 @@ export async function loadAppState(): Promise<AppDataState> {
           ? { ...s, name: '青岛市卫生健康委员会官网（含青岛市中医医院/海慈医疗集团招聘）' }
           : s
       );
-    const sanitizedBriefings = parsed.briefings.filter(
-      (b) => b.id !== 'brief-2026-11-14' && b.id !== 'brief-2026-11-15'
-    );
+    const sanitizedBriefings = parsed.briefings
+      .filter((b) => b.id !== 'brief-2026-11-14' && b.id !== 'brief-2026-11-15')
+      .map((b) => {
+        const dedupedItems = deduplicateRecruitmentItems(b.items ?? []);
+        return {
+          ...b,
+          items: dedupedItems,
+          stats: computeBriefingStats(dedupedItems),
+        };
+      });
     if (sanitizedBriefings.length === 0) {
       const cleanSeed = createInitialSeedState();
       const migrated: AppDataState = {

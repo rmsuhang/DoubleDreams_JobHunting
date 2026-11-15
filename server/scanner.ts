@@ -1,6 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import {
   computeIncrementalDiff,
+  deduplicateRecruitmentItems,
   evaluateProfileMatch,
   isOfficialSourceUrl,
   normalizeCanonicalKey,
@@ -155,13 +156,35 @@ ${sourceListText}
   ]
 }`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
-        contents: prompt,
-        config: {
-          tools: [{ googleSearch: {} }],
-        },
-      });
+      const candidateModels = ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'] as const;
+      let response: Awaited<ReturnType<typeof ai.models.generateContent>> | null = null;
+      let lastGeminiErr: unknown = null;
+
+      for (const modelName of candidateModels) {
+        try {
+          response = await ai.models.generateContent({
+            model: modelName,
+            contents: prompt,
+            config: {
+              tools: [{ googleSearch: {} }],
+            },
+          });
+          break;
+        } catch (modelErr) {
+          lastGeminiErr = modelErr;
+          const msg = modelErr instanceof Error ? modelErr.message : String(modelErr);
+          console.warn(`[scanner] Gemini Search Grounding (${modelName}) failed:`, msg.slice(0, 300));
+          if (msg.includes('API_KEY_INVALID') || msg.includes('PERMISSION_DENIED') || msg.includes('403')) {
+            throw modelErr;
+          }
+          // Brief backoff before trying fallback model on 429/transient error
+          await new Promise((r) => setTimeout(r, 1500));
+        }
+      }
+
+      if (!response) {
+        throw lastGeminiErr ?? new Error('Gemini Search Grounding unavailable');
+      }
 
       const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks ?? [];
       for (const chunk of chunks) {
@@ -247,7 +270,10 @@ ${sourceListText}
       geminiStatusNote = `Search Grounding 额外检索核验 ${geminiItems.length} 条`;
     } catch (err) {
       const rawMsg = err instanceof Error ? err.message : '';
-      if (rawMsg.includes('429') || rawMsg.includes('RESOURCE_EXHAUSTED') || rawMsg.includes('quota')) {
+      if (rawMsg.includes('limit: 0') || rawMsg.includes('free_tier')) {
+        geminiStatusNote =
+          '当前 GEMINI_API_KEY 免费版暂无 Search Grounding 配额（需开启结算或改用国内 Self-hosted Runner 直采全部官源），本次仅保留直连抓取结果';
+      } else if (rawMsg.includes('429') || rawMsg.includes('RESOURCE_EXHAUSTED') || rawMsg.includes('quota')) {
         geminiStatusNote = 'Search Grounding 配额暂达上限，本次仅保留直连抓取结果';
       } else if (rawMsg.includes('403') || rawMsg.includes('400') || rawMsg.includes('API_KEY')) {
         geminiStatusNote = 'Search Grounding 鉴权未就绪，本次仅保留直连抓取结果';
@@ -264,11 +290,12 @@ ${sourceListText}
   const liveScanUsed = reachableCount > 0 || groundingUsed;
   const scanStatusMessage = `已完成真实官源巡检（直连成功 ${reachableCount}/${enabledSources.length} 个官方门户，网页直采解析出 ${directScrapedItems.length} 条真实公告；${geminiStatusNote}）。绝不包含任何示例假数据。`;
 
-  // Merge fresh real items with previous real items before incremental diff
-  const incomingForDiff: RecruitmentItem[] = [...freshItems, ...baselineItems];
+  // Merge fresh real items with previous real items (deduplicated) before incremental diff
+  const cleanBaselineItems = deduplicateRecruitmentItems(baselineItems);
+  const incomingForDiff = deduplicateRecruitmentItems([...freshItems]);
   const cleanBaseline =
-    baselineBriefing && baselineItems.length > 0
-      ? { ...baselineBriefing, items: baselineItems }
+    baselineBriefing && cleanBaselineItems.length > 0
+      ? { ...baselineBriefing, items: cleanBaselineItems }
       : null;
 
   const diffed = computeIncrementalDiff(incomingForDiff, cleanBaseline, todayStr);
