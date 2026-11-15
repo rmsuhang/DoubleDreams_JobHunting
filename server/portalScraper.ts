@@ -18,10 +18,10 @@ const RECRUITMENT_LINK_RE =
   /招聘|招录|引才|人才|公开招聘|校招|校园招聘|急需紧缺|补充公告|更正公告|调整.*时间|延期|笔试|面试|资格审查|准考证|选聘|毕业生/;
 
 const EXCLUDED_LINK_RE =
-  /采购|询价|招标|中标|成交|磋商|废标|环评|环境影响|决算|预算|复印纸|洗涤|呼叫系统|行政处罚|依申请公开|公开指南|办事指南|满意度|招标代理|党风|廉政|节假日|放假|义诊|健康科普|招标公告|竞价|拟聘用.*公示|考察体检.*公示|录用公示|水发集团|济钢集团|山东电工/;
+  /采购|询价|招标|中标|成交|磋商|废标|环评|环境影响|决算|预算|复印纸|洗涤|呼叫系统|行政处罚|依申请公开|公开指南|办事指南|满意度|招标代理|党风|廉政|节假日|放假|义诊|健康科普|招标公告|竞价|拟聘用.*公示|考察体检.*公示|录用公示|水发集团|济钢集团|山东电工|座谈会|完成.*招聘工作|圆满结束|评选会|中新网|博士后建设|泰山学者论坛|培训班招生|规培.*二次录取|年度考核|工作总结|慰问|新闻报道/;
 
 const COLUMN_LINK_RE =
-  /人事招聘|公开招聘|人才招聘|招聘信息|招聘公告|招贤纳士|人才引进|通知公告|公示公告|校园招聘|加入我们|招录/;
+  /人事招聘|公开招聘|人才招聘|招聘信息|招聘公告|招贤纳士|人才引进|通知公告|医院公告|公示公告|校园招聘|加入我们|招录/;
 
 const MEDICAL_SIGNAL_RE =
   /医院|卫健|卫生健康|中医|针灸|推拿|康复|医药|临床医学|医师|药师|护理|制药|医疗器械|医学院|疾控|妇幼|CRA|GCP/;
@@ -60,6 +60,7 @@ export function stripHtmlTags(html: string): string {
 
 export function extractArticleBodyText(html: string): string {
   const withoutChrome = html
+    .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ')
     .replace(/<header\b[\s\S]*?<\/header>/gi, ' ')
     .replace(/<footer\b[\s\S]*?<\/footer>/gi, ' ')
@@ -69,7 +70,6 @@ export function extractArticleBodyText(html: string): string {
   if (text.length < 120) {
     text = stripHtmlTags(html);
   }
-  // Trim repetitive top navigation before breadcrumb marker if present
   const breadcrumbMatch = text.match(/(?:你现在所在的位置|您当前的位置|当前位置)[：:\s]*(.{0,80})/);
   if (breadcrumbMatch && breadcrumbMatch.index !== undefined && breadcrumbMatch.index < text.length * 0.65) {
     text = text.slice(breadcrumbMatch.index + breadcrumbMatch[0].length).trim();
@@ -78,15 +78,51 @@ export function extractArticleBodyText(html: string): string {
 }
 
 export function normalizeChineseDate(raw: string): string | null {
-  const isoMatch = raw.match(/(\d{4})[-/.年](\d{1,2})[-/.月](\d{1,2})/);
+  const isoMatch = raw.match(/(\d{4})\s*[-/.年]\s*(\d{1,2})\s*[-/.月]\s*(\d{1,2})/);
   if (!isoMatch) return null;
   const year = Number(isoMatch[1]);
   const month = Number(isoMatch[2]);
   const day = Number(isoMatch[3]);
-  if (year < 2024 || year > 2030 || month < 1 || month > 12 || day < 1 || day > 31) {
+  if (year < 2015 || year > 2030 || month < 1 || month > 12 || day < 1 || day > 31) {
     return null;
   }
   return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function extractAllDates(text: string): string[] {
+  const dates: string[] = [];
+  let lastYear: number | null = null;
+  let lastMonth: number | null = null;
+
+  const tokenRe =
+    /(\d{4})\s*[-/.年]\s*(\d{1,2})\s*[-/.月]\s*(\d{1,2})\s*日?|(?<!\d)(\d{1,2})\s*[月/.]\s*(\d{1,2})\s*日|[-–—至到~]\s*(\d{1,2})\s*日/g;
+
+  let m: RegExpExecArray | null;
+  while ((m = tokenRe.exec(text)) !== null) {
+    if (m[1] && m[2] && m[3]) {
+      const y = Number(m[1]);
+      const mo = Number(m[2]);
+      const d = Number(m[3]);
+      if (y >= 2024 && y <= 2030 && mo >= 1 && mo <= 12 && d >= 1 && d <= 31) {
+        lastYear = y;
+        lastMonth = mo;
+        dates.push(`${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`);
+      }
+    } else if (m[4] && m[5] && lastYear !== null) {
+      const mo = Number(m[4]);
+      const d = Number(m[5]);
+      if (mo >= 1 && mo <= 12 && d >= 1 && d <= 31) {
+        lastMonth = mo;
+        dates.push(`${lastYear}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`);
+      }
+    } else if (m[6] && lastYear !== null && lastMonth !== null) {
+      const d = Number(m[6]);
+      if (d >= 1 && d <= 31) {
+        dates.push(`${lastYear}-${String(lastMonth).padStart(2, '0')}-${String(d).padStart(2, '0')}`);
+      }
+    }
+  }
+  return dates;
 }
 
 function addDays(dateStr: string, days: number): string {
@@ -101,7 +137,6 @@ export function extractLinksFromHtml(html: string, baseUrl: string): DiscoveredL
   const results: DiscoveredLink[] = [];
   const seen = new Set<string>();
 
-  // Include both normal HTML and JCMS XML <![CDATA[...]]> records
   const normalizedHtml = html.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
   const anchorRe = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
 
@@ -131,15 +166,13 @@ export function extractLinksFromHtml(html: string, baseUrl: string): DiscoveredL
 
     const titleAttr = attrs.match(/title\s*=\s*["']([^"']+)["']/i)?.[1] ?? '';
     const innerText = stripHtmlTags(match[2]);
-    // Strip trailing dates or counters like "2026-11-11 30" or "2026-11-11"
     const rawTitle = (innerText.length >= titleAttr.length ? innerText : titleAttr)
-      .replace(/\s+\d{4}[-/.年]\d{1,2}[-/.月]\d{1,2}日?(?:\s+\d+)?\s*$/, '')
+      .replace(/\s+\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}日?(?:\s+\d+)?\s*$/, '')
       .trim();
 
     if (!rawTitle || rawTitle.length < 4) continue;
 
-    // Look for date in anchor body or nearby sibling slice (up to 160 chars after </a>)
-    const nearbySlice = normalizedHtml.slice(match.index, match.index + match[0].length + 160);
+    const nearbySlice = normalizedHtml.slice(match.index, match.index + match[0].length + 320);
     const dateHint =
       normalizeChineseDate(innerText) ??
       normalizeChineseDate(stripHtmlTags(nearbySlice)) ??
@@ -162,12 +195,28 @@ export function extractLinksFromHtml(html: string, baseUrl: string): DiscoveredL
 export function isRelevantRecruitmentLink(title: string, url: string): boolean {
   if (!title || title.length < 6) return false;
   if (EXCLUDED_LINK_RE.test(title)) return false;
+  if (/201\d年度?|202[0-4]年度?/.test(title)) return false;
   if (/^https?:\/\//i.test(url) && /\.(jpg|jpeg|png|gif|css|js|ico|svg)$/i.test(url)) {
     return false;
   }
-  // Ignore pure navigation links like "人事招聘" or "公开招聘" (too short to be an announcement)
   if (title.length <= 8 && !/\d{4}|公告|简章|通知/.test(title)) return false;
   return RECRUITMENT_LINK_RE.test(title);
+}
+
+export function isTrustedPortalArticleUrl(url: string, baseDomain: string): boolean {
+  try {
+    const host = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
+    const cleanBase = baseDomain.toLowerCase().replace(/^www\./, '');
+    const enterpriseKey = cleanBase.split('.')[0];
+    if (host === cleanBase || host.endsWith(`.${cleanBase}`)) return true;
+    if (host.endsWith('.gov.cn') || host.endsWith('.edu.cn')) return true;
+    if (enterpriseKey.length >= 4 && host.includes(enterpriseKey) && host.endsWith('.zhiye.com')) {
+      return true;
+    }
+    return false;
+  } catch {
+    return false;
+  }
 }
 
 export function isRecruitmentColumnLink(title: string, url: string, baseDomain: string): boolean {
@@ -176,7 +225,11 @@ export function isRecruitmentColumnLink(title: string, url: string, baseDomain: 
   try {
     const host = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
     const cleanBase = baseDomain.toLowerCase().replace(/^www\./, '');
-    if (host !== cleanBase && !host.endsWith(`.${cleanBase}`)) {
+    const enterpriseKey = cleanBase.split('.')[0];
+    const isSameDomain = host === cleanBase || host.endsWith(`.${cleanBase}`);
+    const isEnterpriseCareerSubdomain =
+      enterpriseKey.length >= 4 && host.includes(enterpriseKey) && host.endsWith('.zhiye.com');
+    if (!isSameDomain && !isEnterpriseCareerSubdomain) {
       return false;
     }
   } catch {
@@ -189,7 +242,7 @@ function inferAnnouncementType(title: string, text: string): AnnouncementType {
   if (/补充|更正|调整|延期|推迟|取消|变更/.test(title)) {
     return 'supplement_correction';
   }
-  if (/职位表|岗位表|岗位需求表/.test(title) || /岗位汇总表/.test(text)) {
+  if (/职位表|岗位表|岗位需求表|岗位汇总表/.test(title) || /岗位汇总表/.test(text)) {
     return 'position_table';
   }
   return 'new_announcement';
@@ -207,6 +260,147 @@ function inferEmployerCategory(source: OfficialSource): RecruitmentItem['employe
   if (source.tier === 'hospital_official') return '公立医院';
   if (source.tier === 'soe_medical_enterprise') return '外企/国企药企';
   return '人社/卫健委';
+}
+
+export function extractStructuredMilestones(
+  bodyText: string,
+  publishDate: string,
+  todayStr: string,
+  announcementType: AnnouncementType
+): {
+  milestones: MilestoneNode[];
+  deadlineDate: string;
+  latestActivityDate: string | null;
+} {
+  const milestones: MilestoneNode[] = [];
+  const extractedDates: string[] = [];
+  const explicitRegDates: string[] = [];
+
+  // 1. Multi-session campus recruitment / registration blocks (e.g. 第一场 ... 报名时间：2026年11月20日14:00-16:00)
+  const sessionRe =
+    /(第[一二三四五]场)\s*(?:报名地点[：:\s]*([^。；\n]{4,60}?)\s+)?报名时间[：:\s]*(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}日?(?:\s*(?:[-–—至到~]\s*(?:\d{4}\s*[-/.年]\s*)?(?:\d{1,2}\s*[-/.月]\s*)?\d{1,2}日?)?(?:\s*[上下午]?\s*\d{1,2}[:：]\d{2}(?:\s*[-–—至到~]\s*[上下午]?\s*\d{1,2}[:：]\d{2})?)?)?)/g;
+  let sessionMatch: RegExpExecArray | null;
+  let sessionIdx = 0;
+  while ((sessionMatch = sessionRe.exec(bodyText)) !== null) {
+    sessionIdx++;
+    const sessionLabel = sessionMatch[1];
+    const venue = sessionMatch[2]?.trim();
+    const timeStr = sessionMatch[3].trim();
+    const dates = extractAllDates(timeStr);
+    extractedDates.push(...dates);
+    explicitRegDates.push(...dates);
+    const closing = dates[dates.length - 1] ?? publishDate;
+    milestones.push({
+      id: `ms-session-${sessionIdx}`,
+      type: 'registration',
+      label: venue ? `${sessionLabel}现场报名（${venue.replace(/[，,]\s*$/, '')}）` : `${sessionLabel}现场报名`,
+      dateRange: timeStr,
+      status: closing >= todayStr ? 'active' : 'completed',
+    });
+  }
+
+  // 2. General registration window if no multi-session matched
+  if (milestones.length === 0) {
+    const regMatches = [
+      ...bodyText.matchAll(
+        /(?:网上报名时间|报名起止时间|报名时间|报名截止时间|网申时间|现场报名时间|接受报名时间)[：:\s]*([^。；\n]{6,80})/g
+      ),
+    ];
+    for (let i = 0; i < regMatches.length; i++) {
+      const rawSnippet = regMatches[i][1].trim();
+      if (/确定后|另行公布|计算截止|取得学历|毕业证书|年龄计算/.test(rawSnippet)) continue;
+      const dates = extractAllDates(rawSnippet);
+      if (dates.length === 0) continue;
+      extractedDates.push(...dates);
+      explicitRegDates.push(...dates);
+      const closing = dates[dates.length - 1];
+      milestones.push({
+        id: `ms-reg-${i}`,
+        type: 'registration',
+        label: '报名时间（原文摘录）',
+        dateRange: rawSnippet.slice(0, 64),
+        status: closing >= todayStr ? 'active' : 'completed',
+      });
+    }
+  }
+
+  // 3. Other key nodes (资格审查 / 缴费 / 准考证 / 笔试 / 面试)
+  const extraRules: Array<{
+    type: MilestoneNode['type'];
+    label: string;
+    re: RegExp;
+  }> = [
+    {
+      type: 'qualification_review',
+      label: '资格审查',
+      re: /(?:资格审查|资格初审|资格审核)[^。；\n]{0,40}?(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}[^。；\n]{0,35})/,
+    },
+    {
+      type: 'payment',
+      label: '考务缴费',
+      re: /(?:缴费时间|网上缴费)[^。；\n]{0,40}?(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}[^。；\n]{0,35})/,
+    },
+    {
+      type: 'admit_card',
+      label: '准考证打印',
+      re: /(?:准考证打印)[^。；\n]{0,40}?(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}[^。；\n]{0,35})/,
+    },
+    {
+      type: 'written_exam',
+      label: '笔试安排',
+      re: /(?:笔试时间|笔试定于|统一笔试)[^。；\n]{0,40}?(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}[^。；\n]{0,35})/,
+    },
+    {
+      type: 'interview',
+      label: '面试安排',
+      re: /(?:面试时间|面试定于)[^。；\n]{0,40}?(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2}[^。；\n]{0,35})/,
+    },
+  ];
+
+  for (const rule of extraRules) {
+    const m = bodyText.match(rule.re);
+    if (m?.[1]) {
+      const dates = extractAllDates(m[1]);
+      if (dates.length > 0) {
+        extractedDates.push(...dates);
+        const lastD = dates[dates.length - 1];
+        milestones.push({
+          id: `ms-${rule.type}`,
+          type: rule.type,
+          label: rule.label,
+          dateRange: m[1].trim().slice(0, 56),
+          status: lastD >= todayStr ? 'upcoming' : 'completed',
+        });
+      }
+    }
+  }
+
+  // Fallback honest node when official notice says "具体时间地点另行确定公布"
+  if (milestones.length === 0) {
+    const pendingNote = bodyText.match(/[^。；]*?(?:具体时间[^。；]{0,40}公布|另行确定|另行通知)[^。；]{0,30}/)?.[0]?.trim();
+    milestones.push({
+      id: `ms-pending-${publishDate}`,
+      type: announcementType === 'supplement_correction' ? 'supplement' : 'registration',
+      label: announcementType === 'supplement_correction' ? '补充/调整公告发布' : '报名日程待官方后续公布',
+      dateRange: `公告发布于 ${publishDate}`,
+      status: 'active',
+      note: pendingNote || '原文未固定具体截止日期，请点击官方原文跟进后续通知',
+    });
+  }
+
+  const validExtracted = extractedDates.filter((d) => d <= '2028-12-31').sort();
+  const latestActivityDate = validExtracted.length > 0 ? validExtracted[validExtracted.length - 1] : null;
+  const sortedExplicitReg = explicitRegDates.filter((d) => d <= '2028-12-31').sort();
+  const deadlineDate =
+    sortedExplicitReg.length > 0
+      ? sortedExplicitReg[sortedExplicitReg.length - 1]
+      : latestActivityDate ?? '以官方原文为准';
+
+  return {
+    milestones,
+    deadlineDate,
+    latestActivityDate,
+  };
 }
 
 export function parseOfficialArticleToItem(params: {
@@ -231,11 +425,16 @@ export function parseOfficialArticleToItem(params: {
   const bodyText = extractArticleBodyText(html);
   if (bodyText.length < 80) return null;
 
-  // Extract publish date: explicit header metadata -> list hint -> bottom signature date -> URL -> today
+  // Extract real publish date (supports spaces like "2026 年 6 月 4 日" and header dates like "2020.06.24")
   const metaDateMatch = rawText.match(
-    /(?:发布时间|发布日期|时间|日期)[：:\s]*(\d{4}[-/.年]\d{1,2}[-/.月]\d{1,2})/
+    /(?:发布时间|发布日期|时间|日期)[：:\s]*(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2})/
   );
-  const signatureMatches = [...bodyText.matchAll(/(?:202[4-9])年\d{1,2}月\d{1,2}日/g)];
+  const headerDateMatch = bodyText
+    .slice(0, 260)
+    .match(/(\d{4}\s*[-/.年]\s*\d{1,2}\s*[-/.月]\s*\d{1,2})/);
+  const signatureMatches = [
+    ...bodyText.matchAll(/(?:201[5-9]|202[0-9])\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日/g),
+  ];
   const signatureDate =
     signatureMatches.length > 0
       ? normalizeChineseDate(signatureMatches[signatureMatches.length - 1][0])
@@ -244,31 +443,36 @@ export function parseOfficialArticleToItem(params: {
   const publishDate =
     (metaDateMatch ? normalizeChineseDate(metaDateMatch[1]) : null) ||
     dateHint ||
+    (headerDateMatch ? normalizeChineseDate(headerDateMatch[1]) : null) ||
     signatureDate ||
     normalizeChineseDate(articleUrl) ||
     todayStr;
 
-  if (publishDate < '2026-06-01' && !/2026|2027/.test(cleanTitle)) {
+  const announcementType = inferAnnouncementType(cleanTitle, bodyText);
+  const { milestones, deadlineDate, latestActivityDate } = extractStructuredMilestones(
+    bodyText,
+    publishDate,
+    todayStr,
+    announcementType
+  );
+
+  // Exclude historical or expired announcements:
+  // 1) Title explicitly states an older year (2015-2024) with no future activity >= todayStr
+  if (/201\d年度?|202[0-4]年度?/.test(cleanTitle) && (!latestActivityDate || latestActivityDate < todayStr)) {
     return null;
   }
-
-  // Extract deadline if explicitly stated in bodyText
-  let deadlineDate = addDays(publishDate, 14);
-  const deadlineSentence = bodyText.match(
-    /(?:报名时间|报名截止|截止时间|截至|网申截止|接受报名)[^。；;\n]{0,120}/g
-  );
-  if (deadlineSentence && deadlineSentence.length > 0) {
-    const lastSnippet = deadlineSentence[deadlineSentence.length - 1];
-    const allDates = [...lastSnippet.matchAll(/\d{4}[-/.年]\d{1,2}[-/.月]\d{1,2}/g)];
-    const lastDate = allDates.length > 0 ? normalizeChineseDate(allDates[allDates.length - 1][0]) : null;
-    if (lastDate && lastDate >= publishDate) {
-      deadlineDate = lastDate;
-    }
+  // 2) Explicit deadline or exam/interview date already strictly before todayStr
+  if (latestActivityDate && latestActivityDate < todayStr) {
+    return null;
+  }
+  // 3) Publish date older than 45 days without any future milestone >= todayStr
+  const staleCutoff = addDays(todayStr, -45);
+  if (publishDate < staleCutoff && (!latestActivityDate || latestActivityDate < todayStr)) {
+    return null;
   }
 
   const combinedText = `${cleanTitle} ${bodyText.slice(0, 4000)}`;
 
-  // For general HRSS/gov portals, require explicit medical/hospital/pharma keywords in clean body
   if (source.tier === 'provincial_municipal_hrss' || source.tier === 'national_gov') {
     if (!MEDICAL_SIGNAL_RE.test(combinedText)) {
       return null;
@@ -277,7 +481,6 @@ export function parseOfficialArticleToItem(params: {
     return null;
   }
 
-  const announcementType = inferAnnouncementType(cleanTitle, combinedText);
   const hasAnomaly =
     announcementType === 'supplement_correction' ||
     /延期|顺延|推迟|取消|时间调整|补充公告|更正公告/.test(cleanTitle);
@@ -292,7 +495,6 @@ export function parseOfficialArticleToItem(params: {
   const employerCategory = inferEmployerCategory(source);
   const defaultTrack = source.tier === 'soe_medical_enterprise' ? 'medical_cra' : 'tcm_physician';
 
-  // Run evaluateProfileMatch strictly against real title + real bodyText (never placeholder strings)
   const evalResult = evaluateProfileMatch(
     {
       title: `${cleanTitle} ${bodyText.slice(0, 1200)}`,
@@ -352,27 +554,6 @@ export function parseOfficialArticleToItem(params: {
     });
   }
 
-  const milestones: MilestoneNode[] = [];
-  const regWindow = bodyText.match(/报名时间[：:\s]*([^。；\n]{6,60})/)?.[1]?.trim();
-  if (regWindow) {
-    milestones.push({
-      id: `ms-reg-${publishDate}`,
-      type: 'registration',
-      label: '网上报名 / 投递（原文摘录）',
-      dateRange: regWindow.slice(0, 48),
-      status: deadlineDate >= todayStr ? 'active' : 'completed',
-    });
-  } else {
-    milestones.push({
-      id: `ms-pub-${publishDate}`,
-      type: announcementType === 'supplement_correction' ? 'supplement' : 'registration',
-      label: announcementType === 'supplement_correction' ? '补充/调整公告发布' : '公告发布与报名跟踪',
-      dateRange: `${publishDate} ~ ${deadlineDate}`,
-      status: deadlineDate >= todayStr ? 'active' : 'completed',
-      note: '具体报名起止时段请点击官方原文核对',
-    });
-  }
-
   const baseReasons = [
     `官方直连抓包验证：直采自 ${source.name} 原文详情页`,
     `原文发布日期：${publishDate}`,
@@ -411,14 +592,15 @@ export function parseOfficialArticleToItem(params: {
 
 const BROWSER_HEADERS = {
   'User-Agent':
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
   Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
 };
 
-async function fetchHtmlWithTimeout(
+async function attemptFetch(
   url: string,
-  timeoutMs = 8000
+  timeoutMs: number,
+  extraHeaders?: Record<string, string>
 ): Promise<{ ok: boolean; status: number | null; html: string; finalUrl: string; errorNote?: string }> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -427,7 +609,10 @@ async function fetchHtmlWithTimeout(
       method: 'GET',
       redirect: 'follow',
       signal: controller.signal,
-      headers: BROWSER_HEADERS,
+      headers: {
+        ...BROWSER_HEADERS,
+        ...extraHeaders,
+      },
     });
     const contentType = res.headers.get('content-type') || '';
     const buffer = await res.arrayBuffer();
@@ -445,11 +630,36 @@ async function fetchHtmlWithTimeout(
       status: null,
       html: '',
       finalUrl: url,
-      errorNote: isTimeout ? '连接超时（官方站点限制海外访问或响应较慢）' : '官方站暂不可达',
+      errorNote: isTimeout ? '连接超时（官方站点限制境外IP访问或响应较慢）' : '官方站暂不可达',
     };
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function fetchHtmlWithTimeout(
+  url: string,
+  timeoutMs = 12000
+): Promise<{ ok: boolean; status: number | null; html: string; finalUrl: string; errorNote?: string }> {
+  let result = await attemptFetch(url, timeoutMs);
+
+  // Auto-fallback https:// -> http:// if TLS/connection refused
+  if (!result.ok && result.status === null && url.startsWith('https://')) {
+    const httpFallback = await attemptFetch(url.replace(/^https:\/\//i, 'http://'), timeoutMs);
+    if (httpFallback.ok || httpFallback.status !== null) {
+      result = httpFallback;
+    }
+  }
+
+  // Handle simple JS cookie gate like `document.cookie = "visited=1"` (used by sdzydfy.com)
+  if (result.ok && result.html.length < 3000 && result.html.includes('visited=1')) {
+    const retry = await attemptFetch(result.finalUrl, timeoutMs, { Cookie: 'visited=1' });
+    if (retry.ok && retry.html.length > result.html.length) {
+      result = retry;
+    }
+  }
+
+  return result;
 }
 
 export interface PortalScrapeSummary {
@@ -464,7 +674,7 @@ export async function scrapeOfficialPortal(
   profile: CandidateProfile,
   todayStr: string
 ): Promise<PortalScrapeSummary> {
-  const home = await fetchHtmlWithTimeout(source.url, 8000);
+  const home = await fetchHtmlWithTimeout(source.url, 12000);
   if (!home.ok || !home.html) {
     const note = home.status ? `HTTP ${home.status}（站点拦截或需境内IP）` : home.errorNote || '不可达';
     return {
@@ -478,14 +688,13 @@ export async function scrapeOfficialPortal(
   const pageTitle = home.html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
   const baseLinks = extractLinksFromHtml(home.html, home.finalUrl);
 
-  // Discover up to 2 recruitment/notice sub-column pages on the same official domain
   const columnUrls = baseLinks
     .filter((l) => isRecruitmentColumnLink(l.title, l.url, source.domain))
     .map((l) => l.url)
     .filter((u, idx, arr) => arr.indexOf(u) === idx)
-    .slice(0, 2);
+    .slice(0, 3);
 
-  const subPages = await Promise.all(columnUrls.map((colUrl) => fetchHtmlWithTimeout(colUrl, 6000)));
+  const subPages = await Promise.all(columnUrls.map((colUrl) => fetchHtmlWithTimeout(colUrl, 9000)));
   const allLinks: DiscoveredLink[] = [...baseLinks];
   for (const sub of subPages) {
     if (sub.ok && sub.html) {
@@ -493,24 +702,23 @@ export async function scrapeOfficialPortal(
     }
   }
 
-  // Deduplicate and keep top 5 most recent/relevant announcement links
   const seenUrls = new Set<string>();
   const candidateLinks: DiscoveredLink[] = [];
   for (const link of allLinks) {
+    if (!isTrustedPortalArticleUrl(link.url, source.domain)) continue;
     if (!isRelevantRecruitmentLink(link.title, link.url)) continue;
     if (seenUrls.has(link.url)) continue;
     seenUrls.add(link.url);
     candidateLinks.push(link);
   }
 
-  // Sort newer dates first if dateHint exists
   candidateLinks.sort((a, b) => (b.dateHint ?? '').localeCompare(a.dateHint ?? ''));
-  const topCandidates = candidateLinks.slice(0, 5);
+  const topCandidates = candidateLinks.slice(0, 6);
 
   const articlePages = await Promise.all(
     topCandidates.map(async (link) => ({
       link,
-      page: await fetchHtmlWithTimeout(link.url, 6000),
+      page: await fetchHtmlWithTimeout(link.url, 9000),
     }))
   );
 
@@ -534,8 +742,8 @@ export async function scrapeOfficialPortal(
   const shortTitle = pageTitle ? pageTitle.slice(0, 32) : '官方页面可访问';
   const note =
     items.length > 0
-      ? `在线 · ${shortTitle}（直采命中 ${items.length} 条真实公告）`
-      : `在线 · ${shortTitle}（直连未发现新增匹配公告）`;
+      ? `在线 · ${shortTitle}（直采命中 ${items.length} 条有效公告）`
+      : `在线 · ${shortTitle}（直连未发现未截止新公告）`;
 
   return {
     source,

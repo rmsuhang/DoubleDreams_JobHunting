@@ -17,7 +17,7 @@ test('generateStandaloneWorkbenchHtml outputs a complete self-contained HTML wor
   assert.ok(html.startsWith('<!doctype html>'));
   assert.ok(html.includes('周梦梦'));
   assert.ok(html.includes('https://www.jnszhyy.cn/'));
-  assert.ok(html.includes('https://www.qdzyy.cn/'));
+  assert.ok(html.includes('https://www.jnsjgyy.com/'));
   assert.ok(html.includes('id="searchInput"'));
   assert.ok(html.includes('id="view-milestones"'));
   assert.ok(html.includes('id="view-sources"'));

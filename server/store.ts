@@ -15,6 +15,13 @@ export async function loadAppState(): Promise<AppDataState> {
     if (!parsed || !Array.isArray(parsed.briefings) || !Array.isArray(parsed.sources)) {
       throw new Error('Invalid persisted structure');
     }
+    const sanitizedSources = parsed.sources
+      .filter((s) => s.id !== 'src-qdzyy' && s.domain !== 'qdzyy.cn')
+      .map((s) =>
+        s.id === 'src-qd-wsjkw'
+          ? { ...s, name: '青岛市卫生健康委员会官网（含青岛市中医医院/海慈医疗集团招聘）' }
+          : s
+      );
     const sanitizedBriefings = parsed.briefings.filter(
       (b) => b.id !== 'brief-2026-11-14' && b.id !== 'brief-2026-11-15'
     );
@@ -22,6 +29,7 @@ export async function loadAppState(): Promise<AppDataState> {
       const cleanSeed = createInitialSeedState();
       const migrated: AppDataState = {
         ...parsed,
+        sources: sanitizedSources,
         briefings: cleanSeed.briefings,
       };
       await saveAppState(migrated);
@@ -29,6 +37,7 @@ export async function loadAppState(): Promise<AppDataState> {
     }
     return {
       ...parsed,
+      sources: sanitizedSources,
       briefings: sanitizedBriefings,
     };
   } catch {

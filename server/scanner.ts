@@ -130,7 +130,7 @@ ${sourceListText}
   "region": "济南 | 青岛 | 山东省级/国家",
   "employerName": "招录医院或单位名称",
   "employerCategory": "公立医院 | 人社/卫健委 | 国企医疗 | 外企/国企药企",
-  "deadlineDate": "YYYY-MM-DD",
+  "deadlineDate": "YYYY-MM-DD 或 以官方原文为准（未明确截止日禁止猜测）",
   "hasAnomaly": false,
   "anomalyDetail": "",
   "matchedPositions": [
@@ -225,7 +225,7 @@ ${sourceListText}
             : [],
           deadlineDate: /^\d{4}-\d{2}-\d{2}$/.test(String(entry.deadlineDate || ''))
             ? String(entry.deadlineDate)
-            : todayStr,
+            : '以官方原文为准',
           hasAnomaly: Boolean(entry.hasAnomaly),
           anomalyDetail: entry.anomalyDetail ? String(entry.anomalyDetail) : undefined,
           diffStatus: 'new',

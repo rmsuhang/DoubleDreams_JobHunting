@@ -141,6 +141,10 @@ function positionSignature(item: RecruitmentItem): string {
   });
 }
 
+export function isDeadlineClosed(deadlineDate: string, referenceDate: string): boolean {
+  return /^\d{4}-\d{2}-\d{2}$/.test(deadlineDate) && deadlineDate < referenceDate;
+}
+
 export function computeIncrementalDiff(
   incomingItems: RecruitmentItem[],
   baselineBriefing: BriefingSnapshot | null | undefined,
@@ -166,7 +170,7 @@ export function computeIncrementalDiff(
     const prev = baselineMap.get(key);
 
     if (!prev) {
-      const isClosed = raw.deadlineDate < referenceDate;
+      const isClosed = isDeadlineClosed(raw.deadlineDate, referenceDate);
       result.push({
         ...raw,
         canonicalKey: key,
@@ -203,13 +207,16 @@ export function computeIncrementalDiff(
         diffNote: raw.diffNote || changeNotes.join('；') || '公告关键节点或岗位明细发生更新',
       });
     } else {
-      const stillOpen = raw.deadlineDate >= referenceDate;
+      const isClosed = isDeadlineClosed(raw.deadlineDate, referenceDate);
+      const stillOpen = !isClosed;
       result.push({
         ...raw,
         canonicalKey: key,
         diffStatus: stillOpen ? 'still_open' : 'closed',
         diffNote: stillOpen
-          ? `未截止报名（截止 ${raw.deadlineDate}），延续上次简报状态`
+          ? /^\d{4}-\d{2}-\d{2}$/.test(raw.deadlineDate)
+            ? `未截止报名（截止 ${raw.deadlineDate}），延续上次简报状态`
+            : '报名时间以官方原文为准，延续上次简报状态'
           : `已过报名截止日（${raw.deadlineDate}）`,
       });
     }
@@ -219,18 +226,24 @@ export function computeIncrementalDiff(
   if (baselineBriefing) {
     for (const prev of baselineBriefing.items) {
       const key = prev.canonicalKey || normalizeCanonicalKey(prev.employerName, prev.title, prev.sourceUrl);
-      if (!seenKeys.has(key) && prev.deadlineDate >= referenceDate && prev.diffStatus !== 'closed') {
+      if (
+        !seenKeys.has(key) &&
+        !isDeadlineClosed(prev.deadlineDate, referenceDate) &&
+        prev.diffStatus !== 'closed'
+      ) {
         result.push({
           ...prev,
           canonicalKey: key,
           diffStatus: 'still_open',
-          diffNote: `延续上次简报（未截止，截止 ${prev.deadlineDate}）`,
+          diffNote: /^\d{4}-\d{2}-\d{2}$/.test(prev.deadlineDate)
+            ? `延续上次简报（未截止，截止 ${prev.deadlineDate}）`
+            : '延续上次简报（截止时间以官方原文为准）',
         });
       }
     }
   }
 
-  // Sort: updated/anomaly & new first, then still_open by closest deadline
+  // Sort: updated/anomaly & new first, then still_open; explicit dates before '以官方原文为准'
   const priorityOrder: Record<string, number> = {
     updated: 0,
     new: 1,
@@ -243,7 +256,12 @@ export function computeIncrementalDiff(
     const pb = priorityOrder[b.diffStatus] ?? 9;
     if (pa !== pb) return pa - pb;
     if (a.hasAnomaly !== b.hasAnomaly) return a.hasAnomaly ? -1 : 1;
-    return a.deadlineDate.localeCompare(b.deadlineDate);
+    const aIso = /^\d{4}-\d{2}-\d{2}$/.test(a.deadlineDate);
+    const bIso = /^\d{4}-\d{2}-\d{2}$/.test(b.deadlineDate);
+    if (aIso && !bIso) return -1;
+    if (!aIso && bIso) return 1;
+    if (aIso && bIso) return a.deadlineDate.localeCompare(b.deadlineDate);
+    return b.publishDate.localeCompare(a.publishDate);
   });
 
   const activeItems = result.filter((item) => item.diffStatus !== 'closed');
