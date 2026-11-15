@@ -1113,7 +1113,12 @@
                 var statusBar = document.getElementById('syncStatusBar');
                 if (statusBar) {
                   statusBar.style.display = 'block';
-                  statusBar.textContent = '同步失败（请确认后端服务在线）：' + err.message;
+                  statusBar.textContent =
+                    '同步失败（' +
+                    err.message +
+                    '）：后端地址（' +
+                    apiBase +
+                    '）可能处于休眠、未公开部署或受 AI Studio 登录保护拦截，本地离线网页无法跳过登录校验。请先完成公开部署并填入公开域名，或直接在手机浏览器打开已部署的在线工作台链接。';
                 }
               })
               .finally(function () {
