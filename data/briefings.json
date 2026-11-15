@@ -70,7 +70,7 @@
       "domain": "scs.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 官方页面可访问（直连未发现未截止新公告）"
     },
@@ -84,7 +84,7 @@
       "domain": "hrss.shandong.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 403,
       "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
     },
@@ -98,7 +98,7 @@
       "domain": "jnhhr.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -112,7 +112,7 @@
       "domain": "jnhrss.jinan.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市人力资源和社会保障局（直连未发现未截止新公告）"
     },
@@ -126,7 +126,7 @@
       "domain": "hrss.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -140,7 +140,7 @@
       "domain": "wsjkw.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -154,7 +154,7 @@
       "domain": "jnszhyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -168,7 +168,7 @@
       "domain": "jndwyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -182,7 +182,7 @@
       "domain": "jnslyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市第一人民医院（直采命中 2 条有效公告）"
     },
@@ -196,7 +196,7 @@
       "domain": "jnslqy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -210,7 +210,7 @@
       "domain": "jndsyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 420,
       "lastCheckNote": "HTTP 420（站点拦截或需境内IP）"
     },
@@ -224,7 +224,7 @@
       "domain": "jnsjgyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市机关医院（直采命中 2 条有效公告）"
     },
@@ -238,7 +238,7 @@
       "domain": "sdzydfy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 山东中医药大学附属医院·山东省中医院【官方网站】（直连未发现未截止新公告）"
     },
@@ -252,7 +252,7 @@
       "domain": "qilu-pharma.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 齐鲁制药 | 用科技表达我们的爱（直连未发现未截止新公告）"
     },
@@ -266,7 +266,7 @@
       "domain": "crcare.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 官方页面可访问（直连未发现未截止新公告）"
     },
@@ -280,7 +280,7 @@
       "domain": "tigermedgrp.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 泰格医药 - 领先的合同研究组织（CRO）（直连未发现未截止新公告）"
     },
@@ -294,19 +294,193 @@
       "domain": "astrazeneca.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T16:23:22.003Z",
-      "lastHttpStatus": 403,
-      "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
+      "lastCheckedAt": "2026-11-15T16:27:18.825Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 阿斯利康投资（中国）有限公司（直连未发现未截止新公告）"
     }
   ],
   "schedule": {
     "enabled": true,
     "triggerTime": "08:00",
     "timezone": "Asia/Shanghai",
-    "lastRunAt": "2026-11-15T16:23:22.003Z",
+    "lastRunAt": "2026-11-15T16:27:18.825Z",
     "nextRunAt": "2026-11-16T00:00:00.000Z"
   },
   "briefings": [
+    {
+      "id": "brief-2026-11-16-1794760063013",
+      "briefingDate": "2026-11-16",
+      "generatedAt": "2026-11-15T16:27:18.825Z",
+      "triggerType": "scheduled",
+      "baselineBriefingId": "brief-2026-11-16-1794759823049",
+      "baselineDate": "2026-11-16",
+      "sourcesCheckedCount": 17,
+      "liveScanUsed": true,
+      "scanStatusMessage": "已完成真实官源巡检（直连成功 9/17 个官方门户，网页直采解析出 3 条真实公告；Search Grounding 配额暂达上限，本次仅保留直连抓取结果）。绝不包含任何示例假数据。",
+      "stats": {
+        "totalMatched": 3,
+        "newCount": 0,
+        "updatedCount": 0,
+        "stillOpenCount": 3,
+        "anomalyCount": 0,
+        "tcmPhysicianCount": 3,
+        "medicalCraCount": 0
+      },
+      "items": [
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-12-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3977-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-12",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-12",
+            "重点意向城市命中：山东省济南市",
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "身份与招聘类型匹配：2027届应届毕业生 · 校招通道"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-session-1",
+              "type": "registration",
+              "label": "第一场现场报名（北京中医药大学和平街校区（北京市朝阳区和平街街道北三环东路11号），中医药博物馆一层大厅）",
+              "dateRange": "2026年11月20日14:00-16:00",
+              "status": "active"
+            },
+            {
+              "id": "ms-session-2",
+              "type": "registration",
+              "label": "第二场现场报名（北京大学医学部（北京市海淀区学院路38号），会议中心206会议室）",
+              "dateRange": "2026年11月21日9:00-11:00",
+              "status": "active"
+            }
+          ],
+          "deadlineDate": "2026-11-21",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-21），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-11-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/51/56396.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pending-2026-11-11",
+              "type": "registration",
+              "label": "报名日程待官方后续公布",
+              "dateRange": "公告发布于 2026-11-11",
+              "status": "active",
+              "note": "现场报名的具体时间和地点根据实际情况， 确定后在济南市第一人民医院网站面向社会公布，请及时登录查询"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-11-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3976-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pending-2026-11-11",
+              "type": "registration",
+              "label": "报名日程待官方后续公布",
+              "dateRange": "公告发布于 2026-11-11",
+              "status": "active",
+              "note": "现场报名的具体时间和地点根据实际情况，确定后在济南市机关医院网站面向社会公布，请及时登录查询"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        }
+      ],
+      "groundingLinks": []
+    },
     {
       "id": "brief-2026-11-16-1794759823049",
       "briefingDate": "2026-11-16",
