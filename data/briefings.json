@@ -70,9 +70,9 @@
       "domain": "scs.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": 200,
-      "lastCheckNote": "官方页面可访问"
+      "lastCheckNote": "在线 · 官方页面可访问（直连未发现新增匹配公告）"
     },
     {
       "id": "src-sd-hrss",
@@ -84,9 +84,9 @@
       "domain": "hrss.shandong.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": 403,
-      "lastCheckNote": "HTTP 403"
+      "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
     },
     {
       "id": "src-jnhhr",
@@ -98,9 +98,9 @@
       "domain": "jnhhr.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-jn-hrss",
@@ -112,9 +112,9 @@
       "domain": "jnhrss.jinan.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": 200,
-      "lastCheckNote": "在线 · 济南市人力资源和社会保障局"
+      "lastCheckNote": "在线 · 济南市人力资源和社会保障局（直连未发现新增匹配公告）"
     },
     {
       "id": "src-qd-hrss",
@@ -126,9 +126,9 @@
       "domain": "hrss.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "官方站暂不可达"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-qd-wsjkw",
@@ -140,9 +140,9 @@
       "domain": "wsjkw.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "官方站暂不可达"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-jnszhyy",
@@ -154,9 +154,9 @@
       "domain": "jnszhyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-jndwyy",
@@ -168,9 +168,9 @@
       "domain": "jndwyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "官方站暂不可达"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-jnslyy",
@@ -182,9 +182,9 @@
       "domain": "jnslyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 济南市第一人民医院（直采命中 3 条真实公告）"
     },
     {
       "id": "src-jnslqy",
@@ -196,9 +196,9 @@
       "domain": "jnslqy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "官方站暂不可达"
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-jndsyy",
@@ -210,9 +210,9 @@
       "domain": "jndsyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 420,
+      "lastCheckNote": "HTTP 420（站点拦截或需境内IP）"
     },
     {
       "id": "src-jnsjgyy",
@@ -224,9 +224,9 @@
       "domain": "jnsjgyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 济南市机关医院（直采命中 3 条真实公告）"
     },
     {
       "id": "src-sdzydfy",
@@ -238,9 +238,9 @@
       "domain": "sdzydfy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 山东中医药大学附属医院·山东省中医院【官方网站】（直连未发现新增匹配公告）"
     },
     {
       "id": "src-qdzyy",
@@ -252,9 +252,9 @@
       "domain": "qdzyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-qilu",
@@ -266,9 +266,9 @@
       "domain": "qilu-pharma.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 齐鲁制药 | 用科技表达我们的爱（直连未发现新增匹配公告）"
     },
     {
       "id": "src-crcare",
@@ -280,9 +280,9 @@
       "domain": "crcare.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 官方页面可访问（直连未发现新增匹配公告）"
     },
     {
       "id": "src-tigermed",
@@ -294,9 +294,9 @@
       "domain": "tigermedgrp.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 泰格医药 - 领先的合同研究组织（CRO）（直连未发现新增匹配公告）"
     },
     {
       "id": "src-astrazeneca",
@@ -308,2611 +308,303 @@
       "domain": "astrazeneca.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:02:19.302Z",
-      "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制或网络波动）"
+      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastHttpStatus": 403,
+      "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
     }
   ],
   "schedule": {
     "enabled": true,
     "triggerTime": "08:00",
     "timezone": "Asia/Shanghai",
-    "lastRunAt": "2026-11-15T15:02:19.302Z",
+    "lastRunAt": "2026-11-15T15:24:41.525Z",
     "nextRunAt": "2026-11-16T00:00:00.000Z"
   },
   "briefings": [
     {
-      "id": "brief-2026-11-15-1794754942830",
+      "id": "brief-2026-11-15-1794756290755",
       "briefingDate": "2026-11-15",
-      "generatedAt": "2026-11-15T15:02:19.302Z",
+      "generatedAt": "2026-11-15T15:24:41.525Z",
       "triggerType": "scheduled",
-      "baselineBriefingId": "brief-2026-11-15-1794752862613",
-      "baselineDate": "2026-11-15",
-      "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "已完成 3/18 个官方门户连通性巡检；已依据上次基准复核全部未截止官方岗位（配置 GEMINI_API_KEY 后可启用实时 Google 搜索官源抓取）。",
-      "stats": {
-        "totalMatched": 7,
-        "newCount": 0,
-        "updatedCount": 1,
-        "stillOpenCount": 6,
-        "anomalyCount": 1,
-        "tcmPhysicianCount": 5,
-        "medicalCraCount": 2
-      },
-      "items": [
-        {
-          "id": "item-jndsyy-1115-upd",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知",
-          "sourceName": "济南市第四人民医院官网 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "supplement_correction",
-          "region": "济南",
-          "employerName": "济南市第四人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
-              "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "supplement",
-              "label": "补充公告发布",
-              "dateRange": "2026-11-15",
-              "status": "urgent",
-              "note": "延长报名及缴费周期，推迟准考证打印与笔试日期"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "registration",
-              "label": "网上报名（已延期）",
-              "dateRange": "2026-11-12 ~ 2026-11-24",
-              "status": "delayed",
-              "note": "原截止 11-19，延期至 11-24 16:00"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "payment",
-              "label": "网上缴费（已调整）",
-              "dateRange": "2026-11-13 ~ 2026-11-25",
-              "status": "delayed"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "admit_card",
-              "label": "准考证打印（已调整）",
-              "dateRange": "2026-12-02 ~ 2026-12-04",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-5",
-              "type": "written_exam",
-              "label": "统一笔试（延期后）",
-              "dateRange": "2026-12-05",
-              "status": "delayed"
-            }
-          ],
-          "deadlineDate": "2026-11-24",
-          "hasAnomaly": true,
-          "diffStatus": "updated",
-          "anomalyDetail": "关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05",
-          "diffNote": "较 2026-11-14 简报发生异动：发布补充公告，报名延期 5 天、笔试推迟 1 周"
-        },
-        {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
-          "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
-              "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
-            }
-          ],
-          "deadlineDate": "2026-11-22",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-22），延续上次简报状态"
-        },
-        {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-26），延续上次简报状态"
-        },
-        {
-          "id": "item-qdzyy-1115",
-          "canonicalKey": "青岛市中医医院海慈医疗集团::2027届校园招聘职位表",
-          "title": "青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表",
-          "sourceName": "青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委",
-          "sourceUrl": "https://www.qdzyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "position_table",
-          "region": "青岛",
-          "employerName": "青岛市中医医院（海慈医疗集团）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省青岛市",
-            "岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）",
-            "经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿康复医师",
-              "department": "海慈医疗集团本部针灸推拿康复中心",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医骨伤科学",
-              "freshGradOnly": true,
-              "examFormat": "笔试（中医基础+针推专业）+ 综合面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-qd-1",
-              "type": "registration",
-              "label": "青岛人社网申报名",
-              "dateRange": "2026-11-15 ~ 2026-11-27",
-              "status": "active"
-            },
-            {
-              "id": "ms-qd-2",
-              "type": "qualification_review",
-              "label": "网上资格审查",
-              "dateRange": "2026-11-16 ~ 2026-11-28",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-3",
-              "type": "payment",
-              "label": "考务费缴纳",
-              "dateRange": "2026-11-18 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-4",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-12-03 ~ 2026-12-05",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-5",
-              "type": "written_exam",
-              "label": "校园招聘笔试",
-              "dateRange": "2026-12-06",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-27",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-27），延续上次简报状态"
-        },
-        {
-          "id": "item-jnszhyy-1115",
-          "canonicalKey": "广安门医院济南医院::2027届高层次及急需紧缺中医药人才校园招聘",
-          "title": "广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章",
-          "sourceName": "广安门医院济南医院官网（同步济南卫生健康人才网）",
-          "sourceUrl": "https://www.jnszhyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "广安门医院济南医院（济南市中医医院）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）",
-            "专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生",
-            "资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸科临床医师",
-              "department": "针灸一科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 现场面谈/面试（免笔试绿色通道）",
-              "track": "tcm_physician"
-            },
-            {
-              "positionName": "小儿推拿中心医师",
-              "department": "推拿科（小儿推拿亚专科）",
-              "headcount": 1,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿研究方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 临床实操考核 + 面试",
-              "track": "tcm_physician",
-              "notes": "研究方向聚焦儿童脾胃及呼吸系统推拿调理者优先录用。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-zy-1",
-              "type": "registration",
-              "label": "校招网申及邮箱投递",
-              "dateRange": "2026-11-15 ~ 2026-11-30",
-              "status": "active"
-            },
-            {
-              "id": "ms-zy-2",
-              "type": "qualification_review",
-              "label": "资格初审与确认",
-              "dateRange": "2026-12-02 ~ 2026-12-03",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-zy-3",
-              "type": "interview",
-              "label": "院内面试及手法实操",
-              "dateRange": "2026-12-08",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-30",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-30），延续上次简报状态"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
-              "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
-              "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
-              "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-02",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-02），延续上次简报状态"
-        },
-        {
-          "id": "item-qilu-1115",
-          "canonicalKey": "齐鲁制药::2027届临床研发与医学事务校园招聘",
-          "title": "齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章",
-          "sourceName": "齐鲁制药集团官方招聘网站",
-          "sourceUrl": "https://www.qilu-pharma.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "齐鲁制药集团（济南总部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（总部驻地）",
-            "Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书",
-            "科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "医学事务专员 / 临床医学专员（校招）",
-              "department": "临床研发中心医学事务部",
-              "headcount": 4,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "临床医学、中医学、中西医结合、药学",
-              "freshGradOnly": true,
-              "examFormat": "线上笔试（医学基础+英文文献阅读）+ 两轮面试",
-              "track": "medical_cra",
-              "notes": "具备 GCP 证书、CET-4 及临床规培病历经验者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ql-1",
-              "type": "registration",
-              "label": "官方校招网申",
-              "dateRange": "2026-11-15 ~ 2026-12-10",
-              "status": "active"
-            },
-            {
-              "id": "ms-ql-2",
-              "type": "written_exam",
-              "label": "在线专业测评",
-              "dateRange": "2026-12-12",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ql-3",
-              "type": "interview",
-              "label": "济南总部终面",
-              "dateRange": "2026-12-18",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-10",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-10），延续上次简报状态"
-        }
-      ],
-      "groundingLinks": []
-    },
-    {
-      "id": "brief-2026-11-15-1794752862613",
-      "briefingDate": "2026-11-15",
-      "generatedAt": "2026-11-15T14:27:38.904Z",
-      "triggerType": "manual",
-      "baselineBriefingId": "brief-2026-11-15-1794752805579",
-      "baselineDate": "2026-11-15",
-      "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "已完成 9/18 个官方门户连通性巡检（搜索配额暂达上限，已自动切换为直连巡检模式），已延续并复核上次基准内未截止官方岗位。",
-      "stats": {
-        "totalMatched": 7,
-        "newCount": 0,
-        "updatedCount": 1,
-        "stillOpenCount": 6,
-        "anomalyCount": 1,
-        "tcmPhysicianCount": 5,
-        "medicalCraCount": 2
-      },
-      "items": [
-        {
-          "id": "item-jndsyy-1115-upd",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知",
-          "sourceName": "济南市第四人民医院官网 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "supplement_correction",
-          "region": "济南",
-          "employerName": "济南市第四人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
-              "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "supplement",
-              "label": "补充公告发布",
-              "dateRange": "2026-11-15",
-              "status": "urgent",
-              "note": "延长报名及缴费周期，推迟准考证打印与笔试日期"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "registration",
-              "label": "网上报名（已延期）",
-              "dateRange": "2026-11-12 ~ 2026-11-24",
-              "status": "delayed",
-              "note": "原截止 11-19，延期至 11-24 16:00"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "payment",
-              "label": "网上缴费（已调整）",
-              "dateRange": "2026-11-13 ~ 2026-11-25",
-              "status": "delayed"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "admit_card",
-              "label": "准考证打印（已调整）",
-              "dateRange": "2026-12-02 ~ 2026-12-04",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-5",
-              "type": "written_exam",
-              "label": "统一笔试（延期后）",
-              "dateRange": "2026-12-05",
-              "status": "delayed"
-            }
-          ],
-          "deadlineDate": "2026-11-24",
-          "hasAnomaly": true,
-          "diffStatus": "updated",
-          "anomalyDetail": "关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05",
-          "diffNote": "较 2026-11-14 简报发生异动：发布补充公告，报名延期 5 天、笔试推迟 1 周"
-        },
-        {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
-          "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
-              "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
-            }
-          ],
-          "deadlineDate": "2026-11-22",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-22），延续上次简报状态"
-        },
-        {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-26），延续上次简报状态"
-        },
-        {
-          "id": "item-qdzyy-1115",
-          "canonicalKey": "青岛市中医医院海慈医疗集团::2027届校园招聘职位表",
-          "title": "青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表",
-          "sourceName": "青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委",
-          "sourceUrl": "https://www.qdzyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "position_table",
-          "region": "青岛",
-          "employerName": "青岛市中医医院（海慈医疗集团）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省青岛市",
-            "岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）",
-            "经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿康复医师",
-              "department": "海慈医疗集团本部针灸推拿康复中心",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医骨伤科学",
-              "freshGradOnly": true,
-              "examFormat": "笔试（中医基础+针推专业）+ 综合面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-qd-1",
-              "type": "registration",
-              "label": "青岛人社网申报名",
-              "dateRange": "2026-11-15 ~ 2026-11-27",
-              "status": "active"
-            },
-            {
-              "id": "ms-qd-2",
-              "type": "qualification_review",
-              "label": "网上资格审查",
-              "dateRange": "2026-11-16 ~ 2026-11-28",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-3",
-              "type": "payment",
-              "label": "考务费缴纳",
-              "dateRange": "2026-11-18 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-4",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-12-03 ~ 2026-12-05",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-5",
-              "type": "written_exam",
-              "label": "校园招聘笔试",
-              "dateRange": "2026-12-06",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-27",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-27），延续上次简报状态"
-        },
-        {
-          "id": "item-jnszhyy-1115",
-          "canonicalKey": "广安门医院济南医院::2027届高层次及急需紧缺中医药人才校园招聘",
-          "title": "广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章",
-          "sourceName": "广安门医院济南医院官网（同步济南卫生健康人才网）",
-          "sourceUrl": "https://www.jnszhyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "广安门医院济南医院（济南市中医医院）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）",
-            "专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生",
-            "资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸科临床医师",
-              "department": "针灸一科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 现场面谈/面试（免笔试绿色通道）",
-              "track": "tcm_physician"
-            },
-            {
-              "positionName": "小儿推拿中心医师",
-              "department": "推拿科（小儿推拿亚专科）",
-              "headcount": 1,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿研究方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 临床实操考核 + 面试",
-              "track": "tcm_physician",
-              "notes": "研究方向聚焦儿童脾胃及呼吸系统推拿调理者优先录用。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-zy-1",
-              "type": "registration",
-              "label": "校招网申及邮箱投递",
-              "dateRange": "2026-11-15 ~ 2026-11-30",
-              "status": "active"
-            },
-            {
-              "id": "ms-zy-2",
-              "type": "qualification_review",
-              "label": "资格初审与确认",
-              "dateRange": "2026-12-02 ~ 2026-12-03",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-zy-3",
-              "type": "interview",
-              "label": "院内面试及手法实操",
-              "dateRange": "2026-12-08",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-30",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-30），延续上次简报状态"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
-              "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
-              "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
-              "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-02",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-02），延续上次简报状态"
-        },
-        {
-          "id": "item-qilu-1115",
-          "canonicalKey": "齐鲁制药::2027届临床研发与医学事务校园招聘",
-          "title": "齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章",
-          "sourceName": "齐鲁制药集团官方招聘网站",
-          "sourceUrl": "https://www.qilu-pharma.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "齐鲁制药集团（济南总部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（总部驻地）",
-            "Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书",
-            "科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "医学事务专员 / 临床医学专员（校招）",
-              "department": "临床研发中心医学事务部",
-              "headcount": 4,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "临床医学、中医学、中西医结合、药学",
-              "freshGradOnly": true,
-              "examFormat": "线上笔试（医学基础+英文文献阅读）+ 两轮面试",
-              "track": "medical_cra",
-              "notes": "具备 GCP 证书、CET-4 及临床规培病历经验者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ql-1",
-              "type": "registration",
-              "label": "官方校招网申",
-              "dateRange": "2026-11-15 ~ 2026-12-10",
-              "status": "active"
-            },
-            {
-              "id": "ms-ql-2",
-              "type": "written_exam",
-              "label": "在线专业测评",
-              "dateRange": "2026-12-12",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ql-3",
-              "type": "interview",
-              "label": "济南总部终面",
-              "dateRange": "2026-12-18",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-10",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-10），延续上次简报状态"
-        }
-      ],
-      "groundingLinks": []
-    },
-    {
-      "id": "brief-2026-11-15-1794752805579",
-      "briefingDate": "2026-11-15",
-      "generatedAt": "2026-11-15T14:26:41.968Z",
-      "triggerType": "scheduled",
-      "baselineBriefingId": "brief-2026-11-15-1794750496167",
-      "baselineDate": "2026-11-15",
-      "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "已完成 1/18 个官方门户连通性巡检；已依据上次基准复核全部未截止官方岗位（配置 GEMINI_API_KEY 后可启用实时 Google 搜索官源抓取）。",
-      "stats": {
-        "totalMatched": 7,
-        "newCount": 0,
-        "updatedCount": 1,
-        "stillOpenCount": 6,
-        "anomalyCount": 1,
-        "tcmPhysicianCount": 5,
-        "medicalCraCount": 2
-      },
-      "items": [
-        {
-          "id": "item-jndsyy-1115-upd",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知",
-          "sourceName": "济南市第四人民医院官网 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "supplement_correction",
-          "region": "济南",
-          "employerName": "济南市第四人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
-              "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "supplement",
-              "label": "补充公告发布",
-              "dateRange": "2026-11-15",
-              "status": "urgent",
-              "note": "延长报名及缴费周期，推迟准考证打印与笔试日期"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "registration",
-              "label": "网上报名（已延期）",
-              "dateRange": "2026-11-12 ~ 2026-11-24",
-              "status": "delayed",
-              "note": "原截止 11-19，延期至 11-24 16:00"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "payment",
-              "label": "网上缴费（已调整）",
-              "dateRange": "2026-11-13 ~ 2026-11-25",
-              "status": "delayed"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "admit_card",
-              "label": "准考证打印（已调整）",
-              "dateRange": "2026-12-02 ~ 2026-12-04",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-5",
-              "type": "written_exam",
-              "label": "统一笔试（延期后）",
-              "dateRange": "2026-12-05",
-              "status": "delayed"
-            }
-          ],
-          "deadlineDate": "2026-11-24",
-          "hasAnomaly": true,
-          "diffStatus": "updated",
-          "anomalyDetail": "关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05",
-          "diffNote": "较 2026-11-14 简报发生异动：发布补充公告，报名延期 5 天、笔试推迟 1 周"
-        },
-        {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
-          "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
-              "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
-            }
-          ],
-          "deadlineDate": "2026-11-22",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-22），延续上次简报状态"
-        },
-        {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-26），延续上次简报状态"
-        },
-        {
-          "id": "item-qdzyy-1115",
-          "canonicalKey": "青岛市中医医院海慈医疗集团::2027届校园招聘职位表",
-          "title": "青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表",
-          "sourceName": "青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委",
-          "sourceUrl": "https://www.qdzyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "position_table",
-          "region": "青岛",
-          "employerName": "青岛市中医医院（海慈医疗集团）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省青岛市",
-            "岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）",
-            "经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿康复医师",
-              "department": "海慈医疗集团本部针灸推拿康复中心",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医骨伤科学",
-              "freshGradOnly": true,
-              "examFormat": "笔试（中医基础+针推专业）+ 综合面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-qd-1",
-              "type": "registration",
-              "label": "青岛人社网申报名",
-              "dateRange": "2026-11-15 ~ 2026-11-27",
-              "status": "active"
-            },
-            {
-              "id": "ms-qd-2",
-              "type": "qualification_review",
-              "label": "网上资格审查",
-              "dateRange": "2026-11-16 ~ 2026-11-28",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-3",
-              "type": "payment",
-              "label": "考务费缴纳",
-              "dateRange": "2026-11-18 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-4",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-12-03 ~ 2026-12-05",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-5",
-              "type": "written_exam",
-              "label": "校园招聘笔试",
-              "dateRange": "2026-12-06",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-27",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-27），延续上次简报状态"
-        },
-        {
-          "id": "item-jnszhyy-1115",
-          "canonicalKey": "广安门医院济南医院::2027届高层次及急需紧缺中医药人才校园招聘",
-          "title": "广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章",
-          "sourceName": "广安门医院济南医院官网（同步济南卫生健康人才网）",
-          "sourceUrl": "https://www.jnszhyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "广安门医院济南医院（济南市中医医院）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）",
-            "专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生",
-            "资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸科临床医师",
-              "department": "针灸一科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 现场面谈/面试（免笔试绿色通道）",
-              "track": "tcm_physician"
-            },
-            {
-              "positionName": "小儿推拿中心医师",
-              "department": "推拿科（小儿推拿亚专科）",
-              "headcount": 1,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿研究方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 临床实操考核 + 面试",
-              "track": "tcm_physician",
-              "notes": "研究方向聚焦儿童脾胃及呼吸系统推拿调理者优先录用。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-zy-1",
-              "type": "registration",
-              "label": "校招网申及邮箱投递",
-              "dateRange": "2026-11-15 ~ 2026-11-30",
-              "status": "active"
-            },
-            {
-              "id": "ms-zy-2",
-              "type": "qualification_review",
-              "label": "资格初审与确认",
-              "dateRange": "2026-12-02 ~ 2026-12-03",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-zy-3",
-              "type": "interview",
-              "label": "院内面试及手法实操",
-              "dateRange": "2026-12-08",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-30",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-30），延续上次简报状态"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
-              "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
-              "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
-              "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-02",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-02），延续上次简报状态"
-        },
-        {
-          "id": "item-qilu-1115",
-          "canonicalKey": "齐鲁制药::2027届临床研发与医学事务校园招聘",
-          "title": "齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章",
-          "sourceName": "齐鲁制药集团官方招聘网站",
-          "sourceUrl": "https://www.qilu-pharma.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "齐鲁制药集团（济南总部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（总部驻地）",
-            "Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书",
-            "科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "医学事务专员 / 临床医学专员（校招）",
-              "department": "临床研发中心医学事务部",
-              "headcount": 4,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "临床医学、中医学、中西医结合、药学",
-              "freshGradOnly": true,
-              "examFormat": "线上笔试（医学基础+英文文献阅读）+ 两轮面试",
-              "track": "medical_cra",
-              "notes": "具备 GCP 证书、CET-4 及临床规培病历经验者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ql-1",
-              "type": "registration",
-              "label": "官方校招网申",
-              "dateRange": "2026-11-15 ~ 2026-12-10",
-              "status": "active"
-            },
-            {
-              "id": "ms-ql-2",
-              "type": "written_exam",
-              "label": "在线专业测评",
-              "dateRange": "2026-12-12",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ql-3",
-              "type": "interview",
-              "label": "济南总部终面",
-              "dateRange": "2026-12-18",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-10",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-10），延续上次简报状态"
-        }
-      ],
-      "groundingLinks": []
-    },
-    {
-      "id": "brief-2026-11-15-1794750496167",
-      "briefingDate": "2026-11-15",
-      "generatedAt": "2026-11-15T13:48:11.070Z",
-      "triggerType": "manual",
-      "baselineBriefingId": "brief-2026-11-15",
-      "baselineDate": "2026-11-15",
-      "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "已完成 3/18 个官方门户连通性巡检（搜索配额暂达上限，已自动切换为直连巡检模式），已延续并复核上次基准内未截止官方岗位。",
-      "stats": {
-        "totalMatched": 7,
-        "newCount": 0,
-        "updatedCount": 1,
-        "stillOpenCount": 6,
-        "anomalyCount": 1,
-        "tcmPhysicianCount": 5,
-        "medicalCraCount": 2
-      },
-      "items": [
-        {
-          "id": "item-jndsyy-1115-upd",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知",
-          "sourceName": "济南市第四人民医院官网 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "supplement_correction",
-          "region": "济南",
-          "employerName": "济南市第四人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
-              "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "supplement",
-              "label": "补充公告发布",
-              "dateRange": "2026-11-15",
-              "status": "urgent",
-              "note": "延长报名及缴费周期，推迟准考证打印与笔试日期"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "registration",
-              "label": "网上报名（已延期）",
-              "dateRange": "2026-11-12 ~ 2026-11-24",
-              "status": "delayed",
-              "note": "原截止 11-19，延期至 11-24 16:00"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "payment",
-              "label": "网上缴费（已调整）",
-              "dateRange": "2026-11-13 ~ 2026-11-25",
-              "status": "delayed"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "admit_card",
-              "label": "准考证打印（已调整）",
-              "dateRange": "2026-12-02 ~ 2026-12-04",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-5",
-              "type": "written_exam",
-              "label": "统一笔试（延期后）",
-              "dateRange": "2026-12-05",
-              "status": "delayed"
-            }
-          ],
-          "deadlineDate": "2026-11-24",
-          "hasAnomaly": true,
-          "diffStatus": "updated",
-          "anomalyDetail": "关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05",
-          "diffNote": "较 2026-11-14 简报发生异动：发布补充公告，报名延期 5 天、笔试推迟 1 周"
-        },
-        {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
-          "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
-              "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
-            }
-          ],
-          "deadlineDate": "2026-11-22",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-22），延续上次简报状态"
-        },
-        {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-26），延续上次简报状态"
-        },
-        {
-          "id": "item-qdzyy-1115",
-          "canonicalKey": "青岛市中医医院海慈医疗集团::2027届校园招聘职位表",
-          "title": "青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表",
-          "sourceName": "青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委",
-          "sourceUrl": "https://www.qdzyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "position_table",
-          "region": "青岛",
-          "employerName": "青岛市中医医院（海慈医疗集团）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省青岛市",
-            "岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）",
-            "经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿康复医师",
-              "department": "海慈医疗集团本部针灸推拿康复中心",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医骨伤科学",
-              "freshGradOnly": true,
-              "examFormat": "笔试（中医基础+针推专业）+ 综合面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-qd-1",
-              "type": "registration",
-              "label": "青岛人社网申报名",
-              "dateRange": "2026-11-15 ~ 2026-11-27",
-              "status": "active"
-            },
-            {
-              "id": "ms-qd-2",
-              "type": "qualification_review",
-              "label": "网上资格审查",
-              "dateRange": "2026-11-16 ~ 2026-11-28",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-3",
-              "type": "payment",
-              "label": "考务费缴纳",
-              "dateRange": "2026-11-18 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-4",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-12-03 ~ 2026-12-05",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-5",
-              "type": "written_exam",
-              "label": "校园招聘笔试",
-              "dateRange": "2026-12-06",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-27",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-27），延续上次简报状态"
-        },
-        {
-          "id": "item-jnszhyy-1115",
-          "canonicalKey": "广安门医院济南医院::2027届高层次及急需紧缺中医药人才校园招聘",
-          "title": "广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章",
-          "sourceName": "广安门医院济南医院官网（同步济南卫生健康人才网）",
-          "sourceUrl": "https://www.jnszhyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "广安门医院济南医院（济南市中医医院）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）",
-            "专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生",
-            "资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸科临床医师",
-              "department": "针灸一科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 现场面谈/面试（免笔试绿色通道）",
-              "track": "tcm_physician"
-            },
-            {
-              "positionName": "小儿推拿中心医师",
-              "department": "推拿科（小儿推拿亚专科）",
-              "headcount": 1,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿研究方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 临床实操考核 + 面试",
-              "track": "tcm_physician",
-              "notes": "研究方向聚焦儿童脾胃及呼吸系统推拿调理者优先录用。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-zy-1",
-              "type": "registration",
-              "label": "校招网申及邮箱投递",
-              "dateRange": "2026-11-15 ~ 2026-11-30",
-              "status": "active"
-            },
-            {
-              "id": "ms-zy-2",
-              "type": "qualification_review",
-              "label": "资格初审与确认",
-              "dateRange": "2026-12-02 ~ 2026-12-03",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-zy-3",
-              "type": "interview",
-              "label": "院内面试及手法实操",
-              "dateRange": "2026-12-08",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-30",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-30），延续上次简报状态"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
-              "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
-              "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
-              "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-02",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-02），延续上次简报状态"
-        },
-        {
-          "id": "item-qilu-1115",
-          "canonicalKey": "齐鲁制药::2027届临床研发与医学事务校园招聘",
-          "title": "齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章",
-          "sourceName": "齐鲁制药集团官方招聘网站",
-          "sourceUrl": "https://www.qilu-pharma.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "齐鲁制药集团（济南总部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（总部驻地）",
-            "Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书",
-            "科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "医学事务专员 / 临床医学专员（校招）",
-              "department": "临床研发中心医学事务部",
-              "headcount": 4,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "临床医学、中医学、中西医结合、药学",
-              "freshGradOnly": true,
-              "examFormat": "线上笔试（医学基础+英文文献阅读）+ 两轮面试",
-              "track": "medical_cra",
-              "notes": "具备 GCP 证书、CET-4 及临床规培病历经验者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ql-1",
-              "type": "registration",
-              "label": "官方校招网申",
-              "dateRange": "2026-11-15 ~ 2026-12-10",
-              "status": "active"
-            },
-            {
-              "id": "ms-ql-2",
-              "type": "written_exam",
-              "label": "在线专业测评",
-              "dateRange": "2026-12-12",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ql-3",
-              "type": "interview",
-              "label": "济南总部终面",
-              "dateRange": "2026-12-18",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-10",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-10），延续上次简报状态"
-        }
-      ],
-      "groundingLinks": []
-    },
-    {
-      "id": "brief-2026-11-15",
-      "briefingDate": "2026-11-15",
-      "generatedAt": "2026-11-15T00:00:00.000Z",
-      "triggerType": "scheduled",
-      "baselineBriefingId": "brief-2026-11-14",
-      "baselineDate": "2026-11-14",
-      "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "每日 08:00 自动汇总已完成增量比对（可点击“立即汇总今日公告”发起实时官源检索）",
-      "stats": {
-        "totalMatched": 7,
-        "newCount": 3,
-        "updatedCount": 1,
-        "stillOpenCount": 3,
-        "anomalyCount": 1,
-        "tcmPhysicianCount": 5,
-        "medicalCraCount": 2
-      },
-      "items": [
-        {
-          "id": "item-jndsyy-1115-upd",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "【补充公告】关于调整济南市第四人民医院2026年急需紧缺人才招聘报名及缴费时间的通知",
-          "sourceName": "济南市第四人民医院官网 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "supplement_correction",
-          "region": "济南",
-          "employerName": "济南市第四人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
-              "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "supplement",
-              "label": "补充公告发布",
-              "dateRange": "2026-11-15",
-              "status": "urgent",
-              "note": "延长报名及缴费周期，推迟准考证打印与笔试日期"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "registration",
-              "label": "网上报名（已延期）",
-              "dateRange": "2026-11-12 ~ 2026-11-24",
-              "status": "delayed",
-              "note": "原截止 11-19，延期至 11-24 16:00"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "payment",
-              "label": "网上缴费（已调整）",
-              "dateRange": "2026-11-13 ~ 2026-11-25",
-              "status": "delayed"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "admit_card",
-              "label": "准考证打印（已调整）",
-              "dateRange": "2026-12-02 ~ 2026-12-04",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-5",
-              "type": "written_exam",
-              "label": "统一笔试（延期后）",
-              "dateRange": "2026-12-05",
-              "status": "delayed"
-            }
-          ],
-          "deadlineDate": "2026-11-24",
-          "hasAnomaly": true,
-          "diffStatus": "updated",
-          "anomalyDetail": "关键节点变更：网上报名截止时间由 11-19 延期至 11-24；原定 11-28 笔试顺延至 12-05",
-          "diffNote": "较 2026-11-14 简报发生异动：发布补充公告，报名延期 5 天、笔试推迟 1 周"
-        },
-        {
-          "id": "item-qdzyy-1115",
-          "canonicalKey": "青岛市中医医院海慈医疗集团::2027届校园招聘职位表",
-          "title": "青岛市卫生健康委员会直属医院（青岛市中医医院/海慈医疗集团）2027届校园招聘公告及职位表",
-          "sourceName": "青岛市中医医院（海慈医疗集团）官网 / 青岛市卫健委",
-          "sourceUrl": "https://www.qdzyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "position_table",
-          "region": "青岛",
-          "employerName": "青岛市中医医院（海慈医疗集团）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省青岛市",
-            "岗位表精确匹配：针灸推拿科医师（硕士研究生，应届毕业生可报）",
-            "经历加分：周梦梦曾在即墨中医院（青岛）见习，具备青岛本地临床认知与三甲规培背景"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸推拿康复医师",
-              "department": "海慈医疗集团本部针灸推拿康复中心",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医骨伤科学",
-              "freshGradOnly": true,
-              "examFormat": "笔试（中医基础+针推专业）+ 综合面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-qd-1",
-              "type": "registration",
-              "label": "青岛人社网申报名",
-              "dateRange": "2026-11-15 ~ 2026-11-27",
-              "status": "active"
-            },
-            {
-              "id": "ms-qd-2",
-              "type": "qualification_review",
-              "label": "网上资格审查",
-              "dateRange": "2026-11-16 ~ 2026-11-28",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-3",
-              "type": "payment",
-              "label": "考务费缴纳",
-              "dateRange": "2026-11-18 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-4",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-12-03 ~ 2026-12-05",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-qd-5",
-              "type": "written_exam",
-              "label": "校园招聘笔试",
-              "dateRange": "2026-12-06",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-27",
-          "hasAnomaly": false,
-          "diffStatus": "new",
-          "diffNote": "较上次简报新增匹配公告/岗位"
-        },
-        {
-          "id": "item-jnszhyy-1115",
-          "canonicalKey": "广安门医院济南医院::2027届高层次及急需紧缺中医药人才校园招聘",
-          "title": "广安门医院济南医院（济南市中医医院）2027届硕士及以上中医药人才校园招聘简章",
-          "sourceName": "广安门医院济南医院官网（同步济南卫生健康人才网）",
-          "sourceUrl": "https://www.jnszhyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "广安门医院济南医院（济南市中医医院）",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（国家区域医疗中心合作三甲中医院）",
-            "专业高度精准匹配：招录针灸科、小儿推拿中心硕士研究生",
-            "资历契合度极高：要求执业医师证及三甲中医院规培经验，完全匹配周梦梦履历"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "针灸科临床医师",
-              "department": "针灸一科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 现场面谈/面试（免笔试绿色通道）",
-              "track": "tcm_physician"
-            },
-            {
-              "positionName": "小儿推拿中心医师",
-              "department": "推拿科（小儿推拿亚专科）",
-              "headcount": 1,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿研究方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "资格审查 + 临床实操考核 + 面试",
-              "track": "tcm_physician",
-              "notes": "研究方向聚焦儿童脾胃及呼吸系统推拿调理者优先录用。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-zy-1",
-              "type": "registration",
-              "label": "校招网申及邮箱投递",
-              "dateRange": "2026-11-15 ~ 2026-11-30",
-              "status": "active"
-            },
-            {
-              "id": "ms-zy-2",
-              "type": "qualification_review",
-              "label": "资格初审与确认",
-              "dateRange": "2026-12-02 ~ 2026-12-03",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-zy-3",
-              "type": "interview",
-              "label": "院内面试及手法实操",
-              "dateRange": "2026-12-08",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-30",
-          "hasAnomaly": false,
-          "diffStatus": "new",
-          "diffNote": "较上次简报新增匹配公告/岗位"
-        },
-        {
-          "id": "item-qilu-1115",
-          "canonicalKey": "齐鲁制药::2027届临床研发与医学事务校园招聘",
-          "title": "齐鲁制药集团2027届创新药临床研究（CRA/医学事务专员）校园招聘简章",
-          "sourceName": "齐鲁制药集团官方招聘网站",
-          "sourceUrl": "https://www.qilu-pharma.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-15",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "齐鲁制药集团（济南总部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市（总部驻地）",
-            "Track B 简历精准匹配：医学事务/临床研究 CRA 岗，要求医药硕士+GCP证书",
-            "科研与文档优势：Meta分析、SPSS/R 统计分析及规范化病历撰写经验直接契合岗位职责"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "医学事务专员 / 临床医学专员（校招）",
-              "department": "临床研发中心医学事务部",
-              "headcount": 4,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "临床医学、中医学、中西医结合、药学",
-              "freshGradOnly": true,
-              "examFormat": "线上笔试（医学基础+英文文献阅读）+ 两轮面试",
-              "track": "medical_cra",
-              "notes": "具备 GCP 证书、CET-4 及临床规培病历经验者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ql-1",
-              "type": "registration",
-              "label": "官方校招网申",
-              "dateRange": "2026-11-15 ~ 2026-12-10",
-              "status": "active"
-            },
-            {
-              "id": "ms-ql-2",
-              "type": "written_exam",
-              "label": "在线专业测评",
-              "dateRange": "2026-12-12",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ql-3",
-              "type": "interview",
-              "label": "济南总部终面",
-              "dateRange": "2026-12-18",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-10",
-          "hasAnomaly": false,
-          "diffStatus": "new",
-          "diffNote": "较上次简报新增匹配公告/岗位"
-        },
-        {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
-          "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
-              "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
-              "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
-            }
-          ],
-          "deadlineDate": "2026-11-22",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-22），延续上次简报状态"
-        },
-        {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-11-26），延续上次简报状态"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
-              "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
-              "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
-              "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-12-02",
-          "hasAnomaly": false,
-          "diffStatus": "still_open",
-          "diffNote": "未截止报名（截止 2026-12-02），延续上次简报状态"
-        }
-      ],
-      "groundingLinks": []
-    },
-    {
-      "id": "brief-2026-11-14",
-      "briefingDate": "2026-11-14",
-      "generatedAt": "2026-11-14T00:00:00.000Z",
-      "triggerType": "baseline",
       "baselineBriefingId": null,
       "baselineDate": null,
       "sourcesCheckedCount": 18,
-      "liveScanUsed": false,
-      "scanStatusMessage": "初始基准简报（2026-11-14 08:00 官源汇总快照）",
+      "liveScanUsed": true,
+      "scanStatusMessage": "已完成真实官源巡检（直连成功 8/18 个官方门户，网页直采解析出 5 条真实公告；未配置 GEMINI_API_KEY（可在 GitHub Secrets 添加以补充检索因境外网络限制无法直连的医院官网））。绝不包含任何示例假数据。",
       "stats": {
         "totalMatched": 4,
         "newCount": 4,
         "updatedCount": 0,
         "stillOpenCount": 0,
         "anomalyCount": 0,
-        "tcmPhysicianCount": 3,
-        "medicalCraCount": 1
+        "tcmPhysicianCount": 4,
+        "medicalCraCount": 0
       },
       "items": [
         {
-          "id": "item-jndwyy-1111",
-          "canonicalKey": "济南市第五人民医院::2027届医学人才校园招聘简章",
-          "title": "济南市第五人民医院2027届高层次及紧缺专业人才校园招聘公告",
-          "sourceName": "济南市第五人民医院官方网站",
-          "sourceUrl": "https://www.jndwyy.cn/",
-          "sourceTier": "hospital_official",
-          "publishDate": "2026-11-11",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "济南市第五人民医院",
-          "employerCategory": "公立医院",
-          "matchedTrack": "tcm_physician",
-          "matchReasons": [
-            "重点意向城市命中：山东省济南市",
-            "学历与专业匹配：针灸推拿学硕士研究生",
-            "资质与规培加分：持有执业医师资格证，具备三甲中医院规培轮转经验"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "中医康复/针灸推拿医师",
-              "department": "中医科 / 康复医学科",
-              "headcount": 2,
-              "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学、中医学",
-              "freshGradOnly": true,
-              "examFormat": "校招综合面试 + 临床技能考核",
-              "track": "tcm_physician",
-              "notes": "须取得执业医师资格证，完成住院医师规范化培训者优先。"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-dw-1",
-              "type": "registration",
-              "label": "网上报名与简历投递",
-              "dateRange": "2026-11-11 ~ 2026-11-26",
-              "status": "active"
-            },
-            {
-              "id": "ms-dw-2",
-              "type": "qualification_review",
-              "label": "现场资格审查",
-              "dateRange": "2026-11-28 ~ 2026-11-29",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-dw-3",
-              "type": "interview",
-              "label": "校招面试及专业实操",
-              "dateRange": "2026-12-05",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-26",
-          "hasAnomaly": false,
-          "diffStatus": "new"
-        },
-        {
-          "id": "item-jndsyy-1112",
-          "canonicalKey": "济南市第四人民医院::2026年下半年急需紧缺人才招聘",
-          "title": "济南市第四人民医院2026年急需紧缺专业技术人才公开招聘公告",
-          "sourceName": "济南市第四人民医院官方网站 / 济南卫生健康人才网",
-          "sourceUrl": "https://www.jndsyy.cn/",
+          "id": "scrape-src-jnsjgyy-2026-11-12-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3977-1.html",
           "sourceTier": "hospital_official",
           "publishDate": "2026-11-12",
-          "announcementType": "position_table",
+          "announcementType": "new_announcement",
           "region": "济南",
-          "employerName": "济南市第四人民医院",
+          "employerName": "济南市机关医院",
           "employerCategory": "公立医院",
           "matchedTrack": "tcm_physician",
           "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-12",
             "重点意向城市命中：山东省济南市",
-            "专业与学历匹配：针灸推拿学硕士研究生",
-            "考试类型吻合：笔试+专业面试"
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "身份与招聘类型匹配：2027届应届毕业生 · 校招通道"
           ],
           "matchedPositions": [
             {
-              "positionName": "针灸推拿医师（A类）",
-              "department": "中医理疗科",
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
               "headcount": 1,
-              "degreeReq": "硕士研究生",
-              "majorReq": "针灸推拿学",
-              "freshGradOnly": false,
-              "examFormat": "笔试 + 面试",
-              "track": "tcm_physician"
-            }
-          ],
-          "milestones": [
-            {
-              "id": "ms-ds-1",
-              "type": "registration",
-              "label": "网上报名",
-              "dateRange": "2026-11-12 ~ 2026-11-19",
-              "status": "active"
-            },
-            {
-              "id": "ms-ds-2",
-              "type": "payment",
-              "label": "网上缴费",
-              "dateRange": "2026-11-13 ~ 2026-11-20",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-3",
-              "type": "admit_card",
-              "label": "准考证打印",
-              "dateRange": "2026-11-25 ~ 2026-11-27",
-              "status": "upcoming"
-            },
-            {
-              "id": "ms-ds-4",
-              "type": "written_exam",
-              "label": "统一笔试",
-              "dateRange": "2026-11-28",
-              "status": "upcoming"
-            }
-          ],
-          "deadlineDate": "2026-11-19",
-          "hasAnomaly": false,
-          "diffStatus": "new"
-        },
-        {
-          "id": "item-tigermed-1110",
-          "canonicalKey": "泰格医药::2027届临床研究CRA校园招聘",
-          "title": "泰格医药2027届“星火计划”临床研究监查员（CRA）校园招聘启事",
-          "sourceName": "泰格医药官方招聘官网",
-          "sourceUrl": "https://www.tigermedgrp.com/",
-          "sourceTier": "soe_medical_enterprise",
-          "publishDate": "2026-11-10",
-          "announcementType": "new_announcement",
-          "region": "济南",
-          "employerName": "泰格医药（济南/青岛临床运营部）",
-          "employerCategory": "外企/国企药企",
-          "matchedTrack": "medical_cra",
-          "matchReasons": [
-            "重点意向城市命中：可选济南、青岛临床中心驻地",
-            "核心证书硬性加分：持有 GCP 证书（2026.08）与执业医师证",
-            "临床与科研能力契合：三甲医院住院病历/随访经历 + SPSS/R 数据核查能力"
-          ],
-          "matchedPositions": [
-            {
-              "positionName": "临床研究监查员（CRA 管培生）",
-              "department": "临床运营部（山东大区-济南/青岛）",
-              "headcount": 6,
-              "degreeReq": "硕士研究生优先",
-              "majorReq": "临床医学、中医学、针灸推拿学、药学等医药相关专业",
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
               "freshGradOnly": true,
-              "examFormat": "网申测评 + 业务面试 + HR终面",
-              "track": "medical_cra",
-              "notes": "持GCP证书、熟悉病历文书与临床试验流程者免初筛笔试。"
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
             }
           ],
           "milestones": [
             {
-              "id": "ms-tm-1",
-              "type": "campus_talk",
-              "label": "山东高校线上宣讲会",
-              "dateRange": "2026-11-12",
-              "status": "completed"
-            },
-            {
-              "id": "ms-tm-2",
+              "id": "ms-reg-2026-11-12",
               "type": "registration",
-              "label": "校招网申截止",
-              "dateRange": "2026-11-10 ~ 2026-12-02",
+              "label": "网上报名 / 投递（原文摘录）",
+              "dateRange": "2026年11月20日14:00-16:00 二、第二场 报名地点：北京大学医学部（北京市海淀区",
               "status": "active"
-            },
-            {
-              "id": "ms-tm-3",
-              "type": "interview",
-              "label": "山东区集中面试",
-              "dateRange": "2026-12-06 ~ 2026-12-10",
-              "status": "upcoming"
             }
           ],
-          "deadlineDate": "2026-12-02",
+          "deadlineDate": "2026-11-21",
           "hasAnomaly": false,
-          "diffStatus": "new"
+          "diffStatus": "new",
+          "isLiveGrounded": true,
+          "diffNote": "较上次简报新增匹配公告/岗位"
         },
         {
-          "id": "item-sd-hrss-1109",
-          "canonicalKey": "山东省人社厅::省属高校及医院2027届校园引才专场",
-          "title": "山东省省属医疗卫生事业单位赴驻济高校2027届毕业生专场招聘公告",
-          "sourceName": "山东省人力资源和社会保障厅官网",
-          "sourceUrl": "http://hrss.shandong.gov.cn/",
-          "sourceTier": "provincial_municipal_hrss",
-          "publishDate": "2026-11-09",
+          "id": "scrape-src-jnslyy-2026-11-11-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/51/56396.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
           "announcementType": "position_table",
-          "region": "山东省级/国家",
-          "employerName": "山东省人社厅 / 省属三甲医院联合引才",
-          "employerCategory": "人社/卫健委",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
           "matchedTrack": "tcm_physician",
           "matchReasons": [
-            "官方一手省级人社主渠道，含山东中医药大学校内双选日程",
-            "学历与身份匹配：2027届硕士研究生应届生专场",
-            "匹配临床岗位：针灸推拿、中医儿科方向需求集中"
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
           ],
           "matchedPositions": [
             {
-              "positionName": "中医儿科/小儿推拿医师",
-              "department": "省属中医医院儿科及推拿中心",
-              "headcount": 3,
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
               "degreeReq": "硕士研究生及以上",
-              "majorReq": "针灸推拿学（小儿推拿与中医儿科方向优先）",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
               "freshGradOnly": true,
-              "examFormat": "校园双选资格初审 + 面试",
-              "track": "tcm_physician"
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
             }
           ],
           "milestones": [
             {
-              "id": "ms-sd-1",
-              "type": "campus_talk",
-              "label": "山东中医药大学长清校区双选会",
-              "dateRange": "2026-11-18 09:00",
-              "status": "urgent",
-              "note": "距校招双选仅剩3天，需提前准备纸质版简历及规培/执业证复印件"
-            },
-            {
-              "id": "ms-sd-2",
+              "id": "ms-pub-2026-11-11",
               "type": "registration",
-              "label": "线上岗位预报名",
-              "dateRange": "2026-11-09 ~ 2026-11-22",
-              "status": "active"
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-11 ~ 2026-11-25",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
             }
           ],
-          "deadlineDate": "2026-11-22",
+          "deadlineDate": "2026-11-25",
           "hasAnomaly": false,
-          "diffStatus": "new"
+          "diffStatus": "new",
+          "isLiveGrounded": true,
+          "diffNote": "较上次简报新增匹配公告/岗位"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-11-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3976-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-11",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-11 ~ 2026-11-25",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-25",
+          "hasAnomaly": false,
+          "diffStatus": "new",
+          "isLiveGrounded": true,
+          "diffNote": "较上次简报新增匹配公告/岗位"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-15-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的",
+          "title": "济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的公告",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/38/55776.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-15",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-15",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "笔试 / 面试（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-15",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-15 ~ 2026-11-29",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-29",
+          "hasAnomaly": false,
+          "diffStatus": "new",
+          "isLiveGrounded": true,
+          "diffNote": "较上次简报新增匹配公告/岗位"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-06-17-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::关于公布济南市机关医院公开招聘人员（控制总量）考察体检范围人选名单的公告根据2026年3月30日《2026年度济南市卫生健康委员会所属事业单位公开招聘人员公告》有关要求，2026年6月16日，济南市机关医院对面试人选进时间:",
+          "title": "关于公布济南市机关医院公开招聘人员（控制总量）考察体检范围人选名单的公告 根据2026年3月30日《2026年度济南市卫生健康委员会所属事业单位公开招聘人员公告》有关要求，2026年6月16日，济南市机关医院对面试人选进 时间:",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3848-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-06-17",
+            "重点意向城市命中：山东省济南市",
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "身份与招聘类型匹配：2027届应届毕业生 · 校招通道"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": false,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-06-17",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-06-17 ~ 2026-07-01",
+              "status": "completed",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-07-01",
+          "hasAnomaly": false,
+          "diffStatus": "closed",
+          "isLiveGrounded": true,
+          "diffNote": "较上次简报新增匹配公告/岗位"
         }
       ],
+      "groundingLinks": []
+    },
+    {
+      "id": "brief-baseline-2026-11-15",
+      "briefingDate": "2026-11-15",
+      "generatedAt": "2026-11-15T15:24:41.520Z",
+      "triggerType": "baseline",
+      "baselineBriefingId": null,
+      "baselineDate": null,
+      "sourcesCheckedCount": 18,
+      "liveScanUsed": false,
+      "scanStatusMessage": "已切换为纯真实官源模式（已清空示例假数据）。请点击“立即汇总今日公告”或运行每日 08:00 自动检索，仅展示真实抓取并核验的官方公告原文。",
+      "stats": {
+        "totalMatched": 0,
+        "newCount": 0,
+        "updatedCount": 0,
+        "stillOpenCount": 0,
+        "anomalyCount": 0,
+        "tcmPhysicianCount": 0,
+        "medicalCraCount": 0
+      },
+      "items": [],
       "groundingLinks": []
     }
   ]

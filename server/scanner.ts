@@ -12,43 +12,7 @@ import type {
   OfficialSource,
   RecruitmentItem,
 } from '../src/shared/types.ts';
-
-interface PortalProbeResult {
-  id: string;
-  httpStatus: number | null;
-  note: string;
-}
-
-async function probeOfficialPortal(source: OfficialSource): Promise<PortalProbeResult> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 3500);
-  try {
-    const res = await fetch(source.url, {
-      method: 'GET',
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; OfficialRecruitmentMonitor/1.0)',
-      },
-    });
-    const contentType = res.headers.get('content-type') || '';
-    let note = `HTTP ${res.status}`;
-    if (res.ok && contentType.includes('text/html')) {
-      const html = (await res.text()).slice(0, 6000);
-      const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-      if (titleMatch?.[1]) {
-        note = `在线 · ${titleMatch[1].trim().slice(0, 40)}`;
-      } else {
-        note = '官方页面可访问';
-      }
-    }
-    return { id: source.id, httpStatus: res.status, note };
-  } catch (err) {
-    const message = err instanceof Error && err.name === 'AbortError' ? '连接超时（官方站点限制或网络波动）' : '官方站暂不可达';
-    return { id: source.id, httpStatus: null, note: message };
-  } finally {
-    clearTimeout(timer);
-  }
-}
+import { scrapeOfficialPortal } from './portalScraper.ts';
 
 function getShanghaiDateString(date: Date = new Date()): string {
   const shanghaiMs = date.getTime() + 8 * 60 * 60 * 1000;
@@ -86,29 +50,45 @@ export async function runOfficialRecruitmentScan(
   const todayStr = getShanghaiDateString(now);
   const enabledSources = state.sources.filter((s) => s.enabled);
 
-  // 1. Real reachability check on enabled official portals (parallel, capped latency)
-  const probeResults = await Promise.all(enabledSources.map((src) => probeOfficialPortal(src)));
-  const probeMap = new Map(probeResults.map((p) => [p.id, p]));
+  // 1. Real HTTP scraping across enabled official portals (homepage + recruitment columns + article details)
+  const scrapeResults = await Promise.all(
+    enabledSources.map((src) => scrapeOfficialPortal(src, state.profile, todayStr))
+  );
+  const scrapeMap = new Map(scrapeResults.map((p) => [p.source.id, p]));
   const nowIso = now.toISOString();
 
   const updatedSources = state.sources.map((src) => {
-    const probe = probeMap.get(src.id);
-    if (!probe) return src;
+    const res = scrapeMap.get(src.id);
+    if (!res) return src;
     return {
       ...src,
       lastCheckedAt: nowIso,
-      lastHttpStatus: probe.httpStatus,
-      lastCheckNote: probe.note,
+      lastHttpStatus: res.httpStatus,
+      lastCheckNote: res.note,
     };
   });
 
-  const baselineBriefing = state.briefings[0] ?? null;
-  const baselineItems = baselineBriefing?.items ?? [];
+  const directScrapedItems: RecruitmentItem[] = [];
+  const seenUrls = new Set<string>();
+  const seenKeys = new Set<string>();
+  for (const res of scrapeResults) {
+    for (const item of res.items) {
+      if (!seenUrls.has(item.sourceUrl) && !seenKeys.has(item.canonicalKey)) {
+        seenUrls.add(item.sourceUrl);
+        seenKeys.add(item.canonicalKey);
+        directScrapedItems.push(item);
+      }
+    }
+  }
 
-  let liveItems: RecruitmentItem[] = [];
-  let groundingLinks: GroundingLink[] = [];
-  let liveScanUsed = false;
-  let scanStatusMessage = '';
+  // Carry forward only real live-verified baseline items (never retain legacy placeholder items)
+  const baselineBriefing = state.briefings[0] ?? null;
+  const baselineItems = (baselineBriefing?.items ?? []).filter((item) => item.isLiveGrounded === true);
+
+  const geminiItems: RecruitmentItem[] = [];
+  const groundingLinks: GroundingLink[] = [];
+  let groundingUsed = false;
+  let geminiStatusNote = '';
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (apiKey && apiKey.trim().length > 0 && apiKey !== 'MY_GEMINI_API_KEY') {
@@ -136,15 +116,15 @@ export async function runOfficialRecruitmentScan(
 - 持有证书：${state.profile.certificates.join('、')}
 - 双赛道意向：1) 针灸推拿医师/中医临床/康复理疗；2) 医学事务/临床研究 CRA（持GCP证书+执业医师证）
 
-【唯一允许的信息源（严禁返回第三方商业招聘站或培训机构网站）】
+【唯一允许的信息源（严禁返回第三方商业招聘站或培训机构网站，且每条必须为真实可打开的公告详情页URL）】
 ${sourceListText}
 以及国家公务员局官网(scs.gov.cn)、山东/济南/青岛人社局及卫健委官网、公立医院官网、国企医疗/药企官方招聘渠道。
 
-请输出一个 JSON 数组（放在 \`\`\`json ... \`\`\` 中），最多 6 条真实可查的最新或未截止官方公告。每条必须严格包含字段：
+请输出一个 JSON 数组（放在 \`\`\`json ... \`\`\` 中），只输出真实检索到的最新或未截止官方公告（找不到则输出空数组 []，严禁编造日期或公告）。每条必须严格包含字段：
 {
   "title": "官方原文标题",
   "sourceName": "官方发布单位名称",
-  "sourceUrl": "必须为官方来源真实URL",
+  "sourceUrl": "必须为官方来源真实公告详情页URL",
   "publishDate": "YYYY-MM-DD",
   "announcementType": "new_announcement | position_table | supplement_correction",
   "region": "济南 | 青岛 | 山东省级/国家",
@@ -253,8 +233,9 @@ ${sourceListText}
         };
 
         const matchEval = evaluateProfileMatch(candidateItem, state.profile);
-        if (matchEval.isMatch) {
-          liveItems.push({
+        if (matchEval.isMatch && !seenUrls.has(url)) {
+          seenUrls.add(url);
+          geminiItems.push({
             ...candidateItem,
             matchedTrack: matchEval.matchedTrack,
             matchReasons: matchEval.reasons,
@@ -262,38 +243,43 @@ ${sourceListText}
         }
       }
 
-      liveScanUsed = true;
-      const reachableCount = probeResults.filter((p) => p.httpStatus !== null).length;
-      scanStatusMessage = `已完成实时官源探测（${reachableCount}/${enabledSources.length} 个官方门户在线）及 Search Grounding 官方公告核验，过滤非官方聚合站后新增/核对 ${liveItems.length} 条记录。`;
+      groundingUsed = true;
+      geminiStatusNote = `Search Grounding 额外检索核验 ${geminiItems.length} 条`;
     } catch (err) {
       const rawMsg = err instanceof Error ? err.message : '';
-      let humanReason = '实时搜索连接受限';
       if (rawMsg.includes('429') || rawMsg.includes('RESOURCE_EXHAUSTED') || rawMsg.includes('quota')) {
-        humanReason = '搜索配额暂达上限，已自动切换为直连巡检模式';
+        geminiStatusNote = 'Search Grounding 配额暂达上限，本次仅保留直连抓取结果';
       } else if (rawMsg.includes('403') || rawMsg.includes('400') || rawMsg.includes('API_KEY')) {
-        humanReason = '搜索服务鉴权未就绪，已使用直连巡检模式';
+        geminiStatusNote = 'Search Grounding 鉴权未就绪，本次仅保留直连抓取结果';
+      } else {
+        geminiStatusNote = 'Search Grounding 暂不可用，本次仅保留直连抓取结果';
       }
-      const reachableCount = probeResults.filter((p) => p.httpStatus !== null).length;
-      scanStatusMessage = `已完成 ${reachableCount}/${enabledSources.length} 个官方门户连通性巡检（${humanReason}），已延续并复核上次基准内未截止官方岗位。`;
     }
   } else {
-    const reachableCount = probeResults.filter((p) => p.httpStatus !== null).length;
-    scanStatusMessage = `已完成 ${reachableCount}/${enabledSources.length} 个官方门户连通性巡检；已依据上次基准复核全部未截止官方岗位（配置 GEMINI_API_KEY 后可启用实时 Google 搜索官源抓取）。`;
+    geminiStatusNote = '未配置 GEMINI_API_KEY（可在 GitHub Secrets 添加以补充检索因境外网络限制无法直连的医院官网）';
   }
 
-  // Merge live grounded items with existing active baseline items before incremental diff
-  const incomingForDiff: RecruitmentItem[] =
-    liveItems.length > 0 ? [...liveItems, ...baselineItems] : [...baselineItems];
+  const reachableCount = scrapeResults.filter((p) => p.httpStatus !== null && p.httpStatus < 400).length;
+  const freshItems = [...directScrapedItems, ...geminiItems];
+  const liveScanUsed = reachableCount > 0 || groundingUsed;
+  const scanStatusMessage = `已完成真实官源巡检（直连成功 ${reachableCount}/${enabledSources.length} 个官方门户，网页直采解析出 ${directScrapedItems.length} 条真实公告；${geminiStatusNote}）。绝不包含任何示例假数据。`;
 
-  const diffed = computeIncrementalDiff(incomingForDiff, baselineBriefing, todayStr);
+  // Merge fresh real items with previous real items before incremental diff
+  const incomingForDiff: RecruitmentItem[] = [...freshItems, ...baselineItems];
+  const cleanBaseline =
+    baselineBriefing && baselineItems.length > 0
+      ? { ...baselineBriefing, items: baselineItems }
+      : null;
+
+  const diffed = computeIncrementalDiff(incomingForDiff, cleanBaseline, todayStr);
 
   const newBriefing: BriefingSnapshot = {
     id: `brief-${todayStr}-${Date.now()}`,
     briefingDate: todayStr,
     generatedAt: nowIso,
     triggerType,
-    baselineBriefingId: baselineBriefing?.id ?? null,
-    baselineDate: baselineBriefing?.briefingDate ?? null,
+    baselineBriefingId: cleanBaseline?.id ?? null,
+    baselineDate: cleanBaseline?.briefingDate ?? null,
     sourcesCheckedCount: enabledSources.length,
     liveScanUsed,
     scanStatusMessage,

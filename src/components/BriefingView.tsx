@@ -240,23 +240,29 @@ export function BriefingView({
       {filteredItems.length === 0 ? (
         <div className="bg-white border border-slate-200 rounded-lg p-10 text-center space-y-3">
           <div className="text-sm font-medium text-slate-900">
-            当前筛选条件下暂无匹配的招聘公告
+            {briefing.items.length === 0
+              ? '当前暂无真实官方匹配公告（已禁用示例假数据）'
+              : '当前筛选条件下暂无匹配的招聘公告'}
           </div>
-          <p className="text-xs text-slate-500">
-            可尝试重置筛选条件，或点击右上角“立即汇总今日公告”发起新一轮官方渠道检索。
+          <p className="text-xs text-slate-500 max-w-xl mx-auto leading-relaxed">
+            {briefing.items.length === 0
+              ? '系统仅展示从官方门户直连抓取或经 Search Grounding 核验的真实公告原文。可点击右上角“立即汇总今日公告”重新检索，或在 GitHub Secrets 中配置 GEMINI_API_KEY 以覆盖限制境外服务器直连的医院官网。'
+              : '可尝试重置筛选条件，或点击右上角“立即汇总今日公告”发起新一轮官方渠道检索。'}
           </p>
-          <button
-            type="button"
-            onClick={() => {
-              setDiffFilter('all');
-              setTrackFilter('all');
-              setRegionFilter('all');
-              setKeyword('');
-            }}
-            className="px-4 py-2 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
-          >
-            重置全部筛选
-          </button>
+          {briefing.items.length > 0 && (
+            <button
+              type="button"
+              onClick={() => {
+                setDiffFilter('all');
+                setTrackFilter('all');
+                setRegionFilter('all');
+                setKeyword('');
+              }}
+              className="px-4 py-2 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              重置全部筛选
+            </button>
+          )}
         </div>
       ) : (
         <div className="bg-white border border-slate-200 rounded-lg divide-y divide-slate-200">

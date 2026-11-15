@@ -111,56 +111,58 @@ export function generateStandaloneWorkbenchHtml(
   const enabledSources = sources.filter((s) => s.enabled);
   const safeApiBase = (options?.apiBaseUrl || '').trim().replace(/\/+$/, '');
 
-  const itemsHtml = activeItems
-    .map((item) => {
-      const positionsRows = item.matchedPositions
-        .map(
-          (p) => `
+  const itemsHtml =
+    activeItems.length > 0
+      ? activeItems
+          .map((item) => {
+            const positionsRows = item.matchedPositions
+              .map(
+                (p) => `
           <tr>
             <td><strong>${escapeHtml(p.positionName)}</strong><div class="muted">${escapeHtml(p.department)}</div></td>
             <td class="mono num">${p.headcount}</td>
             <td>${escapeHtml(p.degreeReq)}<div class="muted">${escapeHtml(p.majorReq)}</div></td>
             <td>${escapeHtml(p.examFormat)}</td>
           </tr>`
-        )
-        .join('');
+              )
+              .join('');
 
-      const milestonesRows = item.milestones
-        .map(
-          (m) => `
+            const milestonesRows = item.milestones
+              .map(
+                (m) => `
           <li>
             <span class="ms-label">${escapeHtml(m.label)}</span>
             <span class="mono">${escapeHtml(m.dateRange)}</span>
             ${m.note ? `<span class="muted"> · ${escapeHtml(m.note)}</span>` : ''}
           </li>`
-        )
-        .join('');
+              )
+              .join('');
 
-      const reasonsList = item.matchReasons
-        .map((r) => `<li>${escapeHtml(r)}</li>`)
-        .join('');
+            const reasonsList = item.matchReasons
+              .map((r) => `<li>${escapeHtml(r)}</li>`)
+              .join('');
 
-      const searchText = escapeHtml(
-        [
-          item.title,
-          item.employerName,
-          item.sourceName,
-          item.region,
-          ...item.matchReasons,
-          ...item.matchedPositions.map((p) => `${p.positionName} ${p.department}`),
-        ]
-          .join(' ')
-          .toLowerCase()
-      );
+            const searchText = escapeHtml(
+              [
+                item.title,
+                item.employerName,
+                item.sourceName,
+                item.region,
+                ...item.matchReasons,
+                ...item.matchedPositions.map((p) => `${p.positionName} ${p.department}`),
+              ]
+                .join(' ')
+                .toLowerCase()
+            );
 
-      const statusClass =
-        item.diffStatus === 'updated'
-          ? 'status-warn'
-          : item.diffStatus === 'new'
-          ? 'status-teal'
-          : 'status-muted';
+            const statusClass =
+              item.diffStatus === 'updated'
+                ? 'status-warn'
+                : item.diffStatus === 'new'
+                ? 'status-teal'
+                : 'status-muted';
 
-      return `
+            return `
       <article class="card item-card" data-diff="${escapeHtml(item.diffStatus)}" data-track="${escapeHtml(item.matchedTrack)}" data-region="${escapeHtml(item.region)}" data-search="${searchText}">
         <div class="meta-line">
           <span class="${statusClass}">${escapeHtml(diffLabel(item.diffStatus))}</span>
@@ -209,8 +211,9 @@ export function generateStandaloneWorkbenchHtml(
           </table>
         </details>
       </article>`;
-    })
-    .join('\n');
+          })
+          .join('\n')
+      : `<div class="card"><h3>当前暂无新增/未截止的真实官方匹配公告</h3><p class="muted">${escapeHtml(briefing.scanStatusMessage)}</p></div>`;
 
   const sourcesHtml = enabledSources
     .map(
@@ -417,7 +420,7 @@ export function generateStandaloneWorkbenchHtml(
   </header>
 
   <main class="container">
-    <div id="syncStatusBar" class="sync-note" style="display:none;"></div>
+    <div id="syncStatusBar" class="sync-note">${escapeHtml(briefing.scanStatusMessage)}</div>
     <section id="view-briefing" class="panel active">
       <div class="kpi-grid">
         <div class="kpi-cell"><div class="muted">当前有效匹配</div><div id="kpiTotal" class="kpi-val mono">${briefing.stats.totalMatched}</div></div>

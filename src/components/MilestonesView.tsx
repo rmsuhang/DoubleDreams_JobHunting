@@ -182,54 +182,62 @@ export function MilestonesView({ briefing, onSelectItem }: MilestonesViewProps) 
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200">
-            {filteredNodes.map(({ key, item, milestone }) => {
-              const st = STATUS_DISPLAY[milestone.status];
-              return (
-                <tr key={key} className="hover:bg-slate-50/70 transition-colors align-top">
-                  <td className="py-3.5 px-4 text-xs text-slate-600 whitespace-nowrap">
-                    {NODE_TYPE_LABEL[milestone.type]}
-                  </td>
-                  <td className="py-3.5 px-4">
-                    <div className="font-medium text-slate-900">{milestone.label}</div>
-                    {milestone.note && (
-                      <div className="text-xs text-slate-500 mt-0.5">{milestone.note}</div>
-                    )}
-                  </td>
-                  <td className="py-3.5 px-4 font-mono-tabular text-xs text-slate-800 whitespace-nowrap">
-                    {milestone.dateRange}
-                  </td>
-                  <td className={`py-3.5 px-4 text-xs whitespace-nowrap ${st.className}`}>
-                    {st.label}
-                  </td>
-                  <td className="py-3.5 px-4 text-xs space-y-1">
-                    <div className="font-medium text-slate-900">{item.employerName}</div>
-                    <div className="text-slate-600 line-clamp-1">{item.title}</div>
-                    <div className="text-slate-500 flex items-center gap-2">
-                      <span className="font-mono-tabular">发布 {item.publishDate}</span>
-                      <span aria-hidden="true">·</span>
-                      <a
-                        href={item.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-teal-700 hover:underline inline-flex items-center gap-0.5"
+            {filteredNodes.length === 0 ? (
+              <tr>
+                <td colSpan={6} className="py-10 px-4 text-center text-xs text-slate-500">
+                  当前暂无真实招聘节点数据（已禁用示例假数据）。运行官源检索并命中公告后，将在此集中展示报名、资格审查、准考证、笔试与面试时间轴。
+                </td>
+              </tr>
+            ) : (
+              filteredNodes.map(({ key, item, milestone }) => {
+                const st = STATUS_DISPLAY[milestone.status];
+                return (
+                  <tr key={key} className="hover:bg-slate-50/70 transition-colors align-top">
+                    <td className="py-3.5 px-4 text-xs text-slate-600 whitespace-nowrap">
+                      {NODE_TYPE_LABEL[milestone.type]}
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="font-medium text-slate-900">{milestone.label}</div>
+                      {milestone.note && (
+                        <div className="text-xs text-slate-500 mt-0.5">{milestone.note}</div>
+                      )}
+                    </td>
+                    <td className="py-3.5 px-4 font-mono-tabular text-xs text-slate-800 whitespace-nowrap">
+                      {milestone.dateRange}
+                    </td>
+                    <td className={`py-3.5 px-4 text-xs whitespace-nowrap ${st.className}`}>
+                      {st.label}
+                    </td>
+                    <td className="py-3.5 px-4 text-xs space-y-1">
+                      <div className="font-medium text-slate-900">{item.employerName}</div>
+                      <div className="text-slate-600 line-clamp-1">{item.title}</div>
+                      <div className="text-slate-500 flex items-center gap-2">
+                        <span className="font-mono-tabular">发布 {item.publishDate}</span>
+                        <span aria-hidden="true">·</span>
+                        <a
+                          href={item.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-teal-700 hover:underline inline-flex items-center gap-0.5"
+                        >
+                          <span>官方入口</span>
+                          <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
+                        </a>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <button
+                        type="button"
+                        onClick={() => onSelectItem(item)}
+                        className="text-xs font-medium text-teal-700 hover:text-teal-900 hover:underline"
                       >
-                        <span>官方入口</span>
-                        <ArrowUpRight className="w-3 h-3" aria-hidden="true" />
-                      </a>
-                    </div>
-                  </td>
-                  <td className="py-3.5 px-4 text-right whitespace-nowrap">
-                    <button
-                      type="button"
-                      onClick={() => onSelectItem(item)}
-                      className="text-xs font-medium text-teal-700 hover:text-teal-900 hover:underline"
-                    >
-                      详情
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+                        详情
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })
+            )}
           </tbody>
         </table>
       </div>

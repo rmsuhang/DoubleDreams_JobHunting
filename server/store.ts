@@ -15,7 +15,22 @@ export async function loadAppState(): Promise<AppDataState> {
     if (!parsed || !Array.isArray(parsed.briefings) || !Array.isArray(parsed.sources)) {
       throw new Error('Invalid persisted structure');
     }
-    return parsed;
+    const sanitizedBriefings = parsed.briefings.filter(
+      (b) => b.id !== 'brief-2026-11-14' && b.id !== 'brief-2026-11-15'
+    );
+    if (sanitizedBriefings.length === 0) {
+      const cleanSeed = createInitialSeedState();
+      const migrated: AppDataState = {
+        ...parsed,
+        briefings: cleanSeed.briefings,
+      };
+      await saveAppState(migrated);
+      return migrated;
+    }
+    return {
+      ...parsed,
+      briefings: sanitizedBriefings,
+    };
   } catch {
     const seed = createInitialSeedState();
     await saveAppState(seed);
