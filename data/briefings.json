@@ -70,7 +70,7 @@
       "domain": "scs.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 官方页面可访问（直连未发现新增匹配公告）"
     },
@@ -84,7 +84,7 @@
       "domain": "hrss.shandong.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 403,
       "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
     },
@@ -98,7 +98,7 @@
       "domain": "jnhhr.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
       "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
@@ -112,7 +112,7 @@
       "domain": "jnhrss.jinan.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市人力资源和社会保障局（直连未发现新增匹配公告）"
     },
@@ -126,9 +126,9 @@
       "domain": "hrss.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-qd-wsjkw",
@@ -140,9 +140,9 @@
       "domain": "wsjkw.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-jnszhyy",
@@ -154,7 +154,7 @@
       "domain": "jnszhyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
       "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
@@ -168,9 +168,9 @@
       "domain": "jndwyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-jnslyy",
@@ -182,7 +182,7 @@
       "domain": "jnslyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市第一人民医院（直采命中 3 条真实公告）"
     },
@@ -196,9 +196,9 @@
       "domain": "jnslqy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
-      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-jndsyy",
@@ -210,7 +210,7 @@
       "domain": "jndsyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 420,
       "lastCheckNote": "HTTP 420（站点拦截或需境内IP）"
     },
@@ -224,9 +224,9 @@
       "domain": "jnsjgyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
-      "lastHttpStatus": 200,
-      "lastCheckNote": "在线 · 济南市机关医院（直采命中 3 条真实公告）"
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
+      "lastHttpStatus": null,
+      "lastCheckNote": "连接超时（官方站点限制海外访问或响应较慢）"
     },
     {
       "id": "src-sdzydfy",
@@ -238,9 +238,9 @@
       "domain": "sdzydfy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
-      "lastHttpStatus": 200,
-      "lastCheckNote": "在线 · 山东中医药大学附属医院·山东省中医院【官方网站】（直连未发现新增匹配公告）"
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
+      "lastHttpStatus": null,
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-qdzyy",
@@ -252,7 +252,7 @@
       "domain": "qdzyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -266,7 +266,7 @@
       "domain": "qilu-pharma.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 齐鲁制药 | 用科技表达我们的爱（直连未发现新增匹配公告）"
     },
@@ -280,7 +280,7 @@
       "domain": "crcare.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 官方页面可访问（直连未发现新增匹配公告）"
     },
@@ -294,7 +294,7 @@
       "domain": "tigermedgrp.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 泰格医药 - 领先的合同研究组织（CRO）（直连未发现新增匹配公告）"
     },
@@ -308,19 +308,379 @@
       "domain": "astrazeneca.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-15T15:24:41.525Z",
-      "lastHttpStatus": 403,
-      "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
+      "lastCheckedAt": "2026-11-15T15:32:05.793Z",
+      "lastHttpStatus": 200,
+      "lastCheckNote": "在线 · 阿斯利康投资（中国）有限公司（直连未发现新增匹配公告）"
     }
   ],
   "schedule": {
     "enabled": true,
     "triggerTime": "08:00",
     "timezone": "Asia/Shanghai",
-    "lastRunAt": "2026-11-15T15:24:41.525Z",
+    "lastRunAt": "2026-11-15T15:32:05.793Z",
     "nextRunAt": "2026-11-16T00:00:00.000Z"
   },
   "briefings": [
+    {
+      "id": "brief-2026-11-15-1794756733849",
+      "briefingDate": "2026-11-15",
+      "generatedAt": "2026-11-15T15:32:05.793Z",
+      "triggerType": "scheduled",
+      "baselineBriefingId": "brief-2026-11-15-1794756290755",
+      "baselineDate": "2026-11-15",
+      "sourcesCheckedCount": 18,
+      "liveScanUsed": true,
+      "scanStatusMessage": "已完成真实官源巡检（直连成功 7/18 个官方门户，网页直采解析出 2 条真实公告；未配置 GEMINI_API_KEY（可在 GitHub Secrets 添加以补充检索因境外网络限制无法直连的医院官网））。绝不包含任何示例假数据。",
+      "stats": {
+        "totalMatched": 6,
+        "newCount": 0,
+        "updatedCount": 0,
+        "stillOpenCount": 6,
+        "anomalyCount": 0,
+        "tcmPhysicianCount": 6,
+        "medicalCraCount": 0
+      },
+      "items": [
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-12-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3977-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-12",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-12",
+            "重点意向城市命中：山东省济南市",
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "身份与招聘类型匹配：2027届应届毕业生 · 校招通道"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-reg-2026-11-12",
+              "type": "registration",
+              "label": "网上报名 / 投递（原文摘录）",
+              "dateRange": "2026年11月20日14:00-16:00 二、第二场 报名地点：北京大学医学部（北京市海淀区",
+              "status": "active"
+            }
+          ],
+          "deadlineDate": "2026-11-21",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-21），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-11-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/51/56396.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-11",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-11 ~ 2026-11-25",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-25",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-25），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-11-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/51/56396.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-11",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-11 ~ 2026-11-25",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-25",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-25），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-11-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3976-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-11",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-11 ~ 2026-11-25",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-25",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-25），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-15-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的",
+          "title": "济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的公告",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/38/55776.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-15",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-15",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "笔试 / 面试（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-15",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-15 ~ 2026-11-29",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-29",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-29），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnslyy-2026-11-15-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的",
+          "title": "济南市第一人民医院公开招聘人员（控制总量）面试人选资格审查及面试有关事宜的公告",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/38/55776.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-15",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-15",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "笔试 / 面试（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-11-15",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-11-15 ~ 2026-11-29",
+              "status": "active",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-11-29",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "未截止报名（截止 2026-11-29），延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-06-17-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::关于公布济南市机关医院公开招聘人员（控制总量）考察体检范围人选名单的公告根据2026年3月30日《2026年度济南市卫生健康委员会所属事业单位公开招聘人员公告》有关要求，2026年6月16日，济南市机关医院对面试人选进时间:",
+          "title": "关于公布济南市机关医院公开招聘人员（控制总量）考察体检范围人选名单的公告 根据2026年3月30日《2026年度济南市卫生健康委员会所属事业单位公开招聘人员公告》有关要求，2026年6月16日，济南市机关医院对面试人选进 时间:",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3848-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-06-17",
+            "重点意向城市命中：山东省济南市",
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "身份与招聘类型匹配：2027届应届毕业生 · 校招通道"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "以原文为准",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": false,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pub-2026-06-17",
+              "type": "registration",
+              "label": "公告发布与报名跟踪",
+              "dateRange": "2026-06-17 ~ 2026-07-01",
+              "status": "completed",
+              "note": "具体报名起止时段请点击官方原文核对"
+            }
+          ],
+          "deadlineDate": "2026-07-01",
+          "hasAnomaly": false,
+          "diffStatus": "closed",
+          "isLiveGrounded": true,
+          "diffNote": "已过报名截止日（2026-07-01）"
+        }
+      ],
+      "groundingLinks": []
+    },
     {
       "id": "brief-2026-11-15-1794756290755",
       "briefingDate": "2026-11-15",
