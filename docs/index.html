@@ -173,21 +173,21 @@
   </header>
 
   <main class="container">
-    <div id="syncStatusBar" class="sync-note">已完成真实官源巡检（直连成功 10/17 个官方门户，网页直采解析出 8 条真实公告；未配置 GEMINI_API_KEY（可在 GitHub Secrets 添加以补充检索因境外网络限制无法直连的医院官网））。绝不包含任何示例假数据。</div>
+    <div id="syncStatusBar" class="sync-note">已完成真实官源巡检（直连成功 10/17 个官方门户，网页直采解析出 8 条真实公告；Search Grounding 配额暂达上限，本次仅保留直连抓取结果）。绝不包含任何示例假数据。</div>
     <section id="view-briefing" class="panel active">
       <div class="kpi-grid">
         <div class="kpi-cell"><div class="muted">当前有效匹配</div><div id="kpiTotal" class="kpi-val mono">11</div></div>
-        <div class="kpi-cell"><div class="muted">较上次基准新增</div><div id="kpiNew" class="kpi-val mono" style="color:var(--accent)">+5</div></div>
+        <div class="kpi-cell"><div class="muted">较上次基准新增</div><div id="kpiNew" class="kpi-val mono" style="color:var(--accent)">+0</div></div>
         <div class="kpi-cell"><div class="muted">变更与异动</div><div id="kpiUpdated" class="kpi-val mono" style="color:var(--warn)">0</div></div>
-        <div class="kpi-cell"><div class="muted">未截止延续</div><div id="kpiOpen" class="kpi-val mono">6</div></div>
+        <div class="kpi-cell"><div class="muted">未截止延续</div><div id="kpiOpen" class="kpi-val mono">11</div></div>
       </div>
 
       <div class="toolbar">
         <div class="seg-group" role="group" aria-label="增量筛选">
           <button type="button" class="seg-btn active" data-diff="all">全部 (11)</button>
-          <button type="button" class="seg-btn" data-diff="new">今日新增 (5)</button>
+          <button type="button" class="seg-btn" data-diff="new">今日新增 (0)</button>
           <button type="button" class="seg-btn" data-diff="updated">变更与异动 (0)</button>
-          <button type="button" class="seg-btn" data-diff="still_open">未截止延续 (6)</button>
+          <button type="button" class="seg-btn" data-diff="still_open">未截止延续 (11)</button>
         </div>
         <div class="filters">
           <input type="search" id="searchInput" placeholder="检索单位、岗位或关键字..." aria-label="关键词检索" />
@@ -206,286 +206,6 @@
       </div>
 
       <div id="itemsContainer">
-      <article class="card item-card" data-diff="new" data-track="tcm_physician" data-region="济南" data-search="东阿阿胶股份有限公司：2027届校园招聘（滋补生活事业部中医师） 东阿阿胶股份有限公司 华润集团润招网（runjob.crc.com.cn） 济南 官方校招平台直采：直连 华润集团润招网api（东阿阿胶股份有限公司） 校招岗位：2027届校园招聘（滋补生活事业部中医师）（中国,山东,济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历 央企华润旗下医药大健康校招通道开放中 2027届校园招聘（滋补生活事业部中医师） 东阿阿胶股份有限公司 · 中国,山东,济南市">
-        <div class="meta-line">
-          <span class="status-teal">今日新增</span>
-          <span>·</span>
-          <span>济南</span>
-          <span>·</span>
-          <span>针灸推拿医师</span>
-          <span>·</span>
-          <span class="mono">发布日期 2026-10-21</span>
-          <span>·</span>
-          <span class="mono strong">报名截止 以官方原文为准</span>
-        </div>
-        <h3>东阿阿胶股份有限公司：2027届校园招聘（滋补生活事业部中医师）</h3>
-        <div class="source-line">
-          <span class="muted">官方来源：</span>
-          <span>华润集团润招网（runjob.crc.com.cn）</span>
-          <a href="https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02" target="_blank" rel="noopener noreferrer" class="mono">https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02 ↗</a>
-        </div>
-        
-        <div class="two-col">
-          <div>
-            <div class="subhead">画像匹配原因</div>
-            <ul class="bullet-list"><li>官方校招平台直采：直连 华润集团润招网API（东阿阿胶股份有限公司）</li><li>校招岗位：2027届校园招聘（滋补生活事业部中医师）（中国,山东,济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历</li><li>央企华润旗下医药大健康校招通道开放中</li></ul>
-          </div>
-          <div>
-            <div class="subhead">关键节点摘要</div>
-            <ul class="bullet-list">
-          <li>
-            <span class="ms-label">2027届校招网申开放中</span>
-            <span class="mono">发布于 2026-10-21 · 官网在招中</span>
-            <span class="muted"> · 网申流程：华润集团润招网在线投递简历 → 初筛 → 面试/测评 → 录用签约</span>
-          </li></ul>
-          </div>
-        </div>
-        <details class="pos-details">
-          <summary>展开匹配职位表明细（1 个岗位）</summary>
-          <table>
-            <thead>
-              <tr>
-                <th>岗位 / 科室</th>
-                <th class="num">人数</th>
-                <th>学历与专业</th>
-                <th>考核形式</th>
-              </tr>
-            </thead>
-            <tbody>
-          <tr>
-            <td><strong>2027届校园招聘（滋补生活事业部中医师）</strong><div class="muted">东阿阿胶股份有限公司 · 中国,山东,济南市</div></td>
-            <td class="mono num">1</td>
-            <td>本科及以上<div class="muted">1、熟练掌握中医四诊（望、闻、问、切）及辨证论治技能，能独立完成常见病、多发病的诊疗； 2、熟悉中药方剂配伍原则，具备个性化处方设计能力； 3、了解中医体质辨识、治未病理念及慢性病管理方法； 4、掌握针灸、推拿、拔罐等中</div></td>
-            <td>网申 + 简历筛选 + 面试</td>
-          </tr></tbody>
-          </table>
-        </details>
-      </article>
-
-      <article class="card item-card" data-diff="new" data-track="medical_cra" data-region="济南" data-search="泰格医药校园招聘：cra intern-济南（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 济南 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：cra intern-济南（2027校招）（ⅴ(1)部 · 山东省·济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） cra intern-济南（2027校招） ⅴ(1)部 · 山东省·济南市">
-        <div class="meta-line">
-          <span class="status-teal">今日新增</span>
-          <span>·</span>
-          <span>济南</span>
-          <span>·</span>
-          <span>医学事务 / CRA</span>
-          <span>·</span>
-          <span class="mono">发布日期 2026-06-17</span>
-          <span>·</span>
-          <span class="mono strong">报名截止 以官方原文为准</span>
-        </div>
-        <h3>泰格医药校园招聘：CRA Intern-济南（2027校招）</h3>
-        <div class="source-line">
-          <span class="muted">官方来源：</span>
-          <span>泰格医药校招官网（zhiye.com）</span>
-          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd ↗</a>
-        </div>
-        
-        <div class="two-col">
-          <div>
-            <div class="subhead">画像匹配原因</div>
-            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRA Intern-济南（2027校招）（Ⅴ(1)部 · 山东省·济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
-          </div>
-          <div>
-            <div class="subhead">关键节点摘要</div>
-            <ul class="bullet-list">
-          <li>
-            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
-            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
-            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
-          </li></ul>
-          </div>
-        </div>
-        <details class="pos-details">
-          <summary>展开匹配职位表明细（1 个岗位）</summary>
-          <table>
-            <thead>
-              <tr>
-                <th>岗位 / 科室</th>
-                <th class="num">人数</th>
-                <th>学历与专业</th>
-                <th>考核形式</th>
-              </tr>
-            </thead>
-            <tbody>
-          <tr>
-            <td><strong>CRA Intern-济南（2027校招）</strong><div class="muted">Ⅴ(1)部 · 山东省·济南市</div></td>
-            <td class="mono num">1</td>
-            <td>本科及以上<div class="muted">1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、CET4，具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；</div></td>
-            <td>网申 + 面试 + 实习转正考核</td>
-          </tr></tbody>
-          </table>
-        </details>
-      </article>
-
-      <article class="card item-card" data-diff="new" data-track="medical_cra" data-region="青岛" data-search="泰格医药校园招聘：cra intern-青岛（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 青岛 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：cra intern-青岛（2027校招）（ⅴ(1)部 · 山东省·青岛市） 重点意向城市命中：山东省青岛市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） cra intern-青岛（2027校招） ⅴ(1)部 · 山东省·青岛市">
-        <div class="meta-line">
-          <span class="status-teal">今日新增</span>
-          <span>·</span>
-          <span>青岛</span>
-          <span>·</span>
-          <span>医学事务 / CRA</span>
-          <span>·</span>
-          <span class="mono">发布日期 2026-06-17</span>
-          <span>·</span>
-          <span class="mono strong">报名截止 以官方原文为准</span>
-        </div>
-        <h3>泰格医药校园招聘：CRA Intern-青岛（2027校招）</h3>
-        <div class="source-line">
-          <span class="muted">官方来源：</span>
-          <span>泰格医药校招官网（zhiye.com）</span>
-          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59 ↗</a>
-        </div>
-        
-        <div class="two-col">
-          <div>
-            <div class="subhead">画像匹配原因</div>
-            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRA Intern-青岛（2027校招）（Ⅴ(1)部 · 山东省·青岛市）</li><li>重点意向城市命中：山东省青岛市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
-          </div>
-          <div>
-            <div class="subhead">关键节点摘要</div>
-            <ul class="bullet-list">
-          <li>
-            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
-            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
-            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
-          </li></ul>
-          </div>
-        </div>
-        <details class="pos-details">
-          <summary>展开匹配职位表明细（1 个岗位）</summary>
-          <table>
-            <thead>
-              <tr>
-                <th>岗位 / 科室</th>
-                <th class="num">人数</th>
-                <th>学历与专业</th>
-                <th>考核形式</th>
-              </tr>
-            </thead>
-            <tbody>
-          <tr>
-            <td><strong>CRA Intern-青岛（2027校招）</strong><div class="muted">Ⅴ(1)部 · 山东省·青岛市</div></td>
-            <td class="mono num">1</td>
-            <td>本科及以上<div class="muted">1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识； 5、每周可</div></td>
-            <td>网申 + 面试 + 实习转正考核</td>
-          </tr></tbody>
-          </table>
-        </details>
-      </article>
-
-      <article class="card item-card" data-diff="new" data-track="medical_cra" data-region="济南" data-search="泰格医药校园招聘：crc intern-济南（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 济南 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：crc intern-济南（2027校招）（北ⅳ区 · 山东省·济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） crc intern-济南（2027校招） 北ⅳ区 · 山东省·济南市">
-        <div class="meta-line">
-          <span class="status-teal">今日新增</span>
-          <span>·</span>
-          <span>济南</span>
-          <span>·</span>
-          <span>医学事务 / CRA</span>
-          <span>·</span>
-          <span class="mono">发布日期 2026-06-17</span>
-          <span>·</span>
-          <span class="mono strong">报名截止 以官方原文为准</span>
-        </div>
-        <h3>泰格医药校园招聘：CRC Intern-济南（2027校招）</h3>
-        <div class="source-line">
-          <span class="muted">官方来源：</span>
-          <span>泰格医药校招官网（zhiye.com）</span>
-          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c ↗</a>
-        </div>
-        
-        <div class="two-col">
-          <div>
-            <div class="subhead">画像匹配原因</div>
-            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRC Intern-济南（2027校招）（北Ⅳ区 · 山东省·济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
-          </div>
-          <div>
-            <div class="subhead">关键节点摘要</div>
-            <ul class="bullet-list">
-          <li>
-            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
-            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
-            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
-          </li></ul>
-          </div>
-        </div>
-        <details class="pos-details">
-          <summary>展开匹配职位表明细（1 个岗位）</summary>
-          <table>
-            <thead>
-              <tr>
-                <th>岗位 / 科室</th>
-                <th class="num">人数</th>
-                <th>学历与专业</th>
-                <th>考核形式</th>
-              </tr>
-            </thead>
-            <tbody>
-          <tr>
-            <td><strong>CRC Intern-济南（2027校招）</strong><div class="muted">北Ⅳ区 · 山东省·济南市</div></td>
-            <td class="mono num">1</td>
-            <td>本科及以上<div class="muted">1、药学、护理学、临床医学等医药相关专业，本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识</div></td>
-            <td>网申 + 面试 + 实习转正考核</td>
-          </tr></tbody>
-          </table>
-        </details>
-      </article>
-
-      <article class="card item-card" data-diff="new" data-track="medical_cra" data-region="青岛" data-search="泰格医药校园招聘：crc intern-青岛（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 青岛 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：crc intern-青岛（2027校招）（北ⅳ区 · 山东省·青岛市） 重点意向城市命中：山东省青岛市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） crc intern-青岛（2027校招） 北ⅳ区 · 山东省·青岛市">
-        <div class="meta-line">
-          <span class="status-teal">今日新增</span>
-          <span>·</span>
-          <span>青岛</span>
-          <span>·</span>
-          <span>医学事务 / CRA</span>
-          <span>·</span>
-          <span class="mono">发布日期 2026-06-17</span>
-          <span>·</span>
-          <span class="mono strong">报名截止 以官方原文为准</span>
-        </div>
-        <h3>泰格医药校园招聘：CRC Intern-青岛（2027校招）</h3>
-        <div class="source-line">
-          <span class="muted">官方来源：</span>
-          <span>泰格医药校招官网（zhiye.com）</span>
-          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451 ↗</a>
-        </div>
-        
-        <div class="two-col">
-          <div>
-            <div class="subhead">画像匹配原因</div>
-            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRC Intern-青岛（2027校招）（北Ⅳ区 · 山东省·青岛市）</li><li>重点意向城市命中：山东省青岛市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
-          </div>
-          <div>
-            <div class="subhead">关键节点摘要</div>
-            <ul class="bullet-list">
-          <li>
-            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
-            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
-            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
-          </li></ul>
-          </div>
-        </div>
-        <details class="pos-details">
-          <summary>展开匹配职位表明细（1 个岗位）</summary>
-          <table>
-            <thead>
-              <tr>
-                <th>岗位 / 科室</th>
-                <th class="num">人数</th>
-                <th>学历与专业</th>
-                <th>考核形式</th>
-              </tr>
-            </thead>
-            <tbody>
-          <tr>
-            <td><strong>CRC Intern-青岛（2027校招）</strong><div class="muted">北Ⅳ区 · 山东省·青岛市</div></td>
-            <td class="mono num">1</td>
-            <td>本科及以上<div class="muted">1、药学、护理学、临床医学等医药相关专业本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；</div></td>
-            <td>网申 + 面试 + 实习转正考核</td>
-          </tr></tbody>
-          </table>
-        </details>
-      </article>
-
       <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="济南" data-search="济南市机关医院公开招聘急需优秀高校毕业生公告（北京站·2027届） 济南市机关医院 济南市机关医院官网 济南 官方直连抓包验证：直采自 济南市机关医院官网 原文详情页 原文发布日期：2026-11-12 重点意向城市命中：山东省济南市 专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历 身份与招聘类型匹配：2027届应届毕业生 · 校招通道 医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件） 济南市机关医院">
         <div class="meta-line">
           <span class="status-muted">未截止延续</span>
@@ -659,6 +379,62 @@
         </details>
       </article>
 
+      <article class="card item-card" data-diff="still_open" data-track="tcm_physician" data-region="济南" data-search="东阿阿胶股份有限公司：2027届校园招聘（滋补生活事业部中医师） 东阿阿胶股份有限公司 华润集团润招网（runjob.crc.com.cn） 济南 官方校招平台直采：直连 华润集团润招网api（东阿阿胶股份有限公司） 校招岗位：2027届校园招聘（滋补生活事业部中医师）（中国,山东,济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历 央企华润旗下医药大健康校招通道开放中 2027届校园招聘（滋补生活事业部中医师） 东阿阿胶股份有限公司 · 中国,山东,济南市">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>针灸推拿医师</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-10-21</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 以官方原文为准</span>
+        </div>
+        <h3>东阿阿胶股份有限公司：2027届校园招聘（滋补生活事业部中医师）</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>华润集团润招网（runjob.crc.com.cn）</span>
+          <a href="https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02" target="_blank" rel="noopener noreferrer" class="mono">https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02 ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方校招平台直采：直连 华润集团润招网API（东阿阿胶股份有限公司）</li><li>校招岗位：2027届校园招聘（滋补生活事业部中医师）（中国,山东,济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历</li><li>央企华润旗下医药大健康校招通道开放中</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">2027届校招网申开放中</span>
+            <span class="mono">发布于 2026-10-21 · 官网在招中</span>
+            <span class="muted"> · 网申流程：华润集团润招网在线投递简历 → 初筛 → 面试/测评 → 录用签约</span>
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>2027届校园招聘（滋补生活事业部中医师）</strong><div class="muted">东阿阿胶股份有限公司 · 中国,山东,济南市</div></td>
+            <td class="mono num">1</td>
+            <td>本科及以上<div class="muted">1、熟练掌握中医四诊（望、闻、问、切）及辨证论治技能，能独立完成常见病、多发病的诊疗； 2、熟悉中药方剂配伍原则，具备个性化处方设计能力； 3、了解中医体质辨识、治未病理念及慢性病管理方法； 4、掌握针灸、推拿、拔罐等中</div></td>
+            <td>网申 + 简历筛选 + 面试</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
       <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="济南" data-search="齐鲁制药集团校园招聘：数据管理助理(j11112) 齐鲁制药集团 齐鲁制药集团校招官网（zhiye.com） 济南 官方校招平台直采：直连 齐鲁制药集团官方招聘及公众号（北森校园招聘系统） 校招岗位：数据管理助理(j11112)（临床研发中心 · 山东省·济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招通道开放：面向应届硕士毕业生在招（招满即止） 数据管理助理(j11112) 临床研发中心 · 山东省·济南市">
         <div class="meta-line">
           <span class="status-muted">未截止延续</span>
@@ -825,6 +601,230 @@
           </tr></tbody>
           </table>
         </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="济南" data-search="泰格医药校园招聘：cra intern-济南（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 济南 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：cra intern-济南（2027校招）（ⅴ(1)部 · 山东省·济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） cra intern-济南（2027校招） ⅴ(1)部 · 山东省·济南市">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-06-17</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 以官方原文为准</span>
+        </div>
+        <h3>泰格医药校园招聘：CRA Intern-济南（2027校招）</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>泰格医药校招官网（zhiye.com）</span>
+          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRA Intern-济南（2027校招）（Ⅴ(1)部 · 山东省·济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
+            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
+            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>CRA Intern-济南（2027校招）</strong><div class="muted">Ⅴ(1)部 · 山东省·济南市</div></td>
+            <td class="mono num">1</td>
+            <td>本科及以上<div class="muted">1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、CET4，具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；</div></td>
+            <td>网申 + 面试 + 实习转正考核</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="青岛" data-search="泰格医药校园招聘：cra intern-青岛（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 青岛 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：cra intern-青岛（2027校招）（ⅴ(1)部 · 山东省·青岛市） 重点意向城市命中：山东省青岛市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） cra intern-青岛（2027校招） ⅴ(1)部 · 山东省·青岛市">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>青岛</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-06-17</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 以官方原文为准</span>
+        </div>
+        <h3>泰格医药校园招聘：CRA Intern-青岛（2027校招）</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>泰格医药校招官网（zhiye.com）</span>
+          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59 ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRA Intern-青岛（2027校招）（Ⅴ(1)部 · 山东省·青岛市）</li><li>重点意向城市命中：山东省青岛市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
+            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
+            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>CRA Intern-青岛（2027校招）</strong><div class="muted">Ⅴ(1)部 · 山东省·青岛市</div></td>
+            <td class="mono num">1</td>
+            <td>本科及以上<div class="muted">1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识； 5、每周可</div></td>
+            <td>网申 + 面试 + 实习转正考核</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="济南" data-search="泰格医药校园招聘：crc intern-济南（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 济南 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：crc intern-济南（2027校招）（北ⅳ区 · 山东省·济南市） 重点意向城市命中：山东省济南市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） crc intern-济南（2027校招） 北ⅳ区 · 山东省·济南市">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>济南</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-06-17</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 以官方原文为准</span>
+        </div>
+        <h3>泰格医药校园招聘：CRC Intern-济南（2027校招）</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>泰格医药校招官网（zhiye.com）</span>
+          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRC Intern-济南（2027校招）（北Ⅳ区 · 山东省·济南市）</li><li>重点意向城市命中：山东省济南市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
+            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
+            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>CRC Intern-济南（2027校招）</strong><div class="muted">北Ⅳ区 · 山东省·济南市</div></td>
+            <td class="mono num">1</td>
+            <td>本科及以上<div class="muted">1、药学、护理学、临床医学等医药相关专业，本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识</div></td>
+            <td>网申 + 面试 + 实习转正考核</td>
+          </tr></tbody>
+          </table>
+        </details>
+      </article>
+
+      <article class="card item-card" data-diff="still_open" data-track="medical_cra" data-region="青岛" data-search="泰格医药校园招聘：crc intern-青岛（2027校招） 泰格医药 泰格医药校招官网（zhiye.com） 青岛 官方校招平台直采：直连 泰格医药（临床研究cra）官方招聘及公众号（北森校园招聘系统） 校招岗位：crc intern-青岛（2027校招）（北ⅳ区 · 山东省·青岛市） 重点意向城市命中：山东省青岛市 学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06）） 科研与资质契合：持gcp证书+执业医师证，掌握meta分析、spss/r统计 校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天） crc intern-青岛（2027校招） 北ⅳ区 · 山东省·青岛市">
+        <div class="meta-line">
+          <span class="status-muted">未截止延续</span>
+          <span>·</span>
+          <span>青岛</span>
+          <span>·</span>
+          <span>医学事务 / CRA</span>
+          <span>·</span>
+          <span class="mono">发布日期 2026-06-17</span>
+          <span>·</span>
+          <span class="mono strong">报名截止 以官方原文为准</span>
+        </div>
+        <h3>泰格医药校园招聘：CRC Intern-青岛（2027校招）</h3>
+        <div class="source-line">
+          <span class="muted">官方来源：</span>
+          <span>泰格医药校招官网（zhiye.com）</span>
+          <a href="https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451" target="_blank" rel="noopener noreferrer" class="mono">https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451 ↗</a>
+        </div>
+        
+        <div class="two-col">
+          <div>
+            <div class="subhead">画像匹配原因</div>
+            <ul class="bullet-list"><li>官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）</li><li>校招岗位：CRC Intern-青岛（2027校招）（北Ⅳ区 · 山东省·青岛市）</li><li>重点意向城市命中：山东省青岛市</li><li>学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））</li><li>科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计</li><li>校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）</li></ul>
+          </div>
+          <div>
+            <div class="subhead">关键节点摘要</div>
+            <ul class="bullet-list">
+          <li>
+            <span class="ms-label">2027届校招网申开放中（招满即止）</span>
+            <span class="mono">发布于 2026-06-17 · 官网持续开放网申</span>
+            <span class="muted"> · 网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方</span>
+          </li></ul>
+          </div>
+        </div>
+        <details class="pos-details">
+          <summary>展开匹配职位表明细（1 个岗位）</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>岗位 / 科室</th>
+                <th class="num">人数</th>
+                <th>学历与专业</th>
+                <th>考核形式</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td><strong>CRC Intern-青岛（2027校招）</strong><div class="muted">北Ⅳ区 · 山东省·青岛市</div></td>
+            <td class="mono num">1</td>
+            <td>本科及以上<div class="muted">1、药学、护理学、临床医学等医药相关专业本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；</div></td>
+            <td>网申 + 面试 + 实习转正考核</td>
+          </tr></tbody>
+          </table>
+        </details>
       </article></div>
     </section>
 
@@ -836,36 +836,6 @@
             <tr><th>节点事项</th><th>时间窗口</th><th>招录单位</th><th>官方来源与发布日期</th></tr>
           </thead>
           <tbody>
-      <tr>
-        <td>2027届校招网申开放中</td>
-        <td class="mono">发布于 2026-10-21 · 官网在招中</td>
-        <td>东阿阿胶股份有限公司</td>
-        <td><a href="https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02" target="_blank" rel="noopener noreferrer">官方原文（2026-10-21）↗</a></td>
-      </tr>
-      <tr>
-        <td>2027届校招网申开放中（招满即止）</td>
-        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
-        <td>泰格医药</td>
-        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
-      </tr>
-      <tr>
-        <td>2027届校招网申开放中（招满即止）</td>
-        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
-        <td>泰格医药</td>
-        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
-      </tr>
-      <tr>
-        <td>2027届校招网申开放中（招满即止）</td>
-        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
-        <td>泰格医药</td>
-        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
-      </tr>
-      <tr>
-        <td>2027届校招网申开放中（招满即止）</td>
-        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
-        <td>泰格医药</td>
-        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
-      </tr>
       <tr>
         <td>第一场现场报名（北京中医药大学和平街校区（北京市朝阳区和平街街道北三环东路11号），中医药博物馆一层大厅）</td>
         <td class="mono">2026年11月20日14:00-16:00</td>
@@ -891,6 +861,12 @@
         <td><a href="https://www.jnsjgyy.com/content-110-3976-1.html" target="_blank" rel="noopener noreferrer">官方原文（2026-11-11）↗</a></td>
       </tr>
       <tr>
+        <td>2027届校招网申开放中</td>
+        <td class="mono">发布于 2026-10-21 · 官网在招中</td>
+        <td>东阿阿胶股份有限公司</td>
+        <td><a href="https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&amp;comId=1769554545615040514&amp;typeId=A02" target="_blank" rel="noopener noreferrer">官方原文（2026-10-21）↗</a></td>
+      </tr>
+      <tr>
         <td>2027届校招网申开放中（招满即止）</td>
         <td class="mono">发布于 2026-08-31 · 官网持续开放网申</td>
         <td>齐鲁制药集团</td>
@@ -907,6 +883,30 @@
         <td class="mono">发布于 2026-08-31 · 官网持续开放网申</td>
         <td>齐鲁制药集团</td>
         <td><a href="https://qilu-pharma.zhiye.com/campus/detail?jobAdId=03e276df-ae78-4d8b-a6d1-56fd202a7365" target="_blank" rel="noopener noreferrer">官方原文（2026-08-31）↗</a></td>
+      </tr>
+      <tr>
+        <td>2027届校招网申开放中（招满即止）</td>
+        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
+        <td>泰格医药</td>
+        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
+      </tr>
+      <tr>
+        <td>2027届校招网申开放中（招满即止）</td>
+        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
+        <td>泰格医药</td>
+        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
+      </tr>
+      <tr>
+        <td>2027届校招网申开放中（招满即止）</td>
+        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
+        <td>泰格医药</td>
+        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
+      </tr>
+      <tr>
+        <td>2027届校招网申开放中（招满即止）</td>
+        <td class="mono">发布于 2026-06-17 · 官网持续开放网申</td>
+        <td>泰格医药</td>
+        <td><a href="https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451" target="_blank" rel="noopener noreferrer">官方原文（2026-06-17）↗</a></td>
       </tr></tbody>
         </table>
       </div>
