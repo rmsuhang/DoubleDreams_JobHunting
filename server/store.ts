@@ -18,15 +18,32 @@ export async function loadAppState(): Promise<AppDataState> {
     }
     const sanitizedSources = parsed.sources
       .filter((s) => s.id !== 'src-qdzyy' && s.domain !== 'qdzyy.cn')
-      .map((s) =>
-        s.id === 'src-qd-wsjkw'
-          ? { ...s, name: '青岛市卫生健康委员会官网（含青岛市中医医院/海慈医疗集团招聘）' }
-          : s
-      );
+      .map((s) => {
+        if (s.id === 'src-qd-wsjkw') {
+          return { ...s, name: '青岛市卫生健康委员会官网（含青岛市中医医院/海慈医疗集团招聘）' };
+        }
+        if (s.id === 'src-crcare') {
+          return {
+            ...s,
+            name: '华润健康 / 华润医疗（华润集团润招网官方平台）',
+            tierLabel: '国企医疗大健康官网及公众号',
+            url: 'https://runjob.crc.com.cn/#/complex/homepage?id=1769554545615040514',
+            domain: 'crc.com.cn',
+          };
+        }
+        if (s.id === 'src-tigermed') {
+          return {
+            ...s,
+            url: 'https://tigermed.zhiye.com/',
+          };
+        }
+        return s;
+      });
     const sanitizedBriefings = parsed.briefings
       .filter((b) => b.id !== 'brief-2026-11-14' && b.id !== 'brief-2026-11-15')
       .map((b) => {
-        const dedupedItems = deduplicateRecruitmentItems(b.items ?? []);
+        const cleanItems = (b.items ?? []).filter((item) => !item.sourceUrl.includes('crcare.com.cn'));
+        const dedupedItems = deduplicateRecruitmentItems(cleanItems);
         return {
           ...b,
           items: dedupedItems,

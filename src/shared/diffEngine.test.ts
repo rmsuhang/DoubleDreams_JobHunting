@@ -263,6 +263,85 @@ test('evaluateProfileMatch matches both clinical TCM and Medical/CRA tracks accu
   );
   assert.equal(craResult.isMatch, true);
   assert.equal(craResult.matchedTrack, 'medical_cra');
+
+  const socialExpOnly = evaluateProfileMatch(
+    makeItem({
+      title: '齐鲁制药社会招聘：医学经理2（3-5年工作经验）',
+      region: '济南',
+      matchedPositions: [
+        {
+          positionName: '医学经理2',
+          department: '营销类',
+          headcount: 1,
+          degreeReq: '本科及以上',
+          majorReq: '临床医学，3-5年医药临床经验',
+          freshGradOnly: false,
+          examFormat: '面试',
+          track: 'medical_cra',
+        },
+      ],
+    }),
+    sampleProfile
+  );
+  assert.equal(socialExpOnly.isMatch, false);
+
+  const enterpriseSources: OfficialSource[] = [
+    ...sampleSources,
+    {
+      id: 'src-qilu',
+      name: '齐鲁制药集团官方招聘',
+      tier: 'soe_medical_enterprise',
+      tierLabel: '药企官网',
+      region: '国企/外企',
+      url: 'https://www.qilu-pharma.com/',
+      domain: 'qilu-pharma.com',
+      channelType: '官网',
+      enabled: true,
+    },
+    {
+      id: 'src-tigermed',
+      name: '泰格医药官方招聘',
+      tier: 'soe_medical_enterprise',
+      tierLabel: 'CRO官网',
+      region: '国企/外企',
+      url: 'https://tigermed.zhiye.com/',
+      domain: 'tigermedgrp.com',
+      channelType: '官网',
+      enabled: true,
+    },
+    {
+      id: 'src-crcare',
+      name: '华润集团润招网',
+      tier: 'soe_medical_enterprise',
+      tierLabel: '国企官网',
+      region: '国企/外企',
+      url: 'https://runjob.crc.com.cn/#/complex/homepage?id=1769554545615040514',
+      domain: 'crc.com.cn',
+      channelType: '官网',
+      enabled: true,
+    },
+  ];
+  assert.equal(
+    isOfficialSourceUrl(
+      'https://qilu-pharma.zhiye.com/campus/detail?jobAdId=03e276df-ae78-4d8b-a6d1-56fd202a7365',
+      enterpriseSources
+    ).isOfficial,
+    true
+  );
+  assert.equal(
+    isOfficialSourceUrl(
+      'https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd',
+      enterpriseSources
+    ).isOfficial,
+    true
+  );
+  assert.equal(
+    isOfficialSourceUrl(
+      'https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&comId=1769554545615040514&typeId=A02',
+      enterpriseSources
+    ).isOfficial,
+    true
+  );
 });
 
 test('computeNextTriggerIso schedules next Asia/Shanghai HH:mm trigger', () => {

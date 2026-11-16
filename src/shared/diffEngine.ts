@@ -33,7 +33,11 @@ export function isOfficialSourceUrl(url: string, registeredSources: OfficialSour
     const matchedSource = registeredSources.find((src) => {
       const domain = src.domain.toLowerCase().replace(/^www\./, '');
       const cleanHost = hostname.replace(/^www\./, '');
-      return cleanHost === domain || cleanHost.endsWith(`.${domain}`);
+      if (cleanHost === domain || cleanHost.endsWith(`.${domain}`)) {
+        return true;
+      }
+      const enterpriseKey = domain.split('.')[0].replace(/grp$/, '');
+      return enterpriseKey.length >= 4 && cleanHost.includes(enterpriseKey) && cleanHost.endsWith('.zhiye.com');
     });
 
     if (matchedSource) {
@@ -77,6 +81,25 @@ export function evaluateProfileMatch(
     .map((p) => `${p.positionName} ${p.department} ${p.degreeReq} ${p.majorReq} ${p.notes ?? ''}`)
     .join(' ');
   const fullText = `${item.title} ${posText}`;
+  const degreeOnlyText = item.matchedPositions.map((p) => p.degreeReq).join(' ') || fullText;
+
+  // Reject PhD-only or experienced-social-only roles when candidate is a fresh Master's graduate
+  const isPhdOnly =
+    profile.degree.includes('硕士') &&
+    /博士/.test(degreeOnlyText) &&
+    !/硕士|研究生及|本科及/.test(degreeOnlyText);
+  const requiresMultiYearExp =
+    profile.isFreshGraduate &&
+    /(?:[2-9]|1\d)\s*[-~—至到]\s*\d+\s*年|[2-9]\s*年以上.*(?:工作|行业|临床试验|医学).*经验/.test(fullText) &&
+    !/应届|校招|校园|2027届/.test(fullText);
+
+  if (isPhdOnly || requiresMultiYearExp) {
+    return {
+      isMatch: false,
+      matchedTrack: item.matchedTrack,
+      reasons: Array.from(reasons),
+    };
+  }
 
   const cityHit = profile.targetCities.some((city) => {
     const shortCity = city.replace(/省|市/g, '');
@@ -89,8 +112,8 @@ export function evaluateProfileMatch(
   }
 
   const degreeHit =
-    /硕士|研究生/.test(fullText) ||
-    item.matchedPositions.some((p) => /硕士|研究生/.test(p.degreeReq));
+    /硕士|研究生|本科及以上/.test(fullText) ||
+    item.matchedPositions.some((p) => /硕士|研究生|本科及以上/.test(p.degreeReq));
   if (degreeHit) {
     reasons.add(`学历符合：${profile.degree}（${profile.masterSchool}）`);
   }
@@ -99,8 +122,9 @@ export function evaluateProfileMatch(
     /针灸|推拿|中医医师|中医科|康复科|康复理疗|小儿推拿/.test(fullText) ||
     item.matchedPositions.some((p) => p.track === 'tcm_physician');
   const craHit =
-    /医学事务|CRA|临床研究|临床试验|GCP|医学专员|药物警戒|CRC/.test(fullText) ||
-    item.matchedPositions.some((p) => p.track === 'medical_cra');
+    /医学事务|CRA|临床监查|监查员|临床研究|临床试验|临床数据|数据管理助理|GCP|医学专员|药物警戒|CRC/.test(
+      fullText
+    ) || item.matchedPositions.some((p) => p.track === 'medical_cra');
 
   const tcmHit = tcmClinicalHit || (/中医/.test(fullText) && !craHit);
 

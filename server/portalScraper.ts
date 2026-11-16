@@ -207,7 +207,7 @@ export function isTrustedPortalArticleUrl(url: string, baseDomain: string): bool
   try {
     const host = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
     const cleanBase = baseDomain.toLowerCase().replace(/^www\./, '');
-    const enterpriseKey = cleanBase.split('.')[0];
+    const enterpriseKey = cleanBase.split('.')[0].replace(/grp$/, '');
     if (host === cleanBase || host.endsWith(`.${cleanBase}`)) return true;
     if (host.endsWith('.gov.cn') || host.endsWith('.edu.cn')) return true;
     if (enterpriseKey.length >= 4 && host.includes(enterpriseKey) && host.endsWith('.zhiye.com')) {
@@ -225,7 +225,7 @@ export function isRecruitmentColumnLink(title: string, url: string, baseDomain: 
   try {
     const host = new URL(url).hostname.toLowerCase().replace(/^www\./, '');
     const cleanBase = baseDomain.toLowerCase().replace(/^www\./, '');
-    const enterpriseKey = cleanBase.split('.')[0];
+    const enterpriseKey = cleanBase.split('.')[0].replace(/grp$/, '');
     const isSameDomain = host === cleanBase || host.endsWith(`.${cleanBase}`);
     const isEnterpriseCareerSubdomain =
       enterpriseKey.length >= 4 && host.includes(enterpriseKey) && host.endsWith('.zhiye.com');
@@ -662,6 +662,542 @@ async function fetchHtmlWithTimeout(
   return result;
 }
 
+export interface BeisenJobAd {
+  Id: string;
+  JobAdId?: number;
+  JobAdName: string;
+  Org?: string | null;
+  CategoryId?: string | null;
+  LocNames?: string[] | null;
+  Duty?: string | null;
+  Require?: string | null;
+  Degree?: string | null;
+  YearsOfWorking?: string | null;
+  PostDate?: string | null;
+  EndTime?: string | null;
+  ChangeDate?: string | null;
+  Status?: number;
+}
+
+const BEISEN_CRA_SIGNAL_RE =
+  /临床监查|监查员|CRA|医学事务|药物警戒|CRC|临床试验|临床研究|临床数据|数据管理/;
+
+const BEISEN_MEDICAL_MAJOR_RE =
+  /医药相关专业|临床医学|中医学|临床药学|医学类|医药类|GCP/;
+
+function matchesCandidateTargetCity(locText: string, profile: CandidateProfile): {
+  matched: boolean;
+  region: RecruitmentItem['region'];
+} {
+  const cleanLoc = locText.trim();
+  if (!cleanLoc) {
+    return { matched: false, region: '山东省级/国家' };
+  }
+  if (cleanLoc.includes('青岛')) {
+    return { matched: true, region: '青岛' };
+  }
+  if (cleanLoc.includes('济南')) {
+    return { matched: true, region: '济南' };
+  }
+  const hasExplicitCity = profile.targetCities.some((city) => {
+    const shortCity = city.replace(/省|市/g, '');
+    return shortCity.length >= 2 && cleanLoc.includes(shortCity);
+  });
+  if (hasExplicitCity) {
+    return { matched: true, region: cleanLoc.includes('青岛') ? '青岛' : cleanLoc.includes('济南') ? '济南' : '山东省级/国家' };
+  }
+  // Allow generic 全国 or province-wide 山东省 without naming another non-target city
+  if (cleanLoc === '全国' || /^山东省?$/.test(cleanLoc)) {
+    return { matched: true, region: '山东省级/国家' };
+  }
+  return { matched: false, region: '山东省级/国家' };
+}
+
+function failsEnglishRequirement(requireText: string, profile: CandidateProfile): boolean {
+  const requiresCet6 =
+    /(?:英语\s*CET[- ]?6|CET[- ]?6|英语六级|大学英语六级)/i.test(requireText) &&
+    !/CET[- ]?4|四级|六级.*优先|CET[- ]?6.*优先/i.test(requireText);
+  if (!requiresCet6) return false;
+  const candidateHasCet6 = profile.certificates.some((c) => /CET[- ]?6|CET6|六级/i.test(c));
+  return !candidateHasCet6;
+}
+
+export function parseBeisenCampusJobToItem(
+  job: BeisenJobAd,
+  params: {
+    source: OfficialSource;
+    zhiyeOrigin: string;
+    categoryId: string;
+    todayStr: string;
+    profile: CandidateProfile;
+  }
+): RecruitmentItem | null {
+  const { source, zhiyeOrigin, categoryId, todayStr, profile } = params;
+  if (!job.Id || !job.JobAdName) return null;
+  if (job.Status !== undefined && job.Status !== 1) return null;
+
+  const employerName = source.name.replace(/（.*?）|官方招聘及公众号|官网|网站|及公众号/g, '').trim();
+  const title = job.JobAdName.trim();
+  const org = (job.Org || '').trim() || employerName;
+  const duty = (job.Duty || '').trim();
+  const requireText = (job.Require || '').trim();
+  const rawDegree = (job.Degree || '').trim();
+  const degree =
+    rawDegree === '本科' && /本科及以上/.test(requireText)
+      ? '本科及以上'
+      : rawDegree || (/硕士|研究生/.test(requireText) ? '硕士研究生' : '本科及以上');
+  const locs = (job.LocNames || []).filter(Boolean);
+
+  // Exclude PhD-only or non-Master roles
+  if (profile.degree.includes('硕士')) {
+    if (degree === '博士研究生' || degree === '大专' || degree === '博士') return null;
+    if (/^\s*1[、.]\s*(?:[^。\n]*?专业)?博士\b/.test(requireText) && !/硕士|本科及/.test(requireText)) {
+      return null;
+    }
+  }
+
+  // Reject roles with strict CET-6 requirement when candidate holds CET-4
+  if (failsEnglishRequirement(requireText, profile)) return null;
+
+  // Must match Medical / CRA track signals AND accept clinical/medical backgrounds
+  if (!BEISEN_CRA_SIGNAL_RE.test(`${title} ${duty} ${requireText}`)) return null;
+  if (!BEISEN_MEDICAL_MAJOR_RE.test(requireText)) return null;
+
+  // Enforce target city matching even when Beisen omits LocNames (e.g. "CRC Intern-东莞（2027校招）")
+  const inferredTitleCity = title.match(/[-—]([\u4e00-\u9fa5]{2,8})(?:[（(]|$)/)?.[1] ?? '';
+  const locText = locs.join('、') || inferredTitleCity;
+  if (!locText) return null;
+  if (inferredTitleCity && inferredTitleCity !== '全国' && !matchesCandidateTargetCity(inferredTitleCity, profile).matched) {
+    return null;
+  }
+  const cityCheck = matchesCandidateTargetCity(locText, profile);
+  if (!cityCheck.matched) return null;
+
+  // Check real closing date (Beisen uses 2222-02-02 / 0001-01-01 as rolling open sentinel)
+  let deadlineDate = '以官方原文为准';
+  const rawEnd = (job.EndTime || '').slice(0, 10);
+  if (/^20[2-3]\d-\d{2}-\d{2}$/.test(rawEnd) && rawEnd <= '2030-12-31') {
+    if (rawEnd < todayStr) return null;
+    deadlineDate = rawEnd;
+  }
+
+  const rawPost = (job.PostDate || '').slice(0, 10);
+  const rawChange = (job.ChangeDate || '').slice(0, 10);
+  const publishDate =
+    /^20[2-3]\d-\d{2}-\d{2}$/.test(rawPost)
+      ? rawPost
+      : /^20[2-3]\d-\d{2}-\d{2}$/.test(rawChange)
+        ? rawChange
+        : todayStr;
+
+  const region = cityCheck.region;
+  const cleanOrigin = zhiyeOrigin.replace(/\/+$/, '');
+  const pathPrefix = categoryId === '5' ? '/5/detail' : '/campus/detail';
+  const detailUrl = `${cleanOrigin}${pathPrefix}?jobAdId=${encodeURIComponent(job.Id)}`;
+  const isInternCampus = /Intern|实习/i.test(title);
+  const examFormat = isInternCampus ? '网申 + 面试 + 实习转正考核' : '网申 + 简历筛选 + 面试/测评';
+
+  const evalResult = evaluateProfileMatch(
+    {
+      title: `${employerName} 2027届校招：${title}（${locText}）`,
+      region,
+      employerCategory: '外企/国企药企',
+      matchedPositions: [
+        {
+          positionName: title,
+          department: `${org}（工作地点：${locText}）`,
+          headcount: 1,
+          degreeReq: degree,
+          majorReq: requireText.split(/\n/)[0]?.slice(0, 80) || '临床医学 / 医药相关专业',
+          freshGradOnly: true,
+          examFormat,
+          track: 'medical_cra',
+          notes: `${requireText.replace(/\s+/g, ' ').slice(0, 180)}`,
+        },
+      ],
+      matchedTrack: 'medical_cra',
+      matchReasons: [],
+    },
+    profile
+  );
+
+  if (!evalResult.isMatch) return null;
+
+  const majorSummary =
+    requireText
+      .replace(/\s+/g, ' ')
+      .slice(0, 110)
+      .trim() || '医药/临床医学相关专业硕士';
+
+  const reasons = [
+    `官方校招平台直采：直连 ${source.name}（北森校园招聘系统）`,
+    `校招岗位：${title}（${org} · ${locText}）`,
+    ...evalResult.reasons.filter((r) => !r.includes('2027届应届')),
+    isInternCampus
+      ? '校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）'
+      : '校招通道开放：面向应届硕士毕业生在招（招满即止）',
+  ];
+
+  const milestones: MilestoneNode[] = [
+    {
+      id: `beisen-reg-${job.JobAdId ?? job.Id.slice(0, 8)}`,
+      type: 'registration',
+      label: deadlineDate === '以官方原文为准' ? '2027届校招网申开放中（招满即止）' : '校园招聘网申时间',
+      dateRange:
+        deadlineDate === '以官方原文为准'
+          ? `发布于 ${publishDate} · 官网持续开放网申`
+          : `${publishDate} 至 ${deadlineDate}`,
+      status: 'active',
+      note: '网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方',
+    },
+  ];
+
+  return {
+    id: `scrape-${source.id}-beisen-${job.JobAdId ?? job.Id.slice(0, 8)}`,
+    canonicalKey: normalizeCanonicalKey(employerName, `${title} ${locText}`, detailUrl),
+    title: `${employerName}校园招聘：${title}`,
+    sourceName: `${employerName}校招官网（zhiye.com）`,
+    sourceUrl: detailUrl,
+    sourceTier: source.tier,
+    publishDate,
+    announcementType: 'new_announcement',
+    region,
+    employerName,
+    employerCategory: '外企/国企药企',
+    matchedTrack: 'medical_cra',
+    matchReasons: reasons,
+    matchedPositions: [
+      {
+        positionName: title,
+        department: `${org} · ${locText}`,
+        headcount: 1,
+        degreeReq: degree,
+        majorReq: majorSummary,
+        freshGradOnly: true,
+        examFormat,
+        track: 'medical_cra',
+        notes: duty ? `核心职责：${duty.replace(/\s+/g, ' ').slice(0, 140)}` : undefined,
+      },
+    ],
+    milestones,
+    deadlineDate,
+    hasAnomaly: false,
+    diffStatus: 'new',
+    isLiveGrounded: true,
+  };
+}
+
+async function fetchBeisenCampusJobs(
+  source: OfficialSource,
+  zhiyeOrigin: string,
+  profile: CandidateProfile,
+  todayStr: string
+): Promise<RecruitmentItem[]> {
+  const categories = ['2', '5']; // 2 = 集团校园招聘, 5 = 子公司校园招聘
+  const collected: RecruitmentItem[] = [];
+  const seenIds = new Set<string>();
+  const seenTitleLoc = new Set<string>();
+
+  for (const cat of categories) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 9000);
+    try {
+      const res = await fetch(`${zhiyeOrigin.replace(/\/+$/, '')}/api/Jobad/GetJobAdPageList`, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          ...BROWSER_HEADERS,
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'xmlhttprequest',
+          Referer: `${zhiyeOrigin.replace(/\/+$/, '')}/campus/jobs`,
+        },
+        body: JSON.stringify({
+          PageIndex: 0,
+          PageSize: 200,
+          Category: [cat],
+          KeyWords: '',
+          SpecialType: 0,
+          PortalId: '',
+          DisplayFields: ['LocId', 'Org', 'Degree', 'PostDate', 'EndTime'],
+        }),
+      });
+      if (!res.ok) continue;
+      const json = (await res.json()) as { Data?: BeisenJobAd[] };
+      const sortedJobs = [...(json.Data ?? [])].sort((a, b) =>
+        (b.PostDate ?? '').localeCompare(a.PostDate ?? '')
+      );
+      for (const job of sortedJobs) {
+        if (!job.Id || seenIds.has(job.Id)) continue;
+        const titleLocKey = `${(job.JobAdName ?? '').trim().toLowerCase()}::${(job.LocNames ?? []).join(',').trim()}`;
+        if (seenTitleLoc.has(titleLocKey)) continue;
+        const item = parseBeisenCampusJobToItem(job, {
+          source,
+          zhiyeOrigin,
+          categoryId: cat,
+          todayStr,
+          profile,
+        });
+        if (item) {
+          seenIds.add(job.Id);
+          seenTitleLoc.add(titleLocKey);
+          collected.push(item);
+        }
+      }
+    } catch {
+      // Ignore transient API error and rely on remaining channels
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  return collected;
+}
+
+export interface RunjobPosition {
+  pubPositionId: string;
+  pubPositionName: string;
+  brandName?: string | null;
+  companyDescr?: string | null;
+  locationDescr?: string | null;
+  publishDate?: string | null;
+  typeId?: string | null;
+  typeIdDescr?: string | null;
+  rmEducationalRqmtDescr?: string | null;
+  rmWorkYearsRqmtDescr?: string | null;
+  rmJobDuty?: string | null;
+  rmJobRqmt?: string | null;
+}
+
+const RUNJOB_EXCLUDED_RE =
+  /OTC代表|学术代表|销售代表|销售培训生|推广经理|推广主管|区域经理|生产车间|维修工|店长|护士|财务|采购|党办|供应链|地产|置地|物业|啤酒|燃气|电力/;
+
+const RUNJOB_MEDICAL_SIGNAL_RE =
+  /针灸|推拿|中医师|中医科|康复医学|临床监查|监查员|CRA|医学事务|临床研究|临床试验/;
+
+export function parseRunjobPositionToItem(
+  job: RunjobPosition,
+  params: {
+    source: OfficialSource;
+    todayStr: string;
+    profile: CandidateProfile;
+  }
+): RecruitmentItem | null {
+  const { source, todayStr, profile } = params;
+  if (!job.pubPositionId || !job.pubPositionName) return null;
+
+  const title = job.pubPositionName.trim();
+  const brand = (job.brandName || '').trim();
+  const company = (job.companyDescr || '').trim();
+  const orgName = company || brand || '华润集团医药大健康单位';
+  const locText = (job.locationDescr || '').trim();
+  const publishDate = /^\d{4}-\d{2}-\d{2}$/.test((job.publishDate || '').slice(0, 10))
+    ? (job.publishDate || '').slice(0, 10)
+    : todayStr;
+  const rqmt = (job.rmJobRqmt || '').trim();
+  const duty = (job.rmJobDuty || '').trim();
+  const degree = (job.rmEducationalRqmtDescr || '').trim() || '本科及以上';
+  const workExp = (job.rmWorkYearsRqmtDescr || '').trim();
+  const combined = `${title} ${brand} ${company} ${rqmt} ${duty}`;
+
+  // Filter out stale multi-year posts (older than 120 days)
+  if (publishDate < addDays(todayStr, -120)) return null;
+
+  // Campus / fresh-grad filter
+  const isCampus =
+    job.typeIdDescr === '校园招聘' ||
+    job.typeId === 'A02' ||
+    /2027|校招|应届/.test(combined);
+  if (!isCampus) return null;
+
+  if (RUNJOB_EXCLUDED_RE.test(`${title} ${brand} ${company}`)) return null;
+  if (/博士/.test(degree) && !/硕士|本科/.test(degree)) return null;
+  if (/[2-9]\s*[-~至到]\s*\d+\s*年|[2-9]\s*年以上/.test(`${workExp} ${rqmt}`) && !/无需经验/.test(workExp)) {
+    return null;
+  }
+  if (failsEnglishRequirement(rqmt, profile)) return null;
+
+  // Target city check (济南 / 青岛)
+  const cityCheck = matchesCandidateTargetCity(locText, profile);
+  if (!cityCheck.matched || cityCheck.region === '山东省级/国家') return null;
+
+  if (!RUNJOB_MEDICAL_SIGNAL_RE.test(combined)) return null;
+
+  const isTcm = /针灸|推拿|中医师|中医科|康复/.test(combined);
+  const track: 'tcm_physician' | 'medical_cra' = isTcm ? 'tcm_physician' : 'medical_cra';
+  const detailUrl = `https://runjob.crc.com.cn/#/complex/RecruitDetail?id=${encodeURIComponent(
+    job.pubPositionId
+  )}&comId=1769554545615040514&typeId=${encodeURIComponent(job.typeId || 'A02')}`;
+
+  const evalResult = evaluateProfileMatch(
+    {
+      title: `${company || '华润大健康'}：${title}（${locText}）`,
+      region: cityCheck.region,
+      employerCategory: '国企医疗',
+      matchedPositions: [
+        {
+          positionName: title,
+          department: `${orgName}（工作地点：${locText}）`,
+          headcount: 1,
+          degreeReq: degree,
+          majorReq: rqmt.replace(/\s+/g, ' ').slice(0, 120) || '中医学 / 针灸推拿学 / 医药相关专业',
+          freshGradOnly: true,
+          examFormat: '网申 + 简历筛选 + 面试',
+          track,
+          notes: rqmt.replace(/\s+/g, ' ').slice(0, 180),
+        },
+      ],
+      matchedTrack: track,
+      matchReasons: [],
+    },
+    profile
+  );
+
+  if (!evalResult.isMatch) return null;
+
+  const cleanEmployer = company || '华润医药大健康';
+  return {
+    id: `scrape-${source.id}-runjob-${job.pubPositionId}`,
+    canonicalKey: normalizeCanonicalKey(cleanEmployer, `${title} ${locText}`, detailUrl),
+    title: `${cleanEmployer}：${title}`,
+    sourceName: '华润集团润招网（runjob.crc.com.cn）',
+    sourceUrl: detailUrl,
+    sourceTier: source.tier,
+    publishDate,
+    announcementType: 'new_announcement',
+    region: cityCheck.region,
+    employerName: cleanEmployer,
+    employerCategory: '国企医疗',
+    matchedTrack: evalResult.matchedTrack,
+    matchReasons: [
+      `官方校招平台直采：直连 华润集团润招网API（${company || brand || '华润大健康'}）`,
+      `校招岗位：${title}（${locText}）`,
+      ...evalResult.reasons.filter((r) => !r.includes('2027届应届')),
+      '央企华润旗下医药大健康校招通道开放中',
+    ],
+    matchedPositions: [
+      {
+        positionName: title,
+        department: `${orgName} · ${locText}`,
+        headcount: 1,
+        degreeReq: degree,
+        majorReq: rqmt.replace(/\s+/g, ' ').slice(0, 110) || '中医学 / 针灸推拿学',
+        freshGradOnly: true,
+        examFormat: '网申 + 简历筛选 + 面试',
+        track,
+        notes: duty ? `核心职责：${duty.replace(/\s+/g, ' ').slice(0, 140)}` : undefined,
+      },
+    ],
+    milestones: [
+      {
+        id: `runjob-reg-${job.pubPositionId.slice(-8)}`,
+        type: 'registration',
+        label: '2027届校招网申开放中',
+        dateRange: `发布于 ${publishDate} · 官网在招中`,
+        status: 'active',
+        note: '网申流程：华润集团润招网在线投递简历 → 初筛 → 面试/测评 → 录用签约',
+      },
+    ],
+    deadlineDate: '以官方原文为准',
+    hasAnomaly: false,
+    diffStatus: 'new',
+    isLiveGrounded: true,
+  };
+}
+
+function getShanghaiTimestamp(): string {
+  const sh = new Date(Date.now() + 8 * 60 * 60 * 1000);
+  const pad = (n: number, w = 2) => String(n).padStart(w, '0');
+  return `${sh.getUTCFullYear()}-${pad(sh.getUTCMonth() + 1)}-${pad(sh.getUTCDate())} ${pad(
+    sh.getUTCHours()
+  )}:${pad(sh.getUTCMinutes())}:${pad(sh.getUTCSeconds())}:${pad(sh.getUTCMilliseconds(), 3)}`;
+}
+
+async function fetchRunjobPositions(
+  source: OfficialSource,
+  profile: CandidateProfile,
+  todayStr: string
+): Promise<{ ok: boolean; status: number | null; items: RecruitmentItem[] }> {
+  const keywords = ['中医', '针灸', '华润健康', '临床监查', '医学'];
+  const collected: RecruitmentItem[] = [];
+  const seenIds = new Set<string>();
+  const seenTitleLoc = new Set<string>();
+  let anySuccess = false;
+  let lastStatus: number | null = null;
+
+  for (const keyword of keywords) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 9000);
+    try {
+      const biz = {
+        biz: {
+          method: 'getSynthesizeHomepagePosition',
+          param: {
+            homepageConfigId: '1769554545615040514',
+            locationDescr: '',
+            industryType: '',
+            rmWorkYearsRqmt: '',
+            rmEducationalRqmt: '',
+            keyword,
+            positionType: '',
+            rmBusiness: '',
+            pageNum: 1,
+            pageSize: 50,
+          },
+        },
+      };
+      const ssdpStr = `Api_Version=1.0&Api_ID=crinfo.hrms.rm.synthesizeHomepagePosition&App_Sub_ID=0006000908YA&App_Token=60fe2d19e5ad491f8a02508da3efe532&Sys_ID=00060009&Partner_ID=00060000&Sign=NO_SIGN&Time_Stamp=${getShanghaiTimestamp()}&User_Token=`;
+      const ssdp = Buffer.from(ssdpStr).toString('base64');
+      const base64String = Buffer.from(JSON.stringify(biz)).toString('base64');
+
+      const res = await fetch(`https://ssdp.crc.com.cn/ssdp/sys/rf/?ssdp=${encodeURIComponent(ssdp)}`, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          ...BROWSER_HEADERS,
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          Origin: 'https://runjob.crc.com.cn',
+          Referer: 'https://runjob.crc.com.cn/',
+        },
+        body: JSON.stringify({ base64String }),
+      });
+      lastStatus = res.status;
+      if (!res.ok) continue;
+      anySuccess = true;
+      const json = (await res.json()) as { RESPONSE?: { RETURN_DATA?: string } };
+      if (!json.RESPONSE?.RETURN_DATA) continue;
+      const decoded = JSON.parse(
+        Buffer.from(json.RESPONSE.RETURN_DATA, 'base64').toString('utf8')
+      ) as { data?: RunjobPosition[] };
+
+      for (const job of decoded.data ?? []) {
+        if (!job.pubPositionId || seenIds.has(job.pubPositionId)) continue;
+        const titleLocKey = `${(job.pubPositionName ?? '').trim().toLowerCase()}::${(
+          job.locationDescr ?? ''
+        ).trim()}`;
+        if (seenTitleLoc.has(titleLocKey)) continue;
+        const item = parseRunjobPositionToItem(job, { source, todayStr, profile });
+        if (item) {
+          seenIds.add(job.pubPositionId);
+          seenTitleLoc.add(titleLocKey);
+          collected.push(item);
+        }
+      }
+    } catch {
+      // Continue remaining keyword queries
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+
+  return {
+    ok: anySuccess,
+    status: lastStatus,
+    items: collected,
+  };
+}
+
 export interface PortalScrapeSummary {
   source: OfficialSource;
   httpStatus: number | null;
@@ -674,9 +1210,33 @@ export async function scrapeOfficialPortal(
   profile: CandidateProfile,
   todayStr: string
 ): Promise<PortalScrapeSummary> {
+  if (
+    source.domain === 'crc.com.cn' ||
+    source.domain === 'crcare.com.cn' ||
+    source.url.includes('runjob.crc.com.cn')
+  ) {
+    const runjob = await fetchRunjobPositions(source, profile, todayStr);
+    const note = runjob.ok
+      ? runjob.items.length > 0
+        ? `在线 · 华润集团润招网API（直采命中 ${runjob.items.length} 条有效岗位）`
+        : '在线 · 华润集团润招网API（华润健康等直连暂无济南/青岛未截止新岗位）'
+      : '华润集团润招网API暂不可达';
+    return {
+      source,
+      httpStatus: runjob.status,
+      note,
+      items: runjob.items,
+    };
+  }
+
   const home = await fetchHtmlWithTimeout(source.url, 12000);
   if (!home.ok || !home.html) {
-    const note = home.status ? `HTTP ${home.status}（站点拦截或需境内IP）` : home.errorNote || '不可达';
+    const note =
+      source.domain === 'astrazeneca.com.cn' && home.status === 403
+        ? 'HTTP 403（阿斯利康中国受 CloudFront 拦截，海外 Eightfold 暂无中国区在招，需借助 Search Grounding）'
+        : home.status
+          ? `HTTP ${home.status}（站点拦截或需境内IP）`
+          : home.errorNote || '不可达';
     return {
       source,
       httpStatus: home.status,
@@ -688,10 +1248,42 @@ export async function scrapeOfficialPortal(
   const pageTitle = home.html.match(/<title[^>]*>([^<]+)<\/title>/i)?.[1]?.trim();
   const baseLinks = extractLinksFromHtml(home.html, home.finalUrl);
 
+  const items: RecruitmentItem[] = [];
+  const zhiyeLink = baseLinks.find((l) => {
+    try {
+      const host = new URL(l.url).hostname.toLowerCase();
+      return host.endsWith('.zhiye.com') && isTrustedPortalArticleUrl(l.url, source.domain);
+    } catch {
+      return false;
+    }
+  });
+
+  let directZhiyeOrigin: string | null = null;
+  if (zhiyeLink) {
+    directZhiyeOrigin = new URL(zhiyeLink.url).origin;
+  } else {
+    try {
+      const finalParsed = new URL(home.finalUrl);
+      if (finalParsed.hostname.toLowerCase().endsWith('.zhiye.com')) {
+        directZhiyeOrigin = finalParsed.origin;
+      }
+    } catch {
+      // ignore
+    }
+    if (!directZhiyeOrigin && source.domain === 'tigermedgrp.com') {
+      directZhiyeOrigin = 'https://tigermed.zhiye.com';
+    }
+  }
+
+  if (source.tier === 'soe_medical_enterprise' && directZhiyeOrigin) {
+    const beisenItems = await fetchBeisenCampusJobs(source, directZhiyeOrigin, profile, todayStr);
+    items.push(...beisenItems);
+  }
+
   const columnUrls = baseLinks
     .filter((l) => isRecruitmentColumnLink(l.title, l.url, source.domain))
     .map((l) => l.url)
-    .filter((u, idx, arr) => arr.indexOf(u) === idx)
+    .filter((u, idx, arr) => arr.indexOf(u) === idx && !u.includes('.zhiye.com'))
     .slice(0, 3);
 
   const subPages = await Promise.all(columnUrls.map((colUrl) => fetchHtmlWithTimeout(colUrl, 9000)));
@@ -702,9 +1294,10 @@ export async function scrapeOfficialPortal(
     }
   }
 
-  const seenUrls = new Set<string>();
+  const seenUrls = new Set<string>(items.map((i) => i.sourceUrl));
   const candidateLinks: DiscoveredLink[] = [];
   for (const link of allLinks) {
+    if (link.url.includes('.zhiye.com')) continue;
     if (!isTrustedPortalArticleUrl(link.url, source.domain)) continue;
     if (!isRelevantRecruitmentLink(link.title, link.url)) continue;
     if (seenUrls.has(link.url)) continue;
@@ -722,7 +1315,6 @@ export async function scrapeOfficialPortal(
     }))
   );
 
-  const items: RecruitmentItem[] = [];
   for (const { link, page } of articlePages) {
     if (!page.ok || !page.html) continue;
     const item = parseOfficialArticleToItem({
@@ -734,7 +1326,8 @@ export async function scrapeOfficialPortal(
       dateHint: link.dateHint,
       profile,
     });
-    if (item) {
+    if (item && !seenUrls.has(item.sourceUrl)) {
+      seenUrls.add(item.sourceUrl);
       items.push(item);
     }
   }
@@ -742,7 +1335,7 @@ export async function scrapeOfficialPortal(
   const shortTitle = pageTitle ? pageTitle.slice(0, 32) : '官方页面可访问';
   const note =
     items.length > 0
-      ? `在线 · ${shortTitle}（直采命中 ${items.length} 条有效公告）`
+      ? `在线 · ${shortTitle}（直采命中 ${items.length} 条有效岗位/公告）`
       : `在线 · ${shortTitle}（直连未发现未截止新公告）`;
 
   return {
