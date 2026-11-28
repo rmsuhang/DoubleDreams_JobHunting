@@ -70,7 +70,7 @@
       "domain": "scs.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 官方页面可访问（直连未发现未截止新公告）"
     },
@@ -84,7 +84,7 @@
       "domain": "hrss.shandong.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 403,
       "lastCheckNote": "HTTP 403（站点拦截或需境内IP）"
     },
@@ -98,7 +98,7 @@
       "domain": "jnhhr.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -112,7 +112,7 @@
       "domain": "jnhrss.jinan.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市人力资源和社会保障局（直连未发现未截止新公告）"
     },
@@ -126,9 +126,9 @@
       "domain": "hrss.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
-      "lastHttpStatus": 200,
-      "lastCheckNote": "在线 · 青岛市人力资源和社会保障局（直连未发现未截止新公告）"
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
+      "lastHttpStatus": null,
+      "lastCheckNote": "官方站暂不可达"
     },
     {
       "id": "src-qd-wsjkw",
@@ -140,7 +140,7 @@
       "domain": "wsjkw.qingdao.gov.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 青岛市卫生健康委员会（直连未发现未截止新公告）"
     },
@@ -154,7 +154,7 @@
       "domain": "jnszhyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -168,7 +168,7 @@
       "domain": "jndwyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -182,7 +182,7 @@
       "domain": "jnslyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市第一人民医院（直连未发现未截止新公告）"
     },
@@ -196,7 +196,7 @@
       "domain": "jnslqy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": null,
       "lastCheckNote": "官方站暂不可达"
     },
@@ -210,7 +210,7 @@
       "domain": "jndsyy.cn",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 420,
       "lastCheckNote": "HTTP 420（站点拦截或需境内IP）"
     },
@@ -224,7 +224,7 @@
       "domain": "jnsjgyy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 济南市机关医院（直连未发现未截止新公告）"
     },
@@ -238,7 +238,7 @@
       "domain": "sdzydfy.com",
       "channelType": "官网",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 山东中医药大学附属医院·山东省中医院【官方网站】（直连未发现未截止新公告）"
     },
@@ -252,7 +252,7 @@
       "domain": "qilu-pharma.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 齐鲁制药 | 用科技表达我们的爱（直采命中 3 条有效岗位/公告）"
     },
@@ -266,7 +266,7 @@
       "domain": "crc.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 华润集团润招网API（直采命中 1 条有效岗位）"
     },
@@ -280,7 +280,7 @@
       "domain": "tigermedgrp.com",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 杭州泰格医药科技股份有限公司（直采命中 4 条有效岗位/公告）"
     },
@@ -294,7 +294,7 @@
       "domain": "astrazeneca.com.cn",
       "channelType": "官网及公众号",
       "enabled": true,
-      "lastCheckedAt": "2026-11-27T04:59:58.248Z",
+      "lastCheckedAt": "2026-11-28T04:43:42.759Z",
       "lastHttpStatus": 200,
       "lastCheckNote": "在线 · 阿斯利康投资（中国）有限公司（直连未发现未截止新公告）"
     }
@@ -303,10 +303,529 @@
     "enabled": true,
     "triggerTime": "08:00",
     "timezone": "Asia/Shanghai",
-    "lastRunAt": "2026-11-27T04:59:58.248Z",
-    "nextRunAt": "2026-11-28T00:00:00.000Z"
+    "lastRunAt": "2026-11-28T04:43:42.759Z",
+    "nextRunAt": "2026-11-29T00:00:00.000Z"
   },
   "briefings": [
+    {
+      "id": "brief-2026-11-28-1795841046980",
+      "briefingDate": "2026-11-28",
+      "generatedAt": "2026-11-28T04:43:42.759Z",
+      "triggerType": "scheduled",
+      "baselineBriefingId": "brief-2026-11-27-1795755622460",
+      "baselineDate": "2026-11-27",
+      "sourcesCheckedCount": 17,
+      "liveScanUsed": true,
+      "scanStatusMessage": "已完成真实官源巡检（直连成功 10/17 个官方门户，网页直采解析出 8 条真实公告；Search Grounding 配额暂达上限，本次仅保留直连抓取结果）。绝不包含任何示例假数据。",
+      "stats": {
+        "totalMatched": 10,
+        "newCount": 0,
+        "updatedCount": 0,
+        "stillOpenCount": 10,
+        "anomalyCount": 0,
+        "tcmPhysicianCount": 3,
+        "medicalCraCount": 7
+      },
+      "items": [
+        {
+          "id": "scrape-src-jnslyy-2026-11-11-aHR0cDovL3",
+          "canonicalKey": "济南市第一人民医院官网::济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市第一人民医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市第一人民医院官网",
+          "sourceUrl": "http://www.jnslyy.com/contents/51/56396.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市第一人民医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市第一人民医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市第一人民医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pending-2026-11-11",
+              "type": "registration",
+              "label": "报名日程待官方后续公布",
+              "dateRange": "公告发布于 2026-11-11",
+              "status": "active",
+              "note": "现场报名的具体时间和地点根据实际情况， 确定后在济南市第一人民医院网站面向社会公布，请及时登录查询"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "延续上次简报（截止时间以官方原文为准）"
+        },
+        {
+          "id": "scrape-src-jnsjgyy-2026-11-11-aHR0cHM6Ly",
+          "canonicalKey": "济南市机关医院官网::济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "title": "济南市机关医院公开招聘急需优秀高校毕业生公告（2027届）",
+          "sourceName": "济南市机关医院官网",
+          "sourceUrl": "https://www.jnsjgyy.com/content-110-3976-1.html",
+          "sourceTier": "hospital_official",
+          "publishDate": "2026-11-11",
+          "announcementType": "position_table",
+          "region": "济南",
+          "employerName": "济南市机关医院",
+          "employerCategory": "公立医院",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方直连抓包验证：直采自 济南市机关医院官网 原文详情页",
+            "原文发布日期：2026-11-11",
+            "重点意向地区命中：济南",
+            "命中公立医院2027届应届/硕士招录公告，请点击官方链接下载附件《岗位汇总表》核对针灸推拿岗位"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "医疗卫生高校毕业生 / 紧缺人才岗位（需核对原文附件）",
+              "department": "济南市机关医院",
+              "headcount": 1,
+              "degreeReq": "硕士研究生及以上",
+              "majorReq": "公告正文未单列全部分科，请打开原文附件职位表核对具体专业要求",
+              "freshGradOnly": true,
+              "examFormat": "面试 / 考核（以原文为准）",
+              "track": "tcm_physician",
+              "notes": "官方直连抓包命中该单位招聘公告，未捏造具体科室人数，请点击官方链接核对附件。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "ms-pending-2026-11-11",
+              "type": "registration",
+              "label": "报名日程待官方后续公布",
+              "dateRange": "公告发布于 2026-11-11",
+              "status": "active",
+              "note": "现场报名的具体时间和地点根据实际情况，确定后在济南市机关医院网站面向社会公布，请及时登录查询"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "延续上次简报（截止时间以官方原文为准）"
+        },
+        {
+          "id": "scrape-src-crcare-runjob-2112842208825417731",
+          "canonicalKey": "东阿阿胶股份有限公司::2027届校园招聘（滋补生活事业部中医师）中国,山东,济南市",
+          "title": "东阿阿胶股份有限公司：2027届校园招聘（滋补生活事业部中医师）",
+          "sourceName": "华润集团润招网（runjob.crc.com.cn）",
+          "sourceUrl": "https://runjob.crc.com.cn/#/complex/RecruitDetail?id=2112842208825417731&comId=1769554545615040514&typeId=A02",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-10-21",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "东阿阿胶股份有限公司",
+          "employerCategory": "国企医疗",
+          "matchedTrack": "tcm_physician",
+          "matchReasons": [
+            "官方校招平台直采：直连 华润集团润招网API（东阿阿胶股份有限公司）",
+            "校招岗位：2027届校园招聘（滋补生活事业部中医师）（中国,山东,济南市）",
+            "重点意向城市命中：山东省济南市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "专业与临床契合：针灸推拿学硕士，具备执业医师证及山东省中医院规培经历",
+            "央企华润旗下医药大健康校招通道开放中"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "2027届校园招聘（滋补生活事业部中医师）",
+              "department": "东阿阿胶股份有限公司 · 中国,山东,济南市",
+              "headcount": 1,
+              "degreeReq": "本科及以上",
+              "majorReq": "1、熟练掌握中医四诊（望、闻、问、切）及辨证论治技能，能独立完成常见病、多发病的诊疗； 2、熟悉中药方剂配伍原则，具备个性化处方设计能力； 3、了解中医体质辨识、治未病理念及慢性病管理方法； 4、掌握针灸、推拿、拔罐等中",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 简历筛选 + 面试",
+              "track": "tcm_physician",
+              "notes": "核心职责：1、主责中医诊疗及理疗工作，开发多元化治疗方案，解答客户咨询 ； 2、负责健康产品与创新服务的前端开发，配合部门进行中医业务迭代； 3、负责开展中医药特色的多种形式的健康教育、预防保健宣传； 4、协助完成专家诊疗专场活动及专家维护 、事业部中医相关业务指标达成。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "runjob-reg-25417731",
+              "type": "registration",
+              "label": "2027届校招网申开放中",
+              "dateRange": "发布于 2026-10-21 · 官网在招中",
+              "status": "active",
+              "note": "网申流程：华润集团润招网在线投递简历 → 初筛 → 面试/测评 → 录用签约"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-qilu-beisen-230935021",
+          "canonicalKey": "齐鲁制药集团::数据管理助理(j11112)山东省·济南市",
+          "title": "齐鲁制药集团校园招聘：数据管理助理(J11112)",
+          "sourceName": "齐鲁制药集团校招官网（zhiye.com）",
+          "sourceUrl": "https://qilu-pharma.zhiye.com/campus/detail?jobAdId=10511574-8444-4723-8879-2085e2d72121",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-08-31",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "齐鲁制药集团",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 齐鲁制药集团官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：数据管理助理(J11112)（临床研发中心 · 山东省·济南市）",
+            "重点意向城市命中：山东省济南市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招通道开放：面向应届硕士毕业生在招（招满即止）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "数据管理助理(J11112)",
+              "department": "临床研发中心 · 山东省·济南市",
+              "headcount": 1,
+              "degreeReq": "硕士研究生",
+              "majorReq": "1、教育背景：临床医学、临床药学及相关专业，海外留学背景优先； 2、专业知识：对临床试验有一定了解； 3、通用能力：沟通表达能力、抗压能力、创新能力等。",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 简历筛选 + 面试/测评",
+              "track": "medical_cra",
+              "notes": "核心职责：1、协助撰写数据管理计划，协助设计病例报告表（CRF），协助撰写数据核查计划、CRF填写指南、SAE一致性核查计划、外部数据传输计划等； 2、协助撰写数据库测试计划及相关测试文档，完成数据库的用户测试工作，完成测试记录； 3、协助完成EDC培训文档的撰写以及对相关人员的培训； 4"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-230935021",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-08-31 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-qilu-beisen-230935017",
+          "canonicalKey": "齐鲁制药集团::临床监查员（临床研发中心）(j11111)全国",
+          "title": "齐鲁制药集团校园招聘：临床监查员（临床研发中心）(J11111)",
+          "sourceName": "齐鲁制药集团校招官网（zhiye.com）",
+          "sourceUrl": "https://qilu-pharma.zhiye.com/campus/detail?jobAdId=150da284-c2f1-4f7c-93f6-ddf146220bd6",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-08-31",
+          "announcementType": "new_announcement",
+          "region": "山东省级/国家",
+          "employerName": "齐鲁制药集团",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 齐鲁制药集团官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：临床监查员（临床研发中心）(J11111)（临床研发中心 · 全国）",
+            "覆盖山东地区/省属统筹招聘范围",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招通道开放：面向应届硕士毕业生在招（招满即止）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "临床监查员（临床研发中心）(J11111)",
+              "department": "临床研发中心 · 全国",
+              "headcount": 1,
+              "degreeReq": "硕士研究生",
+              "majorReq": "1、医药相关专业硕士学历，海外留学背景优先； 2、了解临床试验行业相关法律法规；了解GCP机构运作模式；了解监查员工作性质及监查流程； 3、英语四级以上，熟练掌握办公软件； 4、沟通协作能力强，接受出差。",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 简历筛选 + 面试/测评",
+              "track": "medical_cra",
+              "notes": "核心职责：1、根据任务分配，按期完成承担临床试验的进度； 2、严格按照临床试验项目的标准流程与制度、操作指南，实施监查工作，定期总结和完成项目在各医院的监查报告，确保所负责项目质量； 3、协助维护负责医院的专家关系；开发医院资源； 4、完成领导交办的其他工作。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-230935017",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-08-31 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-qilu-beisen-230934981",
+          "canonicalKey": "齐鲁制药集团::临床监查员（药物研究院）(j11106)山东省·济南市",
+          "title": "齐鲁制药集团校园招聘：临床监查员（药物研究院）(J11106)",
+          "sourceName": "齐鲁制药集团校招官网（zhiye.com）",
+          "sourceUrl": "https://qilu-pharma.zhiye.com/campus/detail?jobAdId=03e276df-ae78-4d8b-a6d1-56fd202a7365",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-08-31",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "齐鲁制药集团",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 齐鲁制药集团官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：临床监查员（药物研究院）(J11106)（药物研究院 · 山东省·济南市）",
+            "重点意向城市命中：山东省济南市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招通道开放：面向应届硕士毕业生在招（招满即止）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "临床监查员（药物研究院）(J11106)",
+              "department": "药物研究院 · 山东省·济南市",
+              "headcount": 1,
+              "degreeReq": "硕士研究生",
+              "majorReq": "1、硕士学历，临床医学、药学、护理学、公共卫生、生物统计学等相关专业 2、知识技能：了解GCP及相关法规，英语CET-4及以上（能阅读英文方案）； 3、能力素质：沟通协调能力强，逻辑清晰，责任心强，抗压能力强，能适应较高",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 简历筛选 + 面试/测评",
+              "track": "medical_cra",
+              "notes": "核心职责：1、协助临床试验的启动、监查和关闭工作，确保试验按GCP（药物临床试验质量管理规范）和方案执行； 2、负责研究中心筛选、伦理递交、合同签署等中心启动前的准备工作； 3、定期进行中心监查访视，核实数据真实性、完整性，确保受试者权益； 4、跟踪并记录试验进度，协调解决研究中心出现的常"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-230934981",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-08-31 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-tigermed-beisen-511174702",
+          "canonicalKey": "泰格医药::craintern-济南（2027校招）山东省·济南市",
+          "title": "泰格医药校园招聘：CRA Intern-济南（2027校招）",
+          "sourceName": "泰格医药校招官网（zhiye.com）",
+          "sourceUrl": "https://tigermed.zhiye.com/campus/detail?jobAdId=83fa38ca-34ab-4e5f-8eae-4875e09b04bd",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "泰格医药",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：CRA Intern-济南（2027校招）（Ⅴ(1)部 · 山东省·济南市）",
+            "重点意向城市命中：山东省济南市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "CRA Intern-济南（2027校招）",
+              "department": "Ⅴ(1)部 · 山东省·济南市",
+              "headcount": 1,
+              "degreeReq": "本科及以上",
+              "majorReq": "1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、CET4，具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 面试 + 实习转正考核",
+              "track": "medical_cra",
+              "notes": "核心职责：1、协助CRA做研究中心筛选、启动、入组、随访、关中心等相关过程的管理； 2、协助CRA打印、获取、整理分类、归档试验过程中的文件； 3、协助CRA进行数据一致性核对，以及表格汇总统计； 4、协助CRA进行药品、样本分类清点统计和费用统计； 5、在规定的时间内完成公司推送的培训课"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-511174702",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-06-17 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-tigermed-beisen-511174695",
+          "canonicalKey": "泰格医药::craintern-青岛（2027校招）山东省·青岛市",
+          "title": "泰格医药校园招聘：CRA Intern-青岛（2027校招）",
+          "sourceName": "泰格医药校招官网（zhiye.com）",
+          "sourceUrl": "https://tigermed.zhiye.com/campus/detail?jobAdId=b5f9a609-3439-4ed0-b0f0-d16d372a2c59",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "青岛",
+          "employerName": "泰格医药",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：CRA Intern-青岛（2027校招）（Ⅴ(1)部 · 山东省·青岛市）",
+            "重点意向城市命中：山东省青岛市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "CRA Intern-青岛（2027校招）",
+              "department": "Ⅴ(1)部 · 山东省·青岛市",
+              "headcount": 1,
+              "degreeReq": "本科及以上",
+              "majorReq": "1、药学、临床药学、临床医学等医药相关专业本科及以上学历； 2、具有良好的英文读写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识； 5、每周可",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 面试 + 实习转正考核",
+              "track": "medical_cra",
+              "notes": "核心职责：1、协助CRA做研究中心筛选、启动、入组、随访、关中心等相关过程的管理； 2、协助CRA打印、获取、整理分类、归档试验过程中的文件； 3、协助CRA进行数据一致性核对，以及表格汇总统计； 4、协助CRA进行药品、样本分类清点统计和费用统计； 5、在规定的时间内完成公司推送的培训课"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-511174695",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-06-17 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-tigermed-beisen-511174550",
+          "canonicalKey": "泰格医药::crcintern-济南（2027校招）山东省·济南市",
+          "title": "泰格医药校园招聘：CRC Intern-济南（2027校招）",
+          "sourceName": "泰格医药校招官网（zhiye.com）",
+          "sourceUrl": "https://tigermed.zhiye.com/campus/detail?jobAdId=615551d4-be4b-4fca-9381-af2ebae5165c",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "济南",
+          "employerName": "泰格医药",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：CRC Intern-济南（2027校招）（北Ⅳ区 · 山东省·济南市）",
+            "重点意向城市命中：山东省济南市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "CRC Intern-济南（2027校招）",
+              "department": "北Ⅳ区 · 山东省·济南市",
+              "headcount": 1,
+              "degreeReq": "本科及以上",
+              "majorReq": "1、药学、护理学、临床医学等医药相关专业，本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 面试 + 实习转正考核",
+              "track": "medical_cra",
+              "notes": "核心职责：1、实习期间，在规定的时间内，完成培训课程并通过考试，跟着带教老师完成实地操作（ on - site）的学习； 2、实习期间，协助研究者完成相关的工作，例如协助文档管理、数据管理、受试者管理、实验室管理、药物设备管理等； 3、完成上级领导安排的其他工作。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-511174550",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-06-17 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        },
+        {
+          "id": "scrape-src-tigermed-beisen-511174542",
+          "canonicalKey": "泰格医药::crcintern-青岛（2027校招）山东省·青岛市",
+          "title": "泰格医药校园招聘：CRC Intern-青岛（2027校招）",
+          "sourceName": "泰格医药校招官网（zhiye.com）",
+          "sourceUrl": "https://tigermed.zhiye.com/campus/detail?jobAdId=014ee40f-f460-4c20-a0dc-859791266451",
+          "sourceTier": "soe_medical_enterprise",
+          "publishDate": "2026-06-17",
+          "announcementType": "new_announcement",
+          "region": "青岛",
+          "employerName": "泰格医药",
+          "employerCategory": "外企/国企药企",
+          "matchedTrack": "medical_cra",
+          "matchReasons": [
+            "官方校招平台直采：直连 泰格医药（临床研究CRA）官方招聘及公众号（北森校园招聘系统）",
+            "校招岗位：CRC Intern-青岛（2027校招）（北Ⅳ区 · 山东省·青岛市）",
+            "重点意向城市命中：山东省青岛市",
+            "学历符合：硕士研究生（山东中医药大学（2024.09 - 2027.06））",
+            "科研与资质契合：持GCP证书+执业医师证，掌握Meta分析、SPSS/R统计",
+            "校招实习通道开放：2027校招留用实习项目（官网持续网申，每周需出勤3-5天）"
+          ],
+          "matchedPositions": [
+            {
+              "positionName": "CRC Intern-青岛（2027校招）",
+              "department": "北Ⅳ区 · 山东省·青岛市",
+              "headcount": 1,
+              "degreeReq": "本科及以上",
+              "majorReq": "1、药学、护理学、临床医学等医药相关专业本科及以上学历； 2、英语CET4及以上，具有英文书写能力； 3、拥有良好的人际交往能力，善于沟通及自我表达； 4、对工作负责，工作中做到细心、耐心，具有吃苦耐劳的精神及团队意识；",
+              "freshGradOnly": true,
+              "examFormat": "网申 + 面试 + 实习转正考核",
+              "track": "medical_cra",
+              "notes": "核心职责：1、实习期间，在规定的时间内，完成培训课程并通过考试，跟着带教老师完成实地操作（ on - site）的学习； 2、实习期间，协助研究者完成相关的工作，例如协助文档管理、数据管理、受试者管理、实验室管理、药物设备管理等； 3、完成上级领导安排的其他工作。"
+            }
+          ],
+          "milestones": [
+            {
+              "id": "beisen-reg-511174542",
+              "type": "registration",
+              "label": "2027届校招网申开放中（招满即止）",
+              "dateRange": "发布于 2026-06-17 · 官网持续开放网申",
+              "status": "active",
+              "note": "网申流程：在线网申 → 简历筛选 → 邀约面试/测评 → 通知录用 → 签订三方"
+            }
+          ],
+          "deadlineDate": "以官方原文为准",
+          "hasAnomaly": false,
+          "diffStatus": "still_open",
+          "isLiveGrounded": true,
+          "diffNote": "报名时间以官方原文为准，延续上次简报状态"
+        }
+      ],
+      "groundingLinks": []
+    },
     {
       "id": "brief-2026-11-27-1795755622460",
       "briefingDate": "2026-11-27",
